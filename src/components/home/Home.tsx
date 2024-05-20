@@ -8,13 +8,6 @@ export default function Home() {
     toast.success("Under Production! See you soon.");
   };
   return (
-    <div className="min-h-screen flex justify-center items-center">
-      <button
-        onClick={handleClick}
-        className="text-3xl border bg-slate-500 rounded-md text-white font-bold p-2"
-      >
-        Click Here
-      </button>
-    </div>
+    <div className="min-h-screen flex justify-center items-center">Home</div>
   );
 }
