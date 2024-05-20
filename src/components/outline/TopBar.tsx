@@ -4,7 +4,7 @@ import { FiList } from "react-icons/fi";
 
 export default function TopBar() {
   return (
-    <div className="w-full border-b border-primary-border-color h-[40px] flex items-center justify-between bg-black/30 relative">
+    <div className="w-full border-b border-primary-border-color h-[40px] flex items-center justify-between bg-black/30 blur-bg relative">
       <div className="w-[40px] h-full flex justify-center items-center border-r border-primary-border-color overflow-hidden">
         <Image src={logo} alt="" width={20} height={20} className="invert" />
       </div>

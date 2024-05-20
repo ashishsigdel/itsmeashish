@@ -16,3 +16,8 @@ body {
 ::-webkit-scrollbar {
   display: none;
 }
+
+.blur-bg {
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
