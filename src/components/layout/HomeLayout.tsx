@@ -1,5 +1,5 @@
 import { Background } from "@/utlis";
-import React from "react";
+import { Outline } from "@/components/outline";
 
 export default function HomeLayout({
   children,
@@ -9,7 +9,7 @@ export default function HomeLayout({
   return (
     <>
       <Background />
-      {children}
+      <Outline>{children}</Outline>
     </>
   );
 }
