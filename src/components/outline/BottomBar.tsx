@@ -12,11 +12,36 @@ export default function TopBar() {
         <IoMdSettings className="text-[18px] text-white/60 hover:text-primary" />
       </div>
       <div className="pr-[20px] h-full flex justify-center items-center gap-3">
-        <FaLinkedin className="text-[18px] text-white/60 hover:text-primary cursor-pointer" />
-        <FaInstagram className="text-[18px] text-white/60 hover:text-primary cursor-pointer" />
-        <FaFacebook className="text-[18px] text-white/60 hover:text-primary cursor-pointer" />
-        <FaGithub className="text-[18px] text-white/60 hover:text-primary cursor-pointer" />
-        <FaXTwitter className="text-[18px] text-white/60 hover:text-primary cursor-pointer" />
+        <div className="group relative cursor-pointer hover:text-primary text-white/60">
+          <FaLinkedin />
+          <span className="absolute -top-12 opacity-0 group-hover:opacity-100 group-hover:-top-8 bg-white text-black text-xs rounded py-1 px-2 transition-all duration-300 whitespace-nowrap">
+            Linkedin
+          </span>
+        </div>
+        <div className="group relative cursor-pointer hover:text-primary text-white/60">
+          <FaInstagram />
+          <span className="absolute -top-12 opacity-0 group-hover:opacity-100 group-hover:-top-8 bg-white text-black text-xs rounded py-1 px-2 transition-all duration-300 whitespace-nowrap">
+            Instagram
+          </span>
+        </div>
+        <div className="group relative cursor-pointer hover:text-primary text-white/60">
+          <FaFacebook />
+          <span className="absolute -top-12 opacity-0 group-hover:opacity-100 group-hover:-top-8 bg-white text-black text-xs rounded py-1 px-2 transition-all duration-300 whitespace-nowrap">
+            Facebook
+          </span>
+        </div>
+        <div className="group relative cursor-pointer hover:text-primary text-white/60">
+          <FaGithub />
+          <span className="absolute -top-12 opacity-0 group-hover:opacity-100 group-hover:-top-8 bg-white text-black text-xs rounded py-1 px-2 transition-all duration-300 whitespace-nowrap">
+            Github
+          </span>
+        </div>
+        <div className="group relative cursor-pointer hover:text-primary text-white/60">
+          <FaXTwitter />
+          <span className="absolute -top-12 opacity-0 group-hover:opacity-100 group-hover:-top-8 bg-white text-black text-xs rounded py-1 px-2 transition-all duration-300 whitespace-nowrap">
+            X
+          </span>
+        </div>
       </div>
     </div>
   );
