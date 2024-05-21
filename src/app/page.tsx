@@ -1,3 +1,4 @@
+import { About } from "@/components/about";
 import { Home } from "@/components/home";
 import { HomeLayout } from "@/components/layout";
 import { Outline } from "@/components/outline";
@@ -9,6 +10,7 @@ export default function Page() {
       <HomeLayout>
         <Outline />
         <Home />
+        <About />
       </HomeLayout>
     </div>
   );
