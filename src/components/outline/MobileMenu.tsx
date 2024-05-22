@@ -12,7 +12,7 @@ interface propsTypes {
 const MobileMenu: React.FC<propsTypes> = ({ openNavbar, handleOpenNav }) => {
   return (
     <div
-      className={`bg-black/75 md:hidden blur-bg transition-max-height duration-500 absolute w-full ease-in-out overflow-hidden ${
+      className={`bg-black md:hidden blur-bg transition-max-height duration-500 absolute w-full ease-in-out overflow-hidden ${
         openNavbar ? "max-h-[500px] py-10" : "max-h-0"
       }`}
     >
