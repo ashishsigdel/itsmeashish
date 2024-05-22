@@ -16,8 +16,11 @@ const config: Config = {
       },
       colors: {
         primary: "#37c871",
+        "primary-blue": "#845eee",
+        "primary-yellow": "#e1b84f",
+        "primary-red": "#e14f62",
         "primary-border-color": "#336647",
-        "gray-color": "#456752",
+        "gray-color": "#537a62",
       },
     },
   },
