@@ -1,20 +1,49 @@
+"use client";
+
 import Image from "next/image";
 import logo from "@/assets/logo/coding.svg";
 import { FiList } from "react-icons/fi";
+import MobileMenu from "@/components/outline/MobileMenu";
+import { useState } from "react";
+import { MdClose } from "react-icons/md";
 
 export default function TopBar() {
+  const [openNavbar, setOpenNavbar] = useState<boolean>(false);
+
+  const handleOpenNav = () => {
+    setOpenNavbar(!openNavbar);
+  };
+
   return (
-    <div className="w-full border-b border-primary-border-color h-[40px] flex items-center justify-between bg-black/30 blur-bg relative">
-      <div className="w-[40px] h-full flex justify-center items-center border-r border-primary-border-color overflow-hidden">
-        <Image src={logo} alt="" width={20} height={20} className="invert" />
+    <div className="w-full">
+      <div className="w-full border-b border-primary-border-color h-[40px] flex items-center justify-between bg-black/30 blur-bg relative">
+        <div className="w-[40px] h-full flex justify-center items-center border-r border-primary-border-color overflow-hidden">
+          <Image
+            src={logo}
+            alt="Logo"
+            width={20}
+            height={20}
+            className="invert"
+          />
+        </div>
+        <div className="absolute left-1/2 transform -translate-x-1/2">
+          <p className="text-center font-semibold tracking-wider">
+            Ashish<span className="text-primary">&lt;Sigdel&gt;</span>
+          </p>
+        </div>
+        <div
+          onClick={handleOpenNav}
+          className="w-[40px] h-full flex justify-center items-center md:hidden"
+        >
+          {openNavbar ? (
+            <MdClose className="text-xl cursor-pointer" />
+          ) : (
+            <FiList className="text-xl cursor-pointer" />
+          )}
+        </div>
       </div>
-      <div className="absolute left-1/2 transform -translate-x-1/2">
-        <p className="text-center font-semibold tracking-wider">
-          Ashish<span className="text-primary">&lt;Sigdel&gt;</span>
-        </p>
-      </div>
-      <div className="w-[40px] h-full flex justify-center items-center md:hidden">
-        <FiList className="text-xl cursor-pointer" />
+      <div className="w-full relative">
+        <MobileMenu openNavbar={openNavbar} handleOpenNav={handleOpenNav} />
       </div>
     </div>
   );
