@@ -1,5 +1,5 @@
 import React from "react";
-import { BottomBar, LeftBar, TopBar } from "@/components/outline";
+import { BottomBar, LeftBar, RightBar, TopBar } from "@/components/outline";
 
 export default function Outline({
   children,
@@ -16,6 +16,9 @@ export default function Outline({
           </div>
           <div className="w-full mx-auto overflow-y-auto h-full">
             {children}
+          </div>
+          <div className="h-full">
+            <RightBar />
           </div>
         </div>
         <BottomBar />

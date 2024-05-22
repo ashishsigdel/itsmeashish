@@ -4,12 +4,9 @@ import React from "react";
 import { toast } from "react-toastify";
 
 export default function Home() {
-  const handleClick = () => {
-    toast.success("Under Production! See you soon.");
-  };
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center text-center z-[9999]">
-      <span className="text-sm text-white/60">Home</span>
+    <div className="min-h-[calc(100vh-96px)] flex flex-col justify-center text-center">
+      <span className="text-sm text-white/60 -mt-10">Home</span>
       <h1 className="text-[48px] sm:text-[60px] md:text-[72px] font-semibold">
         Hi, I&#39;m Ashish
       </h1>
