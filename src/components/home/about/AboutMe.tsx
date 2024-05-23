@@ -3,7 +3,7 @@ import React from "react";
 
 export default function AboutMe() {
   return (
-    <div className="w-full text-gray-700 dark:text-gray-300 border border-primary-border-color">
+    <div className="w-full bg-black/40 rounded-ss-md rounded-ee-md blur-bg text-gray-700 dark:text-gray-300 border border-primary-border-color">
       <div className="p-2 border-b border-primary-border-color">
         <span className="">about-me</span>
       </div>
