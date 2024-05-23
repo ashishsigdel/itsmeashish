@@ -1,0 +1,16 @@
+import { Button, SectionTitle } from "@/components/common";
+import { ProjectCard } from "@/components/home/projects";
+
+export default function Highlight() {
+  return (
+    <div className="flex flex-col justify-center max-w-6xl my-3 px-3 mx-auto">
+      <SectionTitle title={"Projects Highlight"} />
+      <div className="flex flex-wrap gap-5">
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+      </div>
+      <Button title={"All-Projects"} />
+    </div>
+  );
+}

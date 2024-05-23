@@ -8,13 +8,13 @@ interface sectionTitleProps {
 
 export default function SectionTitle(props: sectionTitleProps) {
   return (
-    <div className="mb-10">
+    <div className="my-10">
       <div className="flex justify-center items-center flex-col text-center">
         <div className="relative w-full whitespace-nowrap text-center">
           <h2 className="opacity-10 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold stoke-title">
             {props.title}
           </h2>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary-blue absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
             {props.title}
           </h2>
         </div>
