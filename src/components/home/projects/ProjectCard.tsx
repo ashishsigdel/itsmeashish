@@ -28,7 +28,7 @@ const ProjectCard: React.FC = () => {
 
   return (
     <div className="rounded-ss-md rounded-ee-md blur-bg border border-primary-border-color mx-auto group cursor-pointer p-5 w-full sm:w-[350px] flex flex-col justify-center items-center">
-      <div className="book sm:w-[315px] h-[425px]">
+      <div className="book w-[315px] h-[425px]">
         <div className="">
           <Image
             src={product}
