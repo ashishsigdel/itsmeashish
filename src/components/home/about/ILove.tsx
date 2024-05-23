@@ -9,32 +9,32 @@ export default function ILove() {
       </div>
       <div className="p-3 md:p-5 flex flex-col gap-2">
         <p className=" ">
-          <span className="text-gray-700 mr-1">1.</span>
+          <span className="text-gray-700 mr-1">01.</span>
           <span className="text-primary-blue">Coding</span>
         </p>
         <p className="">
-          <span className="text-gray-700 mr-1">2.</span>
+          <span className="text-gray-700 mr-1">02.</span>
 
           <span className="text-primary-yellow">Listening to Music </span>
         </p>
         <p className="">
-          <span className="text-gray-700 mr-1">3.</span>
+          <span className="text-gray-700 mr-1">03.</span>
           <span className="text-primary-red">Exploring</span>
         </p>
         <p className="">
-          <span className="text-gray-700 mr-1">4.</span>
+          <span className="text-gray-700 mr-1">04.</span>
           <span className="text-primary-blue">Money</span>
         </p>
         <p className="">
-          <span className="text-gray-700 mr-1">5.</span>
+          <span className="text-gray-700 mr-1">05.</span>
           <span className="text-primary-yellow">Photography</span>
         </p>
         <p className="">
-          <span className="text-gray-700 mr-1">6.</span>
+          <span className="text-gray-700 mr-1">06.</span>
           <span className="text-primary-red">Videography</span>
         </p>
         <p className="">
-          <span className="text-gray-700 mr-1">7.</span>
+          <span className="text-gray-700 mr-1">07.</span>
           <span className="text-primary-blue">Watching Movies</span>
         </p>
       </div>
