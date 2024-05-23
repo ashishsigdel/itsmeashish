@@ -1,8 +1,7 @@
-import { SectionTitle } from "@/components/common";
+import { Button, SectionTitle } from "@/components/common";
 import Image from "next/image";
 import myImage from "@/assets/me/me.jpg";
-import Link from "next/link";
-import AboutMe from "./AboutMe";
+import { AboutMe, ILove, MeOnline } from "@/components/home/about";
 
 export default function About() {
   return (
@@ -30,8 +29,13 @@ export default function About() {
         </div>
         <div className="flex-1">
           <AboutMe />
+          <div className="flex my-5 gap-5">
+            <ILove />
+            <MeOnline />
+          </div>
         </div>
       </div>
+      <Button title={"About-me"} />
     </div>
   );
 }
