@@ -1,4 +1,4 @@
-import { SectionTitle } from "@/components/common";
+import { Button, SectionTitle } from "@/components/common";
 import Image from "next/image";
 import myImage from "@/assets/me/me.jpg";
 import { AboutMe, ILove, MeOnline } from "@/components/home/about";
@@ -35,6 +35,7 @@ export default function About() {
           </div>
         </div>
       </div>
+      <Button title={"About-me"} />
     </div>
   );
 }

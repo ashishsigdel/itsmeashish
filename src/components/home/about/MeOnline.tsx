@@ -10,24 +10,24 @@ export default function ILove() {
       <div className="p-3 md:p-5 flex flex-col gap-2">
         <p className=" ">
           <span className="text-gray-700 mr-1">1.</span>
-          <span className="text-primary-blue">linkedin</span>
+          <span className="text-primary-blue cursor-pointer">linkedin</span>
         </p>
         <p className="">
           <span className="text-gray-700 mr-1">2.</span>
 
-          <span className="text-primary-yellow">instagram</span>
+          <span className="text-primary-yellow cursor-pointer">instagram</span>
         </p>
         <p className="">
           <span className="text-gray-700 mr-1">3.</span>
-          <span className="text-primary-red">facebook</span>
+          <span className="text-primary-red cursor-pointer">facebook</span>
         </p>
         <p className="">
           <span className="text-gray-700 mr-1">4.</span>
-          <span className="text-primary-blue">X</span>
+          <span className="text-primary-blue cursor-pointer">X</span>
         </p>
         <p className="">
           <span className="text-gray-700 mr-1">5.</span>
-          <span className="text-primary-yellow">github</span>
+          <span className="text-primary-yellow cursor-pointer">github</span>
         </p>
       </div>
     </div>
