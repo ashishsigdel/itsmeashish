@@ -42,13 +42,6 @@ const MobileMenu: React.FC<propsTypes> = ({ openNavbar, handleOpenNav }) => {
           className="text-[18px] cursor-pointer flex items-center gap-3 mx-auto"
           onClick={handleOpenNav}
         >
-          <FaSkiing />
-          My Skills
-        </li>
-        <li
-          className="text-[18px] cursor-pointer flex items-center gap-3 mx-auto"
-          onClick={handleOpenNav}
-        >
           <FaDesktop />
           My Services
         </li>

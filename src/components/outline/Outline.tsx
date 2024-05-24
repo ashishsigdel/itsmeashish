@@ -7,7 +7,7 @@ export default function Outline({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="w-screen h-screen p-2">
+    <div className="w-screen h-screen p-2 z-[999]">
       <div className="w-full h-full border border-primary-border-color rounded-md flex flex-col overflow-hidden">
         <TopBar />
         <div className="flex overflow-y-auto h-full">
