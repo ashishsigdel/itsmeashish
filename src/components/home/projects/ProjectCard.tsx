@@ -27,7 +27,7 @@ const ProjectCard: React.FC = () => {
   const tags: string[] = ["React", "Next.js", "TailwindCSS", "Ecommerce"];
 
   return (
-    <div className="rounded-ss-md rounded-ee-md blur-bg border border-primary-border-color mx-auto group cursor-pointer p-5 w-full flex flex-col md:flex-row gap-4 justify-center sm:justify-between items-center mb-5 mt-5 min-h-[300px]">
+    <div className="rounded-ss-md bg-black/25 rounded-ee-md blur-bg border border-primary-border-color mx-auto group cursor-pointer p-5 w-full flex flex-col md:flex-row gap-4 justify-center sm:justify-between items-center mb-5 mt-5 min-h-[300px] z-[99]">
       <div className="flex gap-7 items-center md:max-w-[40vw] group-hover:gap-0 transition-all duration-700">
         <div className="hidden md:inline-block">
           <span className="group-hover:opacity-0 transition-all duration-700">
