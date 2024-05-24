@@ -1,16 +1,15 @@
 .book {
-  position: relative;
+  // position: relative;
   border-radius: 10px;
-  background-color: rgb(58, 50, 50);
   box-shadow: 1px 1px 12px #000;
   -webkit-transform: preserve-3d;
   -ms-transform: preserve-3d;
   transform: preserve-3d;
   -webkit-perspective: 2000px;
   perspective: 2000px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  // display: -webkit-box;
+  // display: -ms-flexbox;
+  // display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
