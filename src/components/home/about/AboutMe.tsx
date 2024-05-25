@@ -38,6 +38,14 @@ export default function AboutMe() {
           <span className="text-primary-blue"> tech trends</span> and enjoying
           the <span className="text-primary-blue">outdoors</span>.
         </p>
+        <p className="">
+          <span className="text-gray-700 mr-1">05.</span>
+          Also 3+ years of playing with{" "}
+          <span className="text-primary-yellow">Photoshop, </span> I have
+          knowledge about the art of
+          <span className="text-primary-yellow"> Photomanipulation </span>and
+          <span className="text-primary-blue"> graphic design</span>.
+        </p>
       </div>
     </div>
   );

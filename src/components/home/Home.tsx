@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { Hero } from "@/components/home/hero";
 import { About } from "@/components/home/about";
 import { Highlight } from "@/components/home/projects";
+import { LikeTech } from "@/components/home/tech";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <About />
       <Highlight />
+      <LikeTech />
     </div>
   );
 }
