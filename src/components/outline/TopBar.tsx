@@ -26,7 +26,7 @@ export default function TopBar() {
             className="invert"
           />
         </div>
-        <div className="absolute left-1/2 transform -translate-x-1/2">
+        <div className="mx-auto">
           <p className="text-center font-semibold tracking-wider">
             Ashish<span className="text-primary">&lt;Sigdel&gt;</span>
           </p>

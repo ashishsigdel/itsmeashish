@@ -4,9 +4,9 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="mt-16 py-10 bg-black/65 border-t border-primary-border-color">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-wrap items-center justify-between">
+    <div className="mt-16 py-10 bg-black/65 border-t border-primary-border-color w-full">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex flex-col sm:flex-row items-center justify-between">
           <div className="flex gap-3 items-center">
             <Image
               src={logo}
@@ -19,8 +19,8 @@ export default function Footer() {
               Ashish<span className="text-primary">&lt;Sigdel&gt;</span>
             </p>
           </div>
-          <div>
-            <ul className="flex gap-5">
+          <div className="my-5 sm:my-0">
+            <ul className="flex flex-col sm:flex-row text-center gap-5">
               <Link href="#" className="hover:text-primary text-white/60">
                 <li>
                   <span>about</span>

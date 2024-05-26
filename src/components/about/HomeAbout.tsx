@@ -1,5 +1,5 @@
 import { Button, SectionTitle } from "@/components/common";
-import { AboutImage, AboutMe, ILove, MeOnline } from "@/components/home/about";
+import { AboutImage, AboutMe, ILove, MeOnline } from "@/components/about";
 
 export default function About() {
   return (
