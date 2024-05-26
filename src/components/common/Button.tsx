@@ -6,7 +6,7 @@ interface sectionTitleProps {
 
 export default function Button(props: sectionTitleProps) {
   return (
-    <button className="btn w-fit mx-auto my-10">
+    <button className="btn w-fit my-10">
       <svg
         viewBox="0 0 24 24"
         className="arr-2"
