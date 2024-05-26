@@ -1,3 +1,6 @@
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 import { FaFingerprint, FaSkiing } from "react-icons/fa";
 import { FaDesktop } from "react-icons/fa6";
@@ -10,6 +13,11 @@ interface propsTypes {
 }
 
 const MobileMenu: React.FC<propsTypes> = ({ openNavbar, handleOpenNav }) => {
+  const pathname = usePathname();
+
+  const isActive = (page: string) => {
+    return page === pathname;
+  };
   return (
     <div
       className={`bg-black md:hidden blur-bg transition-max-height duration-500 absolute w-full ease-in-out overflow-hidden ${
@@ -17,41 +25,76 @@ const MobileMenu: React.FC<propsTypes> = ({ openNavbar, handleOpenNav }) => {
       } z-[9999]`}
     >
       <ul className="flex flex-col gap-6 w-full">
-        <li
-          className="text-[18px] cursor-pointer flex items-center gap-3 mx-auto"
-          onClick={handleOpenNav}
+        <Link
+          href={"/"}
+          className={`mx-auto ${
+            isActive("/") ? "text-primary" : "text-white/90"
+          }`}
         >
-          <IoHome />
-          Home
-        </li>
-        <li
-          className="text-[18px] cursor-pointer flex items-center gap-3 mx-auto"
-          onClick={handleOpenNav}
+          <li
+            className="text-[18px] cursor-pointer flex items-center gap-3 "
+            onClick={handleOpenNav}
+          >
+            <IoHome />
+            Home
+          </li>
+        </Link>
+        <Link
+          href={"/about"}
+          className={`mx-auto ${
+            isActive("/about") ? "text-primary" : "text-white/90"
+          }`}
         >
-          <FaFingerprint />
-          About Me
-        </li>
-        <li
-          className="text-[18px] cursor-pointer flex items-center gap-3 mx-auto"
-          onClick={handleOpenNav}
+          <li
+            className="text-[18px] cursor-pointer flex items-center gap-3 mx-auto"
+            onClick={handleOpenNav}
+          >
+            <FaFingerprint />
+            About Me
+          </li>
+        </Link>
+        <Link
+          href={"/portfolio"}
+          className={`mx-auto ${
+            isActive("/portfolio") ? "text-primary" : "text-white/90"
+          }`}
         >
-          <RiApps2Fill />
-          My Portfolio
-        </li>
-        <li
-          className="text-[18px] cursor-pointer flex items-center gap-3 mx-auto"
-          onClick={handleOpenNav}
+          <li
+            className="text-[18px] cursor-pointer flex items-center gap-3 mx-auto"
+            onClick={handleOpenNav}
+          >
+            <RiApps2Fill />
+            My Portfolio
+          </li>
+        </Link>
+        <Link
+          href={"/services"}
+          className={`mx-auto ${
+            isActive("/services") ? "text-primary" : "text-white/90"
+          }`}
         >
-          <FaDesktop />
-          My Services
-        </li>
-        <li
-          className="text-[18px] cursor-pointer flex items-center gap-3 mx-auto"
-          onClick={handleOpenNav}
+          <li
+            className="text-[18px] cursor-pointer flex items-center gap-3 mx-auto"
+            onClick={handleOpenNav}
+          >
+            <FaDesktop />
+            My Services
+          </li>
+        </Link>
+        <Link
+          href={"/contact"}
+          className={`mx-auto ${
+            isActive("/contact") ? "text-primary" : "text-white/90"
+          }`}
         >
-          <RiContactsBook3Fill />
-          Contact Me
-        </li>
+          <li
+            className="text-[18px] cursor-pointer flex items-center gap-3 mx-auto"
+            onClick={handleOpenNav}
+          >
+            <RiContactsBook3Fill />
+            Contact Me
+          </li>
+        </Link>
       </ul>
     </div>
   );
