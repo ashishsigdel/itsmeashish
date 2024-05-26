@@ -24,7 +24,7 @@ export default function LikeTech() {
     <div className="flex flex-col justify-center max-w-6xl my-3 px-3 mx-auto min-h-[100vh-96px]">
       <SectionTitle title={"Techs I like to work with"} />
 
-      <div className="h-[8rem] bg-gradient-to-t from-primary to-transparent w-[1px] mx-auto"></div>
+      <div className="h-[7rem] bg-gradient-to-t from-primary-border-color to-transparent w-[1px] mx-auto"></div>
 
       <div className="bg-black/40 rounded-ss-md rounded-ee-md blur-bg text-gray-700 dark:text-gray-300 border border-primary-border-color max-w-4xl mx-auto">
         <div className="p-2 border-b border-primary-border-color">
@@ -40,7 +40,7 @@ export default function LikeTech() {
           <SiNodedotjs className="text-[52px]" />
         </div>
       </div>
-      <div className="h-[2rem] bg-primary w-[1px] mx-auto"></div>
+      <div className="h-[2rem] bg-primary-border-color w-[1px] mx-auto"></div>
       <div className="bg-black/40 rounded-ss-md rounded-ee-md blur-bg text-gray-700 dark:text-gray-300 border border-primary-border-color max-w-4xl mx-auto">
         <div className="p-2 border-b border-primary-border-color">
           <span className="">machine-learning</span>
@@ -54,7 +54,7 @@ export default function LikeTech() {
           <SiNumpy className="text-[52px]" />
         </div>
       </div>
-      <div className="h-[2rem] bg-primary w-[1px] mx-auto"></div>
+      <div className="h-[2rem] bg-primary-border-color w-[1px] mx-auto"></div>
       <div className="bg-black/40 rounded-ss-md rounded-ee-md blur-bg text-gray-700 dark:text-gray-300 border border-primary-border-color max-w-4xl mx-auto">
         <div className="p-2 border-b border-primary-border-color">
           <span className="">design</span>
@@ -65,7 +65,7 @@ export default function LikeTech() {
           <SiFigma className="text-[52px]" />
         </div>
       </div>
-      <div className="h-[8rem] bg-gradient-to-b from-primary to-transparent w-[1px] mx-auto mb-5"></div>
+      <div className="h-[7rem] bg-gradient-to-b from-primary-border-color to-transparent w-[1px] mx-auto mb-5"></div>
     </div>
   );
 }
