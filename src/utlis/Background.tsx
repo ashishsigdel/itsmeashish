@@ -1,6 +1,15 @@
-import "@/styles/background.scss";
+"use client";
 
-export default function Background() {
+import "@/styles/background.scss";
+import { useEffect } from "react";
+
+interface BackgroundProps {
+  color1?: string;
+}
+const Background: React.FC<BackgroundProps> = ({ color1 }) => {
+  useEffect(() => {
+    if (color1) document.documentElement.style.setProperty("--color1", color1);
+  }, [color1]);
   return (
     <div className="gradient-bg">
       <div className="gradients-container">
@@ -9,4 +18,6 @@ export default function Background() {
       </div>
     </div>
   );
-}
+};
+
+export default Background;
