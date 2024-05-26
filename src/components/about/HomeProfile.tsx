@@ -1,7 +1,7 @@
 import { Button, SectionTitle } from "@/components/common";
 import { AboutImage, AboutMe, ILove, MeOnline } from "@/components/about";
 
-export default function About() {
+export default function Profile() {
   return (
     <div className="flex flex-col justify-center my-3 px-3 max-w-6xl mx-auto">
       <SectionTitle title={"Profile Overview"} />

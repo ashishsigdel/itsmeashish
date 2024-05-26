@@ -6,9 +6,16 @@ import { FiList } from "react-icons/fi";
 import MobileMenu from "@/components/outline/MobileMenu";
 import { useState } from "react";
 import { MdClose } from "react-icons/md";
+import { usePathname } from "next/navigation";
 
 export default function TopBar() {
   const [openNavbar, setOpenNavbar] = useState<boolean>(false);
+  const pathname = usePathname();
+
+  const whichColor = () => {
+    if (pathname === "/") return "text-primary";
+    if (pathname === "/about") return "text-primary-blue";
+  };
 
   const handleOpenNav = () => {
     setOpenNavbar(!openNavbar);
@@ -28,7 +35,7 @@ export default function TopBar() {
         </div>
         <div className="mx-auto">
           <p className="text-center font-semibold tracking-wider">
-            Ashish<span className="text-primary">&lt;Sigdel&gt;</span>
+            Ashish<span className={`${whichColor()}`}>&lt;Sigdel&gt;</span>
           </p>
         </div>
         <div
