@@ -1,9 +1,5 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "@/styles/globals.scss";
-import { ToastUtlis } from "@/utlis";
-
-const inter = Inter({ subsets: ["latin"] });
+import { Metadata } from "next";
+import React from "react";
 
 export const metadata: Metadata = {
   title: "Ashish Sigdel || About",
@@ -15,12 +11,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body>
-        {children}
-        <ToastUtlis />
-      </body>
-    </html>
-  );
+  return <>{children}</>;
 }
