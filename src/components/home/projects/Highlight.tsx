@@ -10,7 +10,9 @@ export default function Highlight() {
         <ProjectCard />
         <ProjectCard />
       </div>
-      <Button title={"All-Projects"} />
+      <div className="mx-auto">
+        <Button title={"All-Projects"} />
+      </div>
     </div>
   );
 }

@@ -20,7 +20,9 @@ export default function About() {
           </div>
         </div>
       </div>
-      <Button title={"About-me"} />
+      <div className="mx-auto">
+        <Button title={"About-me"} />
+      </div>
     </div>
   );
 }

@@ -17,9 +17,9 @@ export default function Outline({
           <div className="w-full mx-auto overflow-y-auto h-full">
             {children}
           </div>
-          <div className="h-full">
+          {/* <div className="h-full">
             <RightBar />
-          </div>
+          </div> */}
         </div>
         <BottomBar />
       </div>

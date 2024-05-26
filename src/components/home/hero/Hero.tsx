@@ -11,7 +11,7 @@ export default function Hero() {
         an <span className="text-primary">AI Enthusiast</span> and Creative{" "}
         <span className="text-primary">Developer</span>
       </h3>
-      <p className="text-sm mt-10 text-gray-color">
+      <p className="text-sm mt-10 text-primary-yellow">
         Dedicated to creating robust web applications <br />
         and exploring artificial intelligence and machine learning...
       </p>

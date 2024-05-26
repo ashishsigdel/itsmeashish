@@ -1,10 +1,5 @@
 import { SectionTitle } from "@/components/common";
 import React from "react";
-import { BiLogoJavascript, BiLogoTypescript } from "react-icons/bi";
-import { DiNodejs } from "react-icons/di";
-import { FaPython, FaReact, FaSass } from "react-icons/fa";
-import { IoLogoJavascript } from "react-icons/io5";
-import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import {
   SiAdobeillustrator,
   SiAdobephotoshop,
@@ -29,13 +24,13 @@ export default function LikeTech() {
     <div className="flex flex-col justify-center max-w-6xl my-3 px-3 mx-auto min-h-[100vh-96px]">
       <SectionTitle title={"Techs I like to work with"} />
 
-      <div className="h-[8rem] bg-gradient-to-t from-primary to-transparent w-[1px] mx-auto mt-5"></div>
+      <div className="h-[7rem] bg-gradient-to-t from-primary-border-color to-transparent w-[1px] mx-auto"></div>
 
-      <div className="w-full bg-black/40 rounded-ss-md rounded-ee-md blur-bg text-gray-700 dark:text-gray-300 border border-primary-border-color max-w-4xl mx-auto">
+      <div className="bg-black/40 rounded-ss-md rounded-ee-md blur-bg text-gray-700 dark:text-gray-300 border border-primary-border-color max-w-4xl mx-auto">
         <div className="p-2 border-b border-primary-border-color">
           <span className="">web-develop</span>
         </div>
-        <div className="p-3 md:p-5 flex justify-evenly flex-wrap gap-5">
+        <div className="p-3 md:p-5 flex justify-evenly flex-wrap gap-10">
           <SiNextdotjs className="text-[52px]" />
           <SiReact className="text-[52px]" />
           <SiTailwindcss className="text-[52px]" />
@@ -45,12 +40,12 @@ export default function LikeTech() {
           <SiNodedotjs className="text-[52px]" />
         </div>
       </div>
-      <div className="h-[2rem] bg-primary w-[1px] mx-auto"></div>
-      <div className="w-full bg-black/40 rounded-ss-md rounded-ee-md blur-bg text-gray-700 dark:text-gray-300 border border-primary-border-color max-w-4xl mx-auto">
+      <div className="h-[2rem] bg-primary-border-color w-[1px] mx-auto"></div>
+      <div className="bg-black/40 rounded-ss-md rounded-ee-md blur-bg text-gray-700 dark:text-gray-300 border border-primary-border-color max-w-4xl mx-auto">
         <div className="p-2 border-b border-primary-border-color">
           <span className="">machine-learning</span>
         </div>
-        <div className="p-3 md:p-5 flex justify-evenly flex-wrap gap-5">
+        <div className="p-3 md:p-5 flex justify-evenly flex-wrap gap-10">
           <SiPython className="text-[52px]" />
           <SiTensorflow className="text-[52px]" />
           <SiPytorch className="text-[52px]" />
@@ -59,18 +54,18 @@ export default function LikeTech() {
           <SiNumpy className="text-[52px]" />
         </div>
       </div>
-      <div className="h-[2rem] bg-primary w-[1px] mx-auto"></div>
-      <div className="w-full bg-black/40 rounded-ss-md rounded-ee-md blur-bg text-gray-700 dark:text-gray-300 border border-primary-border-color max-w-4xl mx-auto">
+      <div className="h-[2rem] bg-primary-border-color w-[1px] mx-auto"></div>
+      <div className="bg-black/40 rounded-ss-md rounded-ee-md blur-bg text-gray-700 dark:text-gray-300 border border-primary-border-color max-w-4xl mx-auto">
         <div className="p-2 border-b border-primary-border-color">
           <span className="">design</span>
         </div>
-        <div className="p-3 md:p-5 flex justify-evenly flex-wrap gap-5">
+        <div className="p-3 md:p-5 flex justify-evenly flex-wrap gap-10">
           <SiAdobephotoshop className="text-[52px]" />
           <SiAdobeillustrator className="text-[52px]" />
           <SiFigma className="text-[52px]" />
         </div>
       </div>
-      <div className="h-[8rem] bg-gradient-to-b from-primary to-transparent w-[1px] mx-auto mb-5"></div>
+      <div className="h-[7rem] bg-gradient-to-b from-primary-border-color to-transparent w-[1px] mx-auto mb-5"></div>
     </div>
   );
 }
