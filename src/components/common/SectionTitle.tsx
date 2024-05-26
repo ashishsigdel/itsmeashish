@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import "@/styles/sectionTitle.scss";
+import { usePathname } from "next/navigation";
 
 interface sectionTitleProps {
   title: String;
@@ -7,6 +10,13 @@ interface sectionTitleProps {
 }
 
 export default function SectionTitle(props: sectionTitleProps) {
+  const pathname = usePathname();
+
+  const whichColor = () => {
+    if (pathname === "/") return "text-primary";
+    if (pathname === "/about") return "text-primary-blue";
+  };
+
   return (
     <div className="my-10">
       <div className="flex justify-center items-center flex-col text-center">
@@ -14,7 +24,9 @@ export default function SectionTitle(props: sectionTitleProps) {
           <h2 className="opacity-10 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold stoke-title">
             {props.title}
           </h2>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary-blue absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+          <h2
+            className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold ${whichColor()} absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2`}
+          >
             {props.title}
           </h2>
         </div>
