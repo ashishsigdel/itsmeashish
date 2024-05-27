@@ -7,3 +7,4 @@ export { default as AIProjects } from "./AIProjects";
 export { default as Portfolio } from "./Portfolio";
 export { default as RecentProject } from "./RecentProject";
 export { default as PhotoshopGallery } from "./PhotoshopGallery";
+export { default as MadeWith } from "./MadeWith";
