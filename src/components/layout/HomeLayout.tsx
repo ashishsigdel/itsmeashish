@@ -6,10 +6,12 @@ import { usePathname } from "next/navigation";
 
 const getBackgroundStyles = (pathname: string) => {
   switch (pathname) {
+    case "/contact":
+      return { color1: "225, 79, 98" };
     case "/about":
-      return { color1: "86, 55, 200", circleSize: "90%", blending: "normal" };
+      return { color1: "86, 55, 200" };
     default:
-      return { color1: "55, 200, 113", circleSize: "90%", blending: "normal" };
+      return { color1: "55, 200, 113" };
   }
 };
 
