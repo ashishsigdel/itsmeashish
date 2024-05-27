@@ -15,6 +15,7 @@ export default function SectionTitle(props: sectionTitleProps) {
   const whichColor = () => {
     if (pathname === "/") return "text-primary";
     if (pathname === "/about") return "text-primary-blue";
+    if (pathname === "/contact") return "text-primary-red";
   };
 
   return (
