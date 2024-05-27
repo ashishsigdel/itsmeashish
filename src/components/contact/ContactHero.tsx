@@ -8,13 +8,13 @@ export default function ContactHero() {
         Get In Touch
       </h1>
       <h3 className="text-[24px] sm:text-[30px] md:text-[36px] leading-7">
-        Let's <span className="text-primary-red">Connect </span>
+        Let&#39;s <span className="text-primary-red">Connect </span>
         and <span className="text-primary-red">Create Together!</span>
       </h3>
       <p className="text-sm mt-10 text-primary-yellow">
         Whether you have a project you want to work on together or just want to
         have
-        <br /> a chat, you are in the right place: let's get in touch.
+        <br /> a chat, you are in the right place: let&#39;s get in touch.
       </p>
       <div className="h-[48px] bg-gradient-to-t from-primary-border-color to-transparent w-[1.5px] mx-auto mt-5"></div>
       <div className="h-[48px] bg-gradient-to-b from-primary-border-color to-transparent w-[1.5px] mx-auto"></div>
