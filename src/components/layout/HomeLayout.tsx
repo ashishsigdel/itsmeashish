@@ -7,9 +7,11 @@ import { usePathname } from "next/navigation";
 const getBackgroundStyles = (pathname: string) => {
   switch (pathname) {
     case "/contact":
-      return { color1: "225, 79, 98" };
+      return { color1: "225, 184, 79" };
     case "/about":
       return { color1: "86, 55, 200" };
+    case "/portfolio":
+      return { color1: "225, 79, 98" };
     default:
       return { color1: "55, 200, 113" };
   }
