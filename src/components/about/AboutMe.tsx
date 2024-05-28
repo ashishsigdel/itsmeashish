@@ -7,7 +7,7 @@ export default function AboutMe() {
       <div className="p-2 border-b border-primary-border-color">
         <span className="">about-me</span>
       </div>
-      <div className="p-3 md:p-5 flex flex-col gap-2">
+      <div className="p-3 md:p-5 flex flex-col gap-3">
         <p className=" ">
           <span className="text-gray-700 mr-1">01.</span>Hello, Nice to meet
           you! I&#39;m Ashish, a{" "}

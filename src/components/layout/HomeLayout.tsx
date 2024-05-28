@@ -12,6 +12,8 @@ const getBackgroundStyles = (pathname: string) => {
       return { color1: "86, 55, 200" };
     case "/portfolio":
       return { color1: "225, 79, 98" };
+    case "/services":
+      return { color1: "225, 79, 98" };
     default:
       return { color1: "55, 200, 113" };
   }
