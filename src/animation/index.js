@@ -7,7 +7,7 @@ const tl = gsap.timeline();
 // Preloader Animation
 export const preLoaderAnim = () => {
   tl.to("body", {
-    duration: 0.1,
+    duration: 0.05,
     css: { overflowY: "hidden" },
     ease: "power3.inOut",
   })
@@ -185,9 +185,9 @@ export const closeMenu = () => {
       css: { display: "none" },
     });
 
-  // tl.to(".cursor-active", {
-  //   css: { className: "+=cursor" },
-  // }).to(".cursor2-active", { css: { className: "+=cursor2" } });
+  tl.to(".cursor-active", {
+    css: { className: "+=cursor" },
+  }).to(".cursor2-active", { css: { className: "+=cursor2" } });
 };
 
 // recurrent animations
