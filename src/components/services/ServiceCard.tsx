@@ -29,7 +29,7 @@ const ServiceCard: React.FC = () => {
           </div>
         </div>
         <div
-          className="bg-white/10 hover:bg-white/5 px-2 py-1.5 rounded-lg mr-5 transition duration-500"
+          className="bg-white/10 hover:bg-white/5 px-2 py-1.5 rounded-lg sm:mr-3 md:mr-5 transition duration-500"
           onClick={toggleAccordion}
         >
           {isOpen ? (
@@ -40,7 +40,7 @@ const ServiceCard: React.FC = () => {
         </div>
       </div>
       <div
-        className={`overflow-hidden transition-max-height duration-700 ease-in-out ${
+        className={`overflow-hidden py-3 transition-max-height duration-700 ease-in-out ${
           isOpen ? "max-h-[1000px]" : "max-h-0"
         }`}
       >
@@ -50,6 +50,10 @@ const ServiceCard: React.FC = () => {
             <p className="text-white/90">
               Creating responsive and user-friendly websites.
             </p>
+          </div>
+          <div className="flex gap-2 items-center">
+            <TiTick />
+            <p className="text-white/90">Full stack development expertise.</p>
           </div>
           <div className="flex gap-2 items-center">
             <TiTick />
