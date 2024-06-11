@@ -51,9 +51,9 @@ export default function Portfolio() {
         </span>
       </div>
       {tab === "recent" && <RecentProject />}
-      {tab === "web" && <WebProjects />}
-      {tab === "ai" && <AIProjects />}
-      {tab === "photoshop" && <PhotoshopGallery />}
+      {/* {tab === "web" && <WebProjects />} */}
+      {/* {tab === "ai" && <AIProjects />} */}
+      {/* {tab === "photoshop" && <PhotoshopGallery />} */}
     </div>
   );
 }

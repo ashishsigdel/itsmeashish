@@ -1,10 +1,11 @@
 export type projects = {
-  id: string;
+  _id: string;
   sn: number;
   title: string;
   tags: string[];
-  image: string;
-  github?: string | null;
-  website?: string | null;
+  longImage: string;
+  projectImages: string[];
+  githubLink?: string | null;
+  liveLink?: string | null;
   completeYear?: string | null;
 };

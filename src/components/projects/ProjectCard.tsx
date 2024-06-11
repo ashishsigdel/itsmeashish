@@ -42,7 +42,7 @@ export default function ProjectCard({ project }: { project: projects }) {
       <div className="book w-[225px] h-[300px] md:absolute -top-[2.5rem] right-[10rem] -rotate-6 md:rotate-0 md:group-hover:-rotate-6 md:opacity-0 md:scale-75 md:group-hover:opacity-100 md:group-hover:scale-100 transition-all duration-500">
         <div>
           <Image
-            src={project.image}
+            src={project.longImage}
             alt="Product"
             className="w-full h-full object-cover object-top hover:object-bottom transition-all duration-[2000ms] rounded-[10px]"
             layout="fill"
@@ -66,18 +66,18 @@ export default function ProjectCard({ project }: { project: projects }) {
       </div>
       <div className="flex flex-col items-center mt-5">
         <div className="flex gap-5 items-center scale-90 md:opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-700">
-          {project.github && (
-            <Link href={project.github}>
+          {project.githubLink && (
+            <Link href={project.githubLink}>
               <FaGithub className="text-xl cursor-pointer hover:text-primary" />
             </Link>
           )}
 
-          {project.website && (
-            <Link href={project.website}>
+          {project.liveLink && (
+            <Link href={project.liveLink}>
               <FaGlobe className="text-xl cursor-pointer hover:text-primary" />
             </Link>
           )}
-          <Link href={`/project/${project.id}`}>
+          <Link href={`/project/${project._id}`}>
             <FaInfoCircle className="text-xl cursor-pointer hover:text-primary" />
           </Link>
         </div>
