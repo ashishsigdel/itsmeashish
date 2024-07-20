@@ -6,6 +6,7 @@ const nextConfig = {
       "itsmeashish.com.np",
       "ashishsigdel.com.np",
       "www.shutterstock.com",
+      "raw.githubusercontent.com",
     ],
   },
 };
