@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FaGithub, FaGlobe, FaInfoCircle } from "react-icons/fa";
+import { FaGithub, FaGlobe, FaInfo, FaInfoCircle } from "react-icons/fa";
 import "@/styles/projectCard.scss";
 import { projects } from "@/types/projects";
 import Link from "next/link";
@@ -25,11 +25,13 @@ const Tags: React.FC<TagsProps> = ({ tags }) => {
 
 export default function ProjectCard({ project }: { project: projects }) {
   return (
-    <div className="rounded-ss-lg bg-black/25 rounded-ee-lg blur-bg border border-primary-border-color cursor-pointer w-full sm:w-[500px] flex flex-col">
+    <div className="rounded-ss-lg bg-black/25 rounded-ee-lg blur-bg border border-primary-border-color cursor-pointer w-full sm:w-[500px] flex flex-col mb-5">
       <Image
         src={project.longImage}
         alt="project"
         className="h-[270px] object-top object-cover hover:object-bottom transition-all duration-[3000ms] rounded-ss-md"
+        width={1000}
+        height={5000}
       />
       <div className="p-3">
         <h3 className="text-[22px] font-semibold line-clamp-1">
@@ -57,12 +59,22 @@ export default function ProjectCard({ project }: { project: projects }) {
               href={project.liveLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex gap-2 items-center w-1/2 justify-center bg-primary/50 hover:bg-primary/60 py-3 rounded-md"
+              className="flex gap-2 items-center w-1/2 justify-center hover:bg-gray-700 py-3 rounded-md border border-gray-700"
             >
               <FaGlobe className="text-white hover:text-primary-color transition" />
               <p>Check Live</p>
             </a>
           )}
+
+          <Link
+            href={`/project/${project._id}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex gap-2 items-center w-1/2 justify-center hover:bg-gray-700 py-3 rounded-md border border-gray-700"
+          >
+            <FaInfo className="text-white hover:text-primary-color transition" />
+            <p>More info</p>
+          </Link>
         </div>
       </div>
     </div>

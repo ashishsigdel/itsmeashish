@@ -7,13 +7,17 @@ const useRecentProject = () => {
   const [projects, setProjects] = useState([]);
 
   const fetchProjects = async () => {
-    const response = await myAxios.get(`projects/all-projects`, {
-      params: {
-        startIndex: 0,
-        limit: 6,
-      },
-    });
-    setProjects(response.data.data.projects);
+    try {
+      const response = await myAxios.get(`projects/all-projects`, {
+        params: {
+          startIndex: 0,
+          limit: 6,
+        },
+      });
+      setProjects(response.data.data.projects);
+    } catch (error: any) {
+      console.log(error);
+    }
   };
 
   return { projects, fetchProjects };
