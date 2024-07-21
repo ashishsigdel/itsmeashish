@@ -16,9 +16,9 @@ export default function Highlight() {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center max-w-6xl my-3 px-3 mx-auto">
+    <div className="flex flex-col justify-center max-w-6xl mt-3 mb-7 px-3 mx-auto">
       <SectionTitle title={"Projects Highlights"} />
-      <div className="flex flex-wrap gap-6 mt-16">
+      <div className="flex flex-wrap gap-6 mt-16 mx-auto mb-10">
         {projects.map((project: projects) => (
           <ProjectCard key={project._id} project={project} />
         ))}
