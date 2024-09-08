@@ -8,3 +8,4 @@ export { default as Portfolio } from "./Portfolio";
 export { default as RecentProject } from "./RecentProject";
 export { default as PhotoshopGallery } from "./PhotoshopGallery";
 export { default as MadeWith } from "./MadeWith";
+export { default as Project } from "./project/Project";

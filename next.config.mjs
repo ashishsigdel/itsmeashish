@@ -7,6 +7,7 @@ const nextConfig = {
       "ashishsigdel.com.np",
       "www.shutterstock.com",
       "raw.githubusercontent.com",
+      "firebasestorage.googleapis.com",
     ],
   },
 };

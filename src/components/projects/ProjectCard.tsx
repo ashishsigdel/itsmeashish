@@ -68,7 +68,7 @@ export default function ProjectCard({ project }: { project: projects }) {
 
           <Link
             href={`/project/${project._id}`}
-            target="_blank"
+            // target="_blank"
             rel="noopener noreferrer"
             className="flex gap-2 items-center w-1/2 justify-center hover:bg-gray-700 py-3 rounded-md border border-gray-700"
           >

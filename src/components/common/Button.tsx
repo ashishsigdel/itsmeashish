@@ -5,6 +5,7 @@ interface sectionTitleProps {
 }
 
 export default function Button(props: sectionTitleProps) {
+  //button
   return (
     <button className="btn w-fit my-5">
       <svg
