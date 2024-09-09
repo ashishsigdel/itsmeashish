@@ -21,7 +21,7 @@ export default function Portfolio() {
           onClick={() => handleTabToggle("recent")}
           className={`hover:bg-primary/80 rounded-l-full ${
             tab === "recent" ? "bg-primary" : ""
-          } text-white/75 py-2 px-3 cursor-pointer`}
+          } text-white/75 py-2 px-3 cursor-pointer w-32 text-center`}
         >
           Recent
         </span>
@@ -29,15 +29,15 @@ export default function Portfolio() {
           onClick={() => handleTabToggle("web")}
           className={`hover:bg-primary/80 ${
             tab === "web" ? "bg-primary" : ""
-          } text-white/75 py-2 px-3 cursor-pointer`}
+          } text-white/75 py-2 px-3 cursor-pointer w-32 text-center`}
         >
           Web
         </span>
-        <span
+        {/* <span
           onClick={() => handleTabToggle("ai")}
           className={`hover:bg-primary/80 ${
             tab === "ai" ? "bg-primary" : ""
-          } text-white/75 py-2 px-3 cursor-pointer`}
+          } text-white/75 py-2 px-3 cursor-pointer w-32 text-center`}
         >
           AI and ML
         </span>
@@ -45,13 +45,13 @@ export default function Portfolio() {
           onClick={() => handleTabToggle("photoshop")}
           className={`hover:bg-primary/80 rounded-r-full ${
             tab === "photoshop" ? "bg-primary" : ""
-          } text-white/75 py-2 px-3 cursor-pointer`}
+          } text-white/75 py-2 px-3 cursor-pointer w-32 text-center`}
         >
           Photoshop
-        </span>
+        </span> */}
       </div>
       {tab === "recent" && <RecentProject />}
-      {/* {tab === "web" && <WebProjects />} */}
+      {tab === "web" && <WebProjects />}
       {/* {tab === "ai" && <AIProjects />} */}
       {/* {tab === "photoshop" && <PhotoshopGallery />} */}
     </div>
