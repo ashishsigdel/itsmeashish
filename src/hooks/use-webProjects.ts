@@ -3,7 +3,7 @@
 import { myAxios } from "@/services/apiServices";
 import { useState } from "react";
 
-const useRecentProject = () => {
+const useWebProject = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -27,4 +27,4 @@ const useRecentProject = () => {
   return { projects, fetchProjects, loading };
 };
 
-export default useRecentProject;
+export default useWebProject;
