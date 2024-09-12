@@ -67,10 +67,10 @@ export default function ProjectCard({ project }: { project: projects }) {
           )}
 
           <Link
-            href={`/project/${project._id}`}
+            href={`#`}
             // target="_blank"
             rel="noopener noreferrer"
-            className="flex gap-2 items-center w-1/2 justify-center hover:bg-gray-700 py-3 rounded-md border border-gray-700"
+            className="flex gap-2 items-center w-1/2 justify-center hover:bg-gray-700 py-3 rounded-md border border-gray-700 cursor-not-allowed"
           >
             <FaInfo className="text-white hover:text-primary-color transition" />
             <p>More info</p>
