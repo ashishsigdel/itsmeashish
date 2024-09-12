@@ -25,7 +25,7 @@ const Tags: React.FC<TagsProps> = ({ tags }) => {
 
 export default function ProjectCard({ project }: { project: projects }) {
   return (
-    <div className="rounded-ss-lg bg-black/25 rounded-ee-lg blur-bg border border-primary-border-color cursor-pointer w-full sm:w-[500px] flex flex-col mb-5">
+    <div className="rounded-ss-lg bg-black/25 rounded-ee-lg blur-bg border border-primary-border-color cursor-pointer w-full sm:w-[450px] flex flex-col mb-5">
       <Image
         src={project.longImage}
         alt="project"
@@ -67,10 +67,10 @@ export default function ProjectCard({ project }: { project: projects }) {
           )}
 
           <Link
-            href={`/project/${project._id}`}
+            href={`#`}
             // target="_blank"
             rel="noopener noreferrer"
-            className="flex gap-2 items-center w-1/2 justify-center hover:bg-gray-700 py-3 rounded-md border border-gray-700"
+            className="flex gap-2 items-center w-1/2 justify-center hover:bg-gray-700 py-3 rounded-md border border-gray-700 cursor-not-allowed"
           >
             <FaInfo className="text-white hover:text-primary-color transition" />
             <p>More info</p>

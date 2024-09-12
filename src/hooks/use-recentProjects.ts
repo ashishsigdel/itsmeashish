@@ -13,7 +13,7 @@ const useRecentProject = () => {
       const response = await myAxios.get(`projects/all-projects`, {
         params: {
           startIndex: 0,
-          limit: 6,
+          limit: 4,
         },
       });
       setProjects(response.data.data.projects);
