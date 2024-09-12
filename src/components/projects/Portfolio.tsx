@@ -27,11 +27,15 @@ export default function Portfolio() {
         </span>
         <span
           onClick={() => handleTabToggle("web")}
-          className={`hover:bg-primary/80 ${
+          // className={`hover:bg-primary/80 ${
+          //   tab === "web" ? "bg-primary" : ""
+          // } text-white/75 py-2 px-3 cursor-pointer w-32 text-center`}
+          className={`hover:bg-primary/80 rounded-r-full ${
             tab === "web" ? "bg-primary" : ""
           } text-white/75 py-2 px-3 cursor-pointer w-32 text-center`}
         >
-          Web
+          {/* Web */}
+          All Projects
         </span>
         {/* <span
           onClick={() => handleTabToggle("ai")}

@@ -25,7 +25,7 @@ const Tags: React.FC<TagsProps> = ({ tags }) => {
 
 export default function ProjectCard({ project }: { project: projects }) {
   return (
-    <div className="rounded-ss-lg bg-black/25 rounded-ee-lg blur-bg border border-primary-border-color cursor-pointer w-full sm:w-[500px] flex flex-col mb-5">
+    <div className="rounded-ss-lg bg-black/25 rounded-ee-lg blur-bg border border-primary-border-color cursor-pointer w-full sm:w-[450px] flex flex-col mb-5">
       <Image
         src={project.longImage}
         alt="project"

@@ -13,7 +13,7 @@ const useHomeProject = () => {
       const response = await myAxios.get(`projects/all-projects`, {
         params: {
           startIndex: 0,
-          limit: 3,
+          limit: 2,
         },
       });
       setProjects(response.data.data.projects);
