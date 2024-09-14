@@ -21,7 +21,14 @@ export default function ContactForm() {
     onSubmit,
     responseMessage,
     setResponseMessage,
+    errorResponseMessage,
+    setErrorResponseMessage,
   } = useContact();
+
+  const handleClose = () => {
+    setResponseMessage(undefined);
+    setErrorResponseMessage(undefined);
+  };
 
   return (
     <div className="flex flex-col justify-center max-w-6xl my-3 px-3 mx-auto">
@@ -158,7 +165,18 @@ export default function ContactForm() {
               <p className="text-base text-green-600 ">{responseMessage}</p>
               <span
                 className="text-black text-xl cursor-pointer"
-                onClick={() => setResponseMessage(undefined)}
+                onClick={handleClose}
+              >
+                <CgClose />
+              </span>
+            </div>
+          )}
+          {errorResponseMessage && (
+            <div className="w-full bg-white p-3 rounded-lg flex justify-between items-center">
+              <p className="text-base text-red-600 ">{responseMessage}</p>
+              <span
+                className="text-black text-xl cursor-pointer"
+                onClick={handleClose}
               >
                 <CgClose />
               </span>
