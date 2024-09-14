@@ -6,6 +6,9 @@ export default function useContact() {
   const [responseMessage, setResponseMessage] = useState<string | undefined>(
     undefined
   );
+  const [errorResponseMessage, setErrorResponseMessage] = useState<
+    string | undefined
+  >(undefined);
   const [formData, setFormData] = useState<messageType>({
     email: "",
     name: "",
@@ -92,7 +95,9 @@ export default function useContact() {
         });
       } catch (error: any) {
         console.error("Error sending email:", error);
-        setResponseMessage("Failed to send message. Please try again later.");
+        setErrorResponseMessage(
+          "Failed to send message. Please try again later."
+        );
       } finally {
         setIsLoading(false);
       }
@@ -116,5 +121,7 @@ export default function useContact() {
     onSubmit,
     responseMessage,
     setResponseMessage,
+    errorResponseMessage,
+    setErrorResponseMessage,
   };
 }
