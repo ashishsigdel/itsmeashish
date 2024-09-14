@@ -21,6 +21,7 @@ const config: Config = {
         "primary-red": "#e14f62",
         "primary-border-color": "#336647",
         "gray-color": "#537a62",
+        danger: "#D10000",
       },
     },
   },
