@@ -12,7 +12,7 @@ const useHomeProject = () => {
     try {
       const response = await myAxios.get(`projects/all-projects`, {
         params: {
-          startIndex: 0,
+          page: 1,
           limit: 2,
         },
       });
