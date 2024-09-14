@@ -1,6 +1,7 @@
 "use client";
 import { Button, SectionTitle } from "@/components/common";
 import useContact from "@/hooks/use-contact";
+import { CgClose } from "react-icons/cg";
 
 export default function ContactForm() {
   const {
@@ -19,6 +20,7 @@ export default function ContactForm() {
     validateMessage,
     onSubmit,
     responseMessage,
+    setResponseMessage,
   } = useContact();
 
   return (
@@ -107,7 +109,7 @@ export default function ContactForm() {
               />
             </div>
           </div>
-          <div className="flex gap-3 w-full items-center">
+          {/* <div className="flex gap-3 w-full items-center">
             <input
               onChange={(e) => {
                 e.target.style.backgroundColor = e.target.checked
@@ -124,9 +126,13 @@ export default function ContactForm() {
               </span>
               .
             </span>
-          </div>
+          </div> */}
           <div className="mx-auto">
-            <button type="submit" className="btn w-fit my-5">
+            <button
+              disabled={isLoading}
+              type="submit"
+              className="btn w-fit my-5"
+            >
               <svg
                 viewBox="0 0 24 24"
                 className="arr-2"
@@ -134,7 +140,9 @@ export default function ContactForm() {
               >
                 <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
               </svg>
-              <span className="text">Send Message</span>
+              <span className="text">
+                {isLoading ? "Loading..." : "Send Message"}
+              </span>
               <span className="circle"></span>
               <svg
                 viewBox="0 0 24 24"
@@ -144,8 +152,18 @@ export default function ContactForm() {
                 <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
               </svg>
             </button>
-            {responseMessage && <p>{responseMessage}</p>}
           </div>
+          {responseMessage && (
+            <div className="w-full bg-white p-3 rounded-lg flex justify-between items-center">
+              <p className="text-base text-green-600 ">{responseMessage}</p>
+              <span
+                className="text-black text-xl cursor-pointer"
+                onClick={() => setResponseMessage(undefined)}
+              >
+                <CgClose />
+              </span>
+            </div>
+          )}
         </form>
       </div>
     </div>

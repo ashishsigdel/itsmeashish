@@ -1,6 +1,6 @@
-import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { messageType } from "@/types/message";
-import { myAxios } from "@/services/apiServices";
+import emailjs from "emailjs-com";
 
 export default function useContact() {
   const [responseMessage, setResponseMessage] = useState<string | undefined>(
@@ -16,7 +16,6 @@ export default function useContact() {
   const { name, email, company, message } = formData;
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
-
   const [nameError, setNameError] = useState<string | null>(null);
   const [emailError, setEmailError] = useState<string | null>(null);
   const [messageError, setMessageError] = useState<string | null>(null);
@@ -24,11 +23,10 @@ export default function useContact() {
   const handleChange = (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const updatedFormData = {
+    setFormData({
       ...formData,
       [event.target.name]: event.target.value,
-    };
-    setFormData(updatedFormData);
+    });
   };
 
   const validateName = () => {
@@ -40,8 +38,11 @@ export default function useContact() {
   };
 
   const validateEmail = () => {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email) {
       setEmailError("Email is required!");
+    } else if (!emailPattern.test(email)) {
+      setEmailError("Invalid email format!");
     } else {
       setEmailError(null);
     }
@@ -57,6 +58,8 @@ export default function useContact() {
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    // Perform validations
     validateName();
     validateEmail();
     validateMessage();
@@ -71,13 +74,16 @@ export default function useContact() {
     ) {
       setIsLoading(true);
       try {
-        const response = await myAxios.post(`/message/messagetoemail`, {
-          name,
-          email,
-          company,
-          message,
-        });
-        setResponseMessage(response.data.message);
+        // Send the email
+        const result = await emailjs.send(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+          formData,
+          process.env.NEXT_PUBLIC_EMAILJS_USER_ID!
+        );
+        setResponseMessage("Message sent successfully!");
+
+        // Reset the form after successful send
         setFormData({
           email: "",
           name: "",
@@ -85,9 +91,8 @@ export default function useContact() {
           message: "",
         });
       } catch (error: any) {
-        setResponseMessage("Cannot send Message.");
-        console.log(error.message);
-        return;
+        console.error("Error sending email:", error);
+        setResponseMessage("Failed to send message. Please try again later.");
       } finally {
         setIsLoading(false);
       }
@@ -110,5 +115,6 @@ export default function useContact() {
     validateMessage,
     onSubmit,
     responseMessage,
+    setResponseMessage,
   };
 }
