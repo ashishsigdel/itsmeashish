@@ -1,18 +1,40 @@
+"use client";
 import Image from "next/image";
 import logo from "@/assets/logo/coding.svg";
 import { FiList } from "react-icons/fi";
-import { IoMdSettings } from "react-icons/io";
+import { IoMdClose, IoMdSettings } from "react-icons/io";
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import Link from "next/link"; // Import Link component from Next.js
 import { socialLinks } from "@/types/constant"; // Import your social links
+import { ColorControl } from "@/utlis";
+import { useState } from "react";
 
-export default function TopBar() {
+export default function BottomBar() {
+  const [openColorChoose, setOpenColorChoose] = useState(false);
+
+  const handleColorChoose = () => {
+    setOpenColorChoose(!openColorChoose);
+  };
+
+  const handleCloseColorControl = () => {
+    setOpenColorChoose(false);
+  };
+
   return (
     <div className="w-full border-t border-primary-border-color h-[40px] flex items-center justify-between bg-black/30 relative">
-      <div className="w-[40px] h-full flex justify-center items-center border-r border-primary-border-color overflow-hidden">
-        <IoMdSettings className="text-[18px] text-white/60 hover:text-primary" />
+      <div
+        onClick={handleColorChoose}
+        className="w-[40px] h-full flex justify-center items-center border-r border-primary-border-color overflow-hidden"
+      >
+        {openColorChoose ? (
+          <IoMdClose className="text-[18px] text-white/60 hover:text-primary cursor-pointer" />
+        ) : (
+          <IoMdSettings className="text-[18px] text-white/60 hover:text-primary cursor-pointer" />
+        )}
       </div>
+      {openColorChoose && <ColorControl onClose={handleCloseColorControl} />}
+
       <div className="pr-[20px] h-full flex justify-center items-center gap-3">
         <Link
           href={socialLinks.linkedin}
