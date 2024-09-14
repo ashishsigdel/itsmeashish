@@ -3,6 +3,7 @@
 import React from "react";
 import "@/styles/sectionTitle.scss";
 import { usePathname } from "next/navigation";
+import { useSelector } from "react-redux";
 
 interface sectionTitleProps {
   title: String;
@@ -10,15 +11,7 @@ interface sectionTitleProps {
 }
 
 export default function SectionTitle(props: sectionTitleProps) {
-  const pathname = usePathname();
-
-  const whichColor = () => {
-    if (pathname === "/") return "text-primary";
-    if (pathname === "/about") return "text-primary-blue";
-    if (pathname === "/portfolio") return "text-primary-red";
-    if (pathname === "/services") return "text-primary-blue";
-    if (pathname === "/contact") return "text-primary-red";
-  };
+  const selectedColor = useSelector((state: any) => state.color.color);
 
   return (
     <div className="my-10">
@@ -28,7 +21,8 @@ export default function SectionTitle(props: sectionTitleProps) {
             {props.title}
           </h2>
           <h2
-            className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold ${whichColor()} absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2`}
+            style={{ color: `rgb(${selectedColor})` }}
+            className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2`}
           >
             {props.title}
           </h2>

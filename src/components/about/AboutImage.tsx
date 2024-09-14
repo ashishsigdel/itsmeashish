@@ -5,7 +5,7 @@ import myPicTwo from "@/assets/me/myPicTwo.jpg";
 export default function AboutImage() {
   return (
     <>
-      <div className="ml-14 ">
+      <div className="ml-14 w-full">
         <Image
           src={myPicOne}
           alt="ashish"

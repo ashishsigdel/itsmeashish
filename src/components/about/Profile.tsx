@@ -8,19 +8,19 @@ export default function Profile() {
     <div className="flex flex-col justify-center my-3 px-3 max-w-6xl mx-auto">
       <SectionTitle title={"Profile Overview"} />
 
-      <div className="flex flex-wrap gap-5 flex-col md:flex-row justify-center w-full mb-5">
-        <div className="flex-1 py-5 md:py-10 w-full relative">
-          <div className="md:sticky top-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16 mx-auto mb-10">
+        <div className="py-5 md:py-10 w-full relative mx-auto">
+          <div className="md:sticky top-10 mx-auto">
             <Image
               src={myPicOne}
               alt="My Picture"
               width={400}
               height={400}
-              className="rounded-md"
+              className="rounded-md mx-auto md:mx-0"
             />
           </div>
         </div>
-        <div className="flex-1 overflow-y-auto">
+        <div className="overflow-y-auto">
           <AboutMe />
           <div className="flex my-5 gap-5">
             <ILove />
