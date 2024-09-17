@@ -7,6 +7,7 @@ import {
   RecentProject,
   WebProjects,
 } from "@/components/projects";
+import { SectionTitle } from "../common";
 
 export default function Portfolio() {
   const [tab, setTab] = useState<string>("recent");
@@ -15,7 +16,11 @@ export default function Portfolio() {
     setTab(name);
   };
   return (
-    <div className="flex flex-col justify-center max-w-6xl my-3 px-3 mx-auto ">
+    <div
+      id="portfolio"
+      className="flex flex-col justify-center max-w-6xl mt-3 mb-7 px-3 mx-auto"
+    >
+      <SectionTitle title={"Projects Highlights"} />
       <div className="flex mx-auto items-center bg-black/70 rounded-full">
         <span
           onClick={() => handleTabToggle("recent")}

@@ -31,10 +31,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div
-      id="contact"
-      className="flex flex-col justify-center max-w-6xl my-3 px-3 mx-auto"
-    >
+    <div className="flex flex-col justify-center max-w-6xl my-3 px-3 mx-auto">
       <SectionTitle title={"Send Me a Message"} />
       <div className="w-full max-w-4xl mx-auto rounded-ss-lg bg-black/25 rounded-ee-lg blur-bg border border-primary-border-color">
         <div className="p-2 border-b border-primary-border-color">

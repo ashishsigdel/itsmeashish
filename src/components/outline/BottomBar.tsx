@@ -28,13 +28,16 @@ export default function BottomBar() {
         className="w-[40px] h-full flex justify-center items-center border-r border-primary-border-color overflow-hidden"
       >
         {openColorChoose ? (
-          <IoMdClose className="text-[18px] text-white/60 hover:text-primary cursor-pointer" />
+          <IoMdClose className="text-[22px] text-white/60 hover:text-primary cursor-pointer" />
         ) : (
-          <IoMdSettings className="text-[18px] text-white/60 hover:text-primary cursor-pointer" />
+          <IoMdSettings
+            className={`text-[22px] text-white/60 hover:text-primary cursor-pointer ${
+              !openColorChoose ? "rotate-icon" : ""
+            }`}
+          />
         )}
       </div>
       {openColorChoose && <ColorControl onClose={handleCloseColorControl} />}
-
       <div className="pr-[20px] h-full flex justify-center items-center gap-3">
         <Link
           href={socialLinks.linkedin}

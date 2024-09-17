@@ -21,7 +21,10 @@ import {
 
 export default function LikeTech() {
   return (
-    <div className="flex flex-col justify-center max-w-6xl my-3 px-3 mx-auto min-h-[100vh-96px]">
+    <div
+      id="technologies"
+      className="flex flex-col justify-center max-w-6xl my-3 px-3 mx-auto min-h-[100vh-96px]"
+    >
       <SectionTitle title={"Techs I like to work with"} />
 
       <div className="h-[7rem] bg-gradient-to-t from-primary-border-color to-transparent w-[1px] mx-auto"></div>

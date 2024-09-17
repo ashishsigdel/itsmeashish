@@ -25,7 +25,7 @@ export default function HomeContact() {
             <p className="text-3xl sm:text-4xl md:text-5xl">
               Let&#39;s work together on your next project
             </p>
-            <Link href="/contact" className="mx-auto sm:mx-0">
+            <Link href="#contact" className="mx-auto sm:mx-0">
               <Button title={"let's connect"} />
             </Link>
           </div>

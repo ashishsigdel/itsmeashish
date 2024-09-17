@@ -13,6 +13,10 @@ body {
   color: white;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -20,4 +24,17 @@ body {
 .blur-bg {
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-icon {
+  animation: rotate 2s linear infinite;
 }
