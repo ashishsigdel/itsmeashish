@@ -1,14 +1,18 @@
 import { StaticImageData } from "next/image";
 
+export type Tags = {
+  id: string;
+  title: string;
+};
+
 export type projects = {
-  _id: string;
-  sn: number;
+  id: string;
   title: string;
   description: string;
-  tags: string[];
-  longImage: string | StaticImageData;
-  projectImages: string[];
+  tags: Tags[];
+  longPhoto: string | StaticImageData;
+  coverPhoto: string | StaticImageData;
+  previewPics: string[];
   githubLink?: string | null;
-  liveLink?: string | null;
-  completeYear?: string | null;
+  previewLink?: string | null;
 };

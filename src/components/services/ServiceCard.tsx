@@ -3,8 +3,13 @@ import React, { useState } from "react";
 import "@/styles/projectCard.scss";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { TiTick } from "react-icons/ti";
+import { Service } from "@/types/service";
 
-const ServiceCard: React.FC = () => {
+interface ServiceCardProps {
+  service: Service;
+}
+
+const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleAccordion = () => {
@@ -21,10 +26,12 @@ const ServiceCard: React.FC = () => {
         <div className="flex gap-3 items-center sm:px-5">
           <div className="">
             <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-              Website Development
+              {/* Website Development */}
+              {service.title}
             </h3>
             <p className="text-white/60">
-              Creating responsive and user-friendly websites.
+              {/* Creating responsive and user-friendly websites. */}
+              {service.description}
             </p>
           </div>
         </div>
@@ -45,40 +52,12 @@ const ServiceCard: React.FC = () => {
         }`}
       >
         <div className="w-full my-5 md:flex-grow sm:px-5 flex flex-col gap-3">
-          <div className="flex gap-2 items-center">
-            <TiTick />
-            <p className="text-white/90">
-              Creating responsive and user-friendly websites.
-            </p>
-          </div>
-          <div className="flex gap-2 items-center">
-            <TiTick />
-            <p className="text-white/90">Full stack development expertise.</p>
-          </div>
-          <div className="flex gap-2 items-center">
-            <TiTick />
-            <p className="text-white/90">
-              Developing sites that align with brand identity.
-            </p>
-          </div>
-          <div className="flex gap-2 items-center">
-            <TiTick />
-            <p className="text-white/90">
-              Iterative development process for continuous enhancement.
-            </p>
-          </div>
-          <div className="flex gap-2 items-center">
-            <TiTick />
-            <p className="text-white/90">
-              User testing to ensure optimal website performance.
-            </p>
-          </div>
-          <div className="flex gap-2 items-center">
-            <TiTick />
-            <p className="text-white/90">
-              Collaborating to launch and maintain websites.
-            </p>
-          </div>
+          {service.points.map((point) => (
+            <div key={point.id} className="flex gap-2 items-center">
+              <TiTick />
+              <p className="text-white/90">{point.title}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>

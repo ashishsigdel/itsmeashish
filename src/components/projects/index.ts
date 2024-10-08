@@ -2,7 +2,7 @@ export { default as Projects } from "./Projects";
 export { default as Highlight } from "./Highlight";
 export { default as ProjectCard } from "./ProjectCard";
 export { default as PortfolioHero } from "./PortfolioHero";
-export { default as WebProjects } from "./WebProjects";
+export { default as AllProjects } from "./AllProjects";
 export { default as AIProjects } from "./AIProjects";
 export { default as Portfolio } from "./Portfolio";
 export { default as RecentProject } from "./RecentProject";

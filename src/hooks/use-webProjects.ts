@@ -1,4 +1,5 @@
 import { myAxios } from "@/services/apiServices";
+import { getProjects } from "@/services/projectServices";
 import { useState } from "react";
 
 const useWebProject = () => {
@@ -17,15 +18,10 @@ const useWebProject = () => {
   const fetchProjects = async (page = 1) => {
     setLoading(true);
     try {
-      const response = await myAxios.get(`projects/all-projects`, {
-        params: {
-          page: page, // Use currentPage or passed page here
-          limit: limit,
-        },
-      });
-      setProjects(response.data.data.projects);
-      setCurrentPage(response.data.data.currentPage);
-      setTotalPages(response.data.data.totalPages);
+      const response = await getProjects();
+      setProjects(response.data);
+      // setCurrentPage(response.data.data.currentPage);
+      // setTotalPages(response.data.data.totalPages);
     } catch (error: any) {
       console.log(error);
     } finally {
