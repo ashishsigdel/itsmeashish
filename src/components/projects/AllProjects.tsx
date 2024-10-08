@@ -4,7 +4,6 @@ import { ProjectCard } from "@/components/projects";
 import useRecentProject from "@/hooks/use-recentProjects";
 import { projects } from "@/types/projects";
 import { useEffect } from "react";
-import { projectsData } from "@/data/Projects";
 import useHomeProject from "@/hooks/use-homeProjects";
 import useWebProject from "@/hooks/use-webProjects";
 import { MdArrowBack } from "react-icons/md";

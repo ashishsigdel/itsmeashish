@@ -5,7 +5,6 @@ import { ProjectCard } from "@/components/projects";
 import useRecentProject from "@/hooks/use-recentProjects";
 import { projects } from "@/types/projects";
 import { useEffect } from "react";
-import { projectsData } from "@/data/Projects";
 
 export default function RecentProject() {
   const { projects, fetchProjects, loading } = useRecentProject();
@@ -24,7 +23,7 @@ export default function RecentProject() {
           <>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-16 mx-auto mb-10">
               {projects.map((project: projects) => (
-                <ProjectCard key={project._id} project={project} />
+                <ProjectCard key={project.id} project={project} />
               ))}
             </div>
           </>
