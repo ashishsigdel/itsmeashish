@@ -34,10 +34,7 @@ export default function Profile() {
   }, []);
 
   return (
-    <div
-      id="about"
-      className="flex flex-col justify-center my-3 px-3 max-w-6xl mx-auto"
-    >
+    <div className="flex flex-col justify-center my-3 px-3 max-w-6xl mx-auto">
       <SectionTitle title={"Profile Overview"} />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16 mx-auto mb-10">

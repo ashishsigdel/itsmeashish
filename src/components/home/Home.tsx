@@ -13,12 +13,22 @@ export default function Home() {
   return (
     <>
       <div className="px-3 sm:px-4 md:px-5">
-        <Hero />
-        <Profile />
-        <Portfolio />
-        <MainServices />
-        <LikeTech />
-        <MadeWith />
+        <div id="home">
+          <Hero />
+        </div>
+        <div id="about">
+          <Profile />
+        </div>
+        <div id="portfolio">
+          <Portfolio />
+        </div>
+        <div id="services">
+          <MainServices />
+        </div>
+        <div id="technologies">
+          <LikeTech />
+          <MadeWith />
+        </div>
         <div id="contact">
           <DiscussProject />
           <ContactForm />

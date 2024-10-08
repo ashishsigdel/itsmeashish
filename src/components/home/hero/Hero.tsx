@@ -4,10 +4,7 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <div
-      id="home"
-      className="min-h-[calc(100vh+40px)] flex flex-col justify-center text-center"
-    >
+    <div className="min-h-[calc(100vh+40px)] flex flex-col justify-center text-center">
       <span className="text-sm text-white/60 -mt-10 uppercase">Home</span>
       <h1 className="text-[48px] sm:text-[60px] md:text-[72px] font-semibold">
         Hi, I&#39;m Ashish
