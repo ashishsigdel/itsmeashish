@@ -84,7 +84,7 @@ export default function useContact() {
           process.env.NEXT_PUBLIC_EMAILJS_SERVICEid!,
           process.env.NEXT_PUBLIC_EMAILJS_TEMPLATEid!,
           formData,
-          process.env.NEXT_PUBLIC_EMAILJS_USERid!
+          process.env.NEXT_PUBLIC_EMAILJS_USER_ID!
         );
         setResponseMessage("Message sent successfully!");
 
