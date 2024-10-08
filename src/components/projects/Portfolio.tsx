@@ -1,12 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import {
-  AIProjects,
-  AllProjects,
-  PhotoshopGallery,
-  RecentProject,
-} from "@/components/projects";
+import { AllProjects } from "@/components/projects";
 import { SectionTitle } from "../common";
 
 export default function Portfolio() {
