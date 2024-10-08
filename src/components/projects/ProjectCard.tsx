@@ -10,7 +10,7 @@ export default function ProjectCard({ project }: { project: projects }) {
       <Image
         src={project.longPhoto}
         alt="project"
-        className="h-[270px] object-top object-cover hover:object-bottom transition-all duration-[3000ms] rounded-ss-md"
+        className="h-[270px] w-full object-top object-cover hover:object-bottom transition-all duration-[3000ms] rounded-ss-md"
         width={300}
         height={1000}
       />
