@@ -11,8 +11,8 @@ export default function ProjectCard({ project }: { project: projects }) {
         src={project.longPhoto}
         alt="project"
         className="h-[270px] object-top object-cover hover:object-bottom transition-all duration-[3000ms] rounded-ss-md"
-        width={1000}
-        height={5000}
+        width={300}
+        height={1000}
       />
       <div className="p-3">
         <h3 className="text-[22px] font-semibold text-center my-5">

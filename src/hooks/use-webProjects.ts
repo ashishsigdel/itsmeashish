@@ -18,10 +18,11 @@ const useWebProject = () => {
   const fetchProjects = async (page = 1) => {
     setLoading(true);
     try {
-      const response = await getProjects();
-      setProjects(response.data);
-      // setCurrentPage(response.data.data.currentPage);
-      // setTotalPages(response.data.data.totalPages);
+      const response = await getProjects(page);
+
+      setProjects(response.data.projects);
+      setCurrentPage(response.data.currentPage);
+      setTotalPages(response.data.total);
     } catch (error: any) {
       console.log(error);
     } finally {

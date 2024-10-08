@@ -20,7 +20,7 @@ export default function AllProjects() {
 
   const handlePageChange = async (pageNumber: number) => {
     setCurrentPage(pageNumber);
-    fetchProjects(pageNumber); // Pass the new page number to fetchProjects
+    fetchProjects(pageNumber);
   };
 
   useEffect(() => {
