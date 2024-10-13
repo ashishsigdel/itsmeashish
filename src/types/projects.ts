@@ -15,8 +15,8 @@ export type projects = {
   title: string;
   description: string;
   tags: Tags[];
-  longPhoto: string | undefined;
-  coverPhoto: string | undefined;
+  longPhoto: string | StaticImageData;
+  coverPhoto: string | StaticImageData;
   previewPics: PicsProps[];
   githubLink?: string | null;
   previewLink?: string | null;
