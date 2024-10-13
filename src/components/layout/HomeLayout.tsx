@@ -14,7 +14,9 @@ export default function HomeLayout({
   return (
     <>
       <Background color1={selectedColor} />
-      <Outline>{children}</Outline>
+      {/* <Outline> */}
+      {children}
+      {/* </Outline> */}
     </>
   );
 }

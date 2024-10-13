@@ -5,6 +5,8 @@ import { projects } from "@/types/projects";
 import { useParams } from "next/navigation";
 import React, { useEffect } from "react";
 import { ProjectDetails } from "@/components/projects";
+import ProjectNotFound from "./ProjectNotFound";
+import { Spinner } from "@/components/common";
 
 export default function Project() {
   const params = useParams<{ id: string }>();
@@ -30,7 +32,9 @@ export default function Project() {
   return (
     <div className="flex lg:flex-row flex-col w-full h-full">
       {loading ? (
-        <p>Loading...</p>
+        <div className=" flex flex-col items-center justify-center p-5 w-full">
+          <Spinner />
+        </div>
       ) : project ? (
         <>
           <div className="lg:w-[70%] w-full relative">
@@ -42,7 +46,7 @@ export default function Project() {
           </div>
         </>
       ) : (
-        <p>Project not found!</p>
+        <ProjectNotFound />
       )}
     </div>
   );
