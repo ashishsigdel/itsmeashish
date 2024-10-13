@@ -8,3 +8,12 @@ export const getProjects = async (page: number) => {
     throw error;
   }
 };
+
+export const getProjectById = async (id: number) => {
+  try {
+    const response = await myAxios.get(`/project/get-by-id?id=${id}`);
+    return response.data;
+  } catch (error: any) {
+    throw error;
+  }
+};

@@ -38,7 +38,6 @@ export default function LeftBar() {
   }, []);
 
   const isActive = (id: string) => activeSection === id;
-  console.log(isActive);
 
   return (
     <div className="hidden md:flex flex-col gap-4 justify-center items-center w-[40px] h-full border-r border-primary-border-color bg-black/30">
