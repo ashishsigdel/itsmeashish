@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { navigationLinks } from "@/data/navigationData";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface propsTypes {
   openNavbar: boolean;
@@ -11,37 +12,64 @@ interface propsTypes {
 
 const MobileMenu: React.FC<propsTypes> = ({ openNavbar, handleOpenNav }) => {
   const pathname = usePathname();
-
   const isActive = (page: string) => {
     return page === pathname;
   };
 
   return (
-    <div
-      className={`bg-black md:hidden blur-bg transition-max-height duration-500 absolute w-full ease-in-out overflow-hidden ${
-        openNavbar ? "max-h-[500px] py-10 " : "max-h-0"
-      } z-[9999]`}
-    >
-      <ul className="flex flex-col gap-6 w-full">
-        {navigationLinks.map(({ href, icon: Icon, label }) => (
-          <Link
-            key={href}
-            href={href}
-            className={`mx-auto ${
-              isActive(href) ? "text-primary" : "text-white/90"
-            }`}
+    <AnimatePresence>
+      {openNavbar && (
+        <motion.div
+          className="bg-black md:hidden blur-bg absolute w-full z-[9999] overflow-hidden"
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <motion.ul
+            className="flex flex-col gap-6 w-full py-10"
+            initial="closed"
+            animate="open"
+            exit="closed"
+            variants={{
+              open: {
+                transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+              },
+              closed: {
+                transition: { staggerChildren: 0.05, staggerDirection: -1 },
+              },
+            }}
           >
-            <li
-              className="text-[18px] cursor-pointer flex items-center gap-3 mx-auto"
-              onClick={handleOpenNav}
-            >
-              <Icon />
-              {label}
-            </li>
-          </Link>
-        ))}
-      </ul>
-    </div>
+            {navigationLinks.map(({ href, icon: Icon, label }) => (
+              <motion.li
+                key={href}
+                variants={{
+                  open: { opacity: 1, y: 0 },
+                  closed: { opacity: 0, y: 20 },
+                }}
+              >
+                <Link
+                  href={href}
+                  className={`mx-auto ${
+                    isActive(href) ? "text-primary" : "text-white/90"
+                  }`}
+                >
+                  <motion.div
+                    className="text-[18px] cursor-pointer flex items-center gap-3 mx-auto"
+                    onClick={handleOpenNav}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Icon />
+                    {label}
+                  </motion.div>
+                </Link>
+              </motion.li>
+            ))}
+          </motion.ul>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 

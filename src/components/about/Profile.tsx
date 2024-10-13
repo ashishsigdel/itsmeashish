@@ -6,6 +6,7 @@ import myPicOne from "@/assets/me/myPicOne.jpg";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { getActive } from "@/services/profileService";
+import { motion } from "framer-motion"; // Import motion from framer-motion
 
 interface ProfilePic {
   id: number;
@@ -13,11 +14,9 @@ interface ProfilePic {
 }
 
 export default function Profile() {
-  // Initialize the state outside of useEffect
   const [profilePic, setProfilePic] = useState<ProfilePic | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
-  // Fetch profile picture on component mount
   useEffect(() => {
     const fetchProfilePic = async () => {
       setLoading(true);
@@ -33,36 +32,72 @@ export default function Profile() {
     fetchProfilePic();
   }, []);
 
+  // Animation variants for different elements
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
-    <div className="flex flex-col justify-center my-3 px-3 max-w-6xl mx-auto">
+    <motion.div
+      className="flex flex-col justify-center my-3 px-3 max-w-6xl mx-auto"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.5 }} // Triggers animation once 50% of the section is in view
+    >
       <SectionTitle title={"Profile Overview"} />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16 mx-auto mb-10">
-        <div className="py-5 md:py-10 w-full relative mx-auto">
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16 mx-auto mb-10"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.5 }} // Ensure each section animates when it comes into view
+      >
+        <motion.div
+          className="py-5 md:py-10 w-full relative mx-auto"
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeIn}
+          viewport={{ once: false, amount: 0.5 }} // Only animates when 50% of it is in the viewport
+        >
           <div className="md:sticky top-10 mx-auto">
             {!loading && profilePic?.profileURL ? (
-              <Image
-                src={profilePic?.profileURL || myPicOne}
-                alt="My Picture"
-                width={400}
-                height={400}
-                className="rounded-md mx-auto md:mx-0"
-              />
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: false, amount: 0.5 }} // Animate when in viewport
+              >
+                <Image
+                  src={profilePic?.profileURL || myPicOne}
+                  alt="My Picture"
+                  width={400}
+                  height={400}
+                  className="rounded-md mx-auto md:mx-0"
+                />
+              </motion.div>
             ) : (
-              <div className="flex items-center w-full h-full justify-center]">
+              <div className="flex items-center w-full h-full justify-center">
                 <Spinner />
               </div>
             )}
           </div>
-        </div>
-        <div className="overflow-y-auto">
+        </motion.div>
+
+        <motion.div
+          className="overflow-y-auto"
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeIn}
+          viewport={{ once: false, amount: 0.5 }} // Animate when 50% of the div is visible
+        >
           <AboutMe />
-          <div className="flex my-5 gap-5">
+          <motion.div className="flex my-5 gap-5" variants={fadeIn}>
             <ILove />
             <MeOnline />
-          </div>
-        </div>
-      </div>
-    </div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 }
