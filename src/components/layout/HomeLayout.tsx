@@ -3,6 +3,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Background } from "@/utlis";
 import { Outline } from "@/components/outline";
+import { Header } from "@/components/header";
 
 export default function HomeLayout({
   children,
@@ -13,10 +14,9 @@ export default function HomeLayout({
 
   return (
     <>
-      <Background color1={selectedColor} />
-      {/* <Outline> */}
+      <Header />
       {children}
-      {/* </Outline> */}
+      <Background color1={selectedColor} />
     </>
   );
 }
