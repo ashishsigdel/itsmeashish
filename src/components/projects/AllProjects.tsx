@@ -27,8 +27,12 @@ export default function AllProjects() {
   };
 
   useEffect(() => {
-    fetchProjects(currentPage);
-  }, [currentPage, fetchProjects]);
+    if (!currentPage) {
+      fetchProjects(1);
+    } else {
+      fetchProjects(currentPage);
+    }
+  }, [currentPage]);
 
   return (
     <>
