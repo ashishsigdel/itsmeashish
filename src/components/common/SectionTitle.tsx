@@ -14,7 +14,7 @@ export default function SectionTitle(props: sectionTitleProps) {
   const selectedColor = useSelector((state: any) => state.color.color);
 
   return (
-    <div className="my-10">
+    <div className="mt-[4.3rem] mb-2">
       <div className="flex justify-center items-center flex-col text-center">
         <div className="relative w-full whitespace-nowrap text-center">
           <h2 className="opacity-10 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold stoke-title">
