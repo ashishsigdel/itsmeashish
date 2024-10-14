@@ -28,7 +28,7 @@ export default function AllProjects() {
 
   useEffect(() => {
     fetchProjects(currentPage);
-  }, [currentPage]);
+  }, [currentPage, fetchProjects]);
 
   return (
     <>

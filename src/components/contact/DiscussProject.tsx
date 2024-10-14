@@ -31,7 +31,7 @@ const TypewriterText: React.FC<TypewriterTextProps> = ({ text, inView }) => {
       });
       return controls.stop;
     }
-  }, [inView]);
+  }, [inView, count, text.length]);
 
   return <motion.span>{displayText}</motion.span>;
 };

@@ -10,8 +10,9 @@ const Tag = memo(({ tag }: { tag: Tags }) => (
     {tag.title}
   </span>
 ));
+Tag.displayName = "Tag";
 
-export default function ProjectCard({ project }: { project: projects }) {
+function ProjectCard({ project }: { project: projects }) {
   return (
     <Link
       href={`/project/${project.id}`}
@@ -68,3 +69,7 @@ export default function ProjectCard({ project }: { project: projects }) {
     </Link>
   );
 }
+
+ProjectCard.displayName = "ProjectCard";
+
+export default ProjectCard;

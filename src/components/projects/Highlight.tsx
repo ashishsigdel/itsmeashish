@@ -13,7 +13,7 @@ export default function Highlight() {
 
   useEffect(() => {
     fetchProjects();
-  }, []);
+  }, [fetchProjects]);
 
   return (
     <div className="flex flex-col justify-center max-w-7xl mt-3 mb-7 px-3 mx-auto">
