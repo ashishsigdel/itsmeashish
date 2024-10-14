@@ -27,21 +27,12 @@ const TechIcon = ({
   Icon: React.ElementType;
   name: string;
 }) => (
-  <motion.div
-    className="relative group"
-    whileHover={{ scale: 1.1 }}
-    whileTap={{ scale: 0.95 }}
-  >
+  <div className="relative group">
     <Icon className="text-[52px]" />
-    <motion.span
-      className="absolute left-1/2 -translate-x-1/2 -bottom-8 bg-black text-white text-xs py-1 px-2 rounded whitespace-nowrap"
-      initial={{ opacity: 0, y: 10 }}
-      whileHover={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.2 }}
-    >
+    <span className="absolute left-1/2 -translate-x-1/2 top-16 bg-black text-white text-xs py-1 px-2 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none">
       {name}
-    </motion.span>
-  </motion.div>
+    </span>
+  </div>
 );
 
 const TechSection = ({
@@ -57,7 +48,7 @@ const TechSection = ({
   return (
     <motion.div
       ref={ref}
-      className="bg-black/40 rounded-ss-md rounded-ee-md blur-bg text-gray-700 dark:text-gray-300 border border-primary-border-color max-w-4xl mx-auto"
+      className="bg-black/40 rounded-ss-md rounded-ee-md blur-bg text-white/90 border border-primary-border-color max-w-4xl mx-auto"
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
@@ -121,7 +112,7 @@ export default function LikeTech() {
   ];
 
   return (
-    <div className="flex flex-col justify-center max-w-7xl my-3 px-3 mx-auto min-h-[100vh-96px]">
+    <div className="flex flex-col justify-center max-w-7xl my-3 px-3 mx-auto min-h-[100vh-96px] text-white/90">
       <SectionTitle title={"Techs I like to work with"} />
       <motion.div
         className="h-[7rem] bg-gradient-to-t from-primary-border-color to-transparent w-[1px] mx-auto"

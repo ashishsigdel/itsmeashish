@@ -17,21 +17,12 @@ const TechIcon = ({
   Icon: React.ElementType;
   name: string;
 }) => (
-  <motion.div
-    className="relative group"
-    whileHover={{ scale: 1.1 }}
-    whileTap={{ scale: 0.95 }}
-  >
+  <div className="relative group">
     <Icon className="text-[52px]" />
-    <motion.span
-      className="absolute left-1/2 -translate-x-1/2 -bottom-8 bg-black text-white text-xs py-1 px-2 rounded whitespace-nowrap"
-      initial={{ opacity: 0, y: 10 }}
-      whileHover={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.2 }}
-    >
+    <span className="absolute left-1/2 -translate-x-1/2 top-16 bg-black text-white text-xs py-1 px-2 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none">
       {name}
-    </motion.span>
-  </motion.div>
+    </span>
+  </div>
 );
 
 export default function MadeWith() {
