@@ -4,8 +4,6 @@ import { ProjectCard } from "@/components/projects";
 import useWebProject from "@/hooks/use-webProjects";
 import { projects } from "@/types/projects";
 import { useEffect } from "react";
-import { MdArrowBack } from "react-icons/md";
-import { motion } from "framer-motion";
 
 export default function AllProjects() {
   const {

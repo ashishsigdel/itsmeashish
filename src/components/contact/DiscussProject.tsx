@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   motion,
   useMotionValue,
@@ -22,7 +22,7 @@ const TypewriterText: React.FC<TypewriterTextProps> = ({ text, inView }) => {
   const rounded = useTransform(count, (latest) => Math.round(latest));
   const displayText = useTransform(rounded, (latest) => text.slice(0, latest));
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (inView) {
       const controls = animate(count, text.length, {
         type: "tween",

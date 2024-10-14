@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { FiList } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
@@ -12,6 +12,7 @@ import { ColorControl } from "@/utlis";
 export default function LinkSection() {
   const [openNavbar, setOpenNavbar] = useState<boolean>(false);
   const [openColorChoose, setOpenColorChoose] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   const handleOpenNav = () => {
     setOpenNavbar(!openNavbar);
@@ -24,6 +25,38 @@ export default function LinkSection() {
   const handleCloseColorControl = () => {
     setOpenColorChoose(false);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = [
+        "home",
+        "about",
+        "portfolio",
+        "services",
+        "technologies",
+        "contact",
+      ];
+      let currentSection = "";
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            currentSection = section;
+            break;
+          }
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Call once to set initial state
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
@@ -41,7 +74,13 @@ export default function LinkSection() {
             transition={{ duration: 0.3, delay: 0.1 * index }}
           >
             <Link href={href}>
-              <div className="group relative cursor-pointer hover:text-primary text-white/40">
+              <div
+                className={`group relative cursor-pointer ${
+                  activeSection === href.slice(1)
+                    ? "text-white"
+                    : "text-white/40 hover:text-primary"
+                }`}
+              >
                 <Icon className="text-[1.2rem]" />
                 <span className="absolute left-1/2 transform -translate-x-1/2 top-7 opacity-0 group-hover:opacity-100 group-hover:top-10 bg-white text-black text-xs rounded py-1 px-2 transition-all duration-300 whitespace-nowrap z-[999]">
                   {label}
