@@ -11,9 +11,8 @@ interface propsTypes {
 }
 
 const MobileMenu: React.FC<propsTypes> = ({ openNavbar, handleOpenNav }) => {
-  const pathname = usePathname();
-  const isActive = (page: string) => {
-    return page === pathname;
+  const isActive = (href: string) => {
+    return false;
   };
 
   return (
@@ -27,7 +26,7 @@ const MobileMenu: React.FC<propsTypes> = ({ openNavbar, handleOpenNav }) => {
           transition={{ duration: 0.3 }}
         >
           <motion.ul
-            className="flex flex-col gap-6 w-full py-10"
+            className="flex flex-col items-center gap-6 w-full py-10"
             initial="closed"
             animate="open"
             exit="closed"

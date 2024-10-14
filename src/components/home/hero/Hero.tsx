@@ -3,6 +3,17 @@ import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
 
+const floatingAnimation = {
+  y: [0, -10, 0],
+  transition: {
+    y: {
+      duration: 5,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  },
+};
+
 export default function Hero() {
   return (
     <div className="h-[calc(100vh-4rem)] flex flex-col justify-center items-center text-center relative">
@@ -15,7 +26,7 @@ export default function Hero() {
         <motion.span
           className="text-sm text-white/60 uppercase"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={{ opacity: 1, ...floatingAnimation }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
           Home
@@ -23,7 +34,7 @@ export default function Hero() {
         <motion.h1
           className="text-[48px] sm:text-[60px] md:text-[72px] font-semibold"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, x: 0, ...floatingAnimation }}
           transition={{ delay: 0.4, duration: 0.8 }}
         >
           Hi, I&#39;m Ashish
@@ -31,7 +42,7 @@ export default function Hero() {
         <motion.h3
           className="text-[24px] sm:text-[30px] md:text-[36px] leading-7"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, x: 0, ...floatingAnimation }}
           transition={{ delay: 0.6, duration: 0.8 }}
         >
           an <span className="text-primary">AI Enthusiast</span> and Creative{" "}
@@ -40,7 +51,7 @@ export default function Hero() {
         <motion.p
           className="text-sm mt-10 text-primary-yellow"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, x: 0, ...floatingAnimation }}
           transition={{ delay: 0.8, duration: 0.8 }}
         >
           Dedicated to creating robust web applications <br />

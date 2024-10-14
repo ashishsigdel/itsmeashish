@@ -1,13 +1,11 @@
 "use client";
-
 import { Button, Pagination, SectionTitle, Spinner } from "@/components/common";
 import { ProjectCard } from "@/components/projects";
-import useRecentProject from "@/hooks/use-recentProjects";
+import useWebProject from "@/hooks/use-webProjects";
 import { projects } from "@/types/projects";
 import { useEffect } from "react";
-import useWebProject from "@/hooks/use-webProjects";
 import { MdArrowBack } from "react-icons/md";
-import { motion } from "framer-motion"; // Import motion
+import { motion } from "framer-motion";
 
 export default function AllProjects() {
   const {
@@ -25,14 +23,31 @@ export default function AllProjects() {
   };
 
   useEffect(() => {
-    fetchProjects(currentPage); // Fetch initial data with currentPage
+    fetchProjects(currentPage);
   }, [currentPage]);
 
-  // Animation variants for the project cards
-  const cardVariants = (isEven: boolean) => ({
-    hidden: { opacity: 0, x: isEven ? -50 : 50 }, // Left or right based on index
-    visible: { opacity: 1, x: 0 }, // Move to center and become fully visible
-  });
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+      },
+    },
+  };
 
   return (
     <>
@@ -41,20 +56,18 @@ export default function AllProjects() {
           {loading ? (
             <Spinner />
           ) : (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-16 mx-auto mb-10">
-              {projects.map((project: projects, index: number) => (
-                <motion.div
-                  key={project.id}
-                  variants={cardVariants(index % 2 === 0)} // Alternate direction
-                  initial="hidden"
-                  whileInView="visible" // Trigger animation when in view
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                  viewport={{ once: false, amount: 0.2 }} // Trigger when 20% is visible
-                >
+            <motion.div
+              className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-16 mx-auto mb-10"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              {projects.map((project: projects) => (
+                <motion.div key={project.id} variants={cardVariants}>
                   <ProjectCard project={project} />
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           )}
         </div>
       </div>

@@ -2,6 +2,8 @@
 import { Button, SectionTitle } from "@/components/common";
 import useContact from "@/hooks/use-contact";
 import { CgClose } from "react-icons/cg";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function ContactForm() {
   const {
@@ -30,10 +32,41 @@ export default function ContactForm() {
     setErrorResponseMessage(undefined);
   };
 
+  const formRef = useRef(null);
+  const isInView = useInView(formRef, { once: false, amount: 0.3 });
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        when: "beforeChildren",
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 },
+    },
+  };
+
   return (
     <div className="flex flex-col justify-center max-w-6xl my-3 px-3 mx-auto">
       <SectionTitle title={"Send Me a Message"} />
-      <div className="w-full max-w-4xl mx-auto rounded-ss-lg bg-black/25 rounded-ee-lg blur-bg border border-primary-border-color">
+      <motion.div
+        ref={formRef}
+        className="w-full max-w-4xl mx-auto rounded-ss-lg bg-black/25 rounded-ee-lg blur-bg border border-primary-border-color"
+        variants={containerVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+      >
         <div className="p-2 border-b border-primary-border-color">
           <span>write-me</span>
         </div>
@@ -41,7 +74,7 @@ export default function ContactForm() {
           onSubmit={onSubmit}
           className="flex flex-col gap-5 p-3 sm:p-4 md:p-8"
         >
-          <div className="flex justify-start">
+          <motion.div className="flex justify-start" variants={itemVariants}>
             <span className="text-primary-blue mr-2 text-sm">01</span>
             <div className="flex flex-col gap-0.5 w-full">
               <span className="text-sm text-primary-yellow">your-name*</span>
@@ -60,8 +93,8 @@ export default function ContactForm() {
                 value={name}
               />
             </div>
-          </div>
-          <div className="flex justify-start">
+          </motion.div>
+          <motion.div className="flex justify-start" variants={itemVariants}>
             <span className="text-primary-blue mr-2 text-sm">02</span>
             <div className="flex flex-col gap-0.5 w-full">
               <span className="text-sm text-primary-yellow">company</span>
@@ -75,8 +108,8 @@ export default function ContactForm() {
                 value={company}
               />
             </div>
-          </div>
-          <div className="flex justify-start">
+          </motion.div>
+          <motion.div className="flex justify-start" variants={itemVariants}>
             <span className="text-primary-blue mr-2 text-sm">03</span>
             <div className="flex flex-col gap-0.5 w-full">
               <span className="text-sm text-primary-yellow">your-email*</span>
@@ -95,8 +128,8 @@ export default function ContactForm() {
                 value={email}
               />
             </div>
-          </div>
-          <div className="flex justify-start">
+          </motion.div>
+          <motion.div className="flex justify-start" variants={itemVariants}>
             <span className="text-primary-blue mr-2 text-sm">04</span>
             <div className="flex flex-col gap-0.5 w-full">
               <span className="text-sm text-primary-yellow">your-message*</span>
@@ -115,26 +148,8 @@ export default function ContactForm() {
                 value={message}
               />
             </div>
-          </div>
-          {/* <div className="flex gap-3 w-full items-center">
-            <input
-              onChange={(e) => {
-                e.target.style.backgroundColor = e.target.checked
-                  ? "#ff0000"
-                  : "#f0f0f0";
-              }}
-              type="checkbox"
-              className="w-4 h-4"
-            />
-            <span className="text-sm">
-              I accepts{" "}
-              <span className="hover:underline text-primary-red cursor-pointer">
-                terms and conditions*
-              </span>
-              .
-            </span>
-          </div> */}
-          <div className="mx-auto">
+          </motion.div>
+          <motion.div className="mx-auto" variants={itemVariants}>
             <button
               disabled={isLoading}
               type="submit"
@@ -159,9 +174,14 @@ export default function ContactForm() {
                 <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
               </svg>
             </button>
-          </div>
+          </motion.div>
           {responseMessage && (
-            <div className="w-full bg-white p-3 rounded-lg flex justify-between items-center">
+            <motion.div
+              className="w-full bg-white p-3 rounded-lg flex justify-between items-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+            >
               <p className="text-base text-green-600 ">{responseMessage}</p>
               <span
                 className="text-black text-xl cursor-pointer"
@@ -169,21 +189,26 @@ export default function ContactForm() {
               >
                 <CgClose />
               </span>
-            </div>
+            </motion.div>
           )}
           {errorResponseMessage && (
-            <div className="w-full bg-white p-3 rounded-lg flex justify-between items-center">
-              <p className="text-base text-red-600 ">{responseMessage}</p>
+            <motion.div
+              className="w-full bg-white p-3 rounded-lg flex justify-between items-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+            >
+              <p className="text-base text-red-600 ">{errorResponseMessage}</p>
               <span
                 className="text-black text-xl cursor-pointer"
                 onClick={handleClose}
               >
                 <CgClose />
               </span>
-            </div>
+            </motion.div>
           )}
         </form>
-      </div>
+      </motion.div>
     </div>
   );
 }
