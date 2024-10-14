@@ -41,7 +41,7 @@ export default function DiscussProject() {
   const isInView = useInView(ref, { once: false, amount: 0.3 });
 
   return (
-    <div className="flex flex-col max-w-6xl my-3 px-3 mx-auto">
+    <div className="flex flex-col max-w-7xl my-3 px-3 mx-auto">
       <motion.div
         ref={ref}
         className="rounded-ss-md bg-black/25 rounded-ee-md blur-bg border border-primary-border-color w-full mb-5 mt-5 z-[99]"

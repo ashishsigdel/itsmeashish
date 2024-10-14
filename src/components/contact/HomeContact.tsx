@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function HomeContact() {
   return (
-    <div className="flex flex-col max-w-6xl my-3 px-3 mx-auto">
+    <div className="flex flex-col max-w-7xl my-3 px-3 mx-auto">
       <div className="rounded-ss-md bg-black/25 rounded-ee-md blur-bg border border-primary-border-color w-full mb-5 mt-5 z-[99]">
         <div className="border-b h-fit w-full border-primary-border-color">
           <p className="p-3">collaboration</p>

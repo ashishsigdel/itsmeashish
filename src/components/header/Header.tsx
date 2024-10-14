@@ -10,7 +10,7 @@ export default function Header() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w-6xl mx-auto h-full flex items-center justify-between ">
+      <div className="max-w-7xl mx-auto h-full flex items-center justify-between ">
         <LogoSection />
         <LinkSection />
       </div>

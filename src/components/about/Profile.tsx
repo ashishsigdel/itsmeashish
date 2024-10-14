@@ -40,7 +40,7 @@ export default function Profile() {
 
   return (
     <motion.div
-      className="flex flex-col justify-center my-3 px-3 max-w-6xl mx-auto"
+      className="flex flex-col justify-center my-3 px-3 max-w-7xl mx-auto"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false, amount: 0.5 }} // Triggers animation once 50% of the section is in view

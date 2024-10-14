@@ -2,7 +2,7 @@ import { myAxios } from "./apiServices";
 
 export const getProjects = async (page: number) => {
   try {
-    const response = await myAxios.get(`/project/get?page=${page}`);
+    const response = await myAxios.get(`/project/get?page=${page}&limit=6`);
     return response.data;
   } catch (error: any) {
     throw error;

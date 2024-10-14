@@ -16,7 +16,7 @@ export default function Footer() {
 
   return (
     <div className="mt-16 py-10 bg-black/65 border-t border-primary-border-color w-full">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col sm:flex-row items-center justify-between">
           <div className="flex gap-3 items-center">
             <Image
