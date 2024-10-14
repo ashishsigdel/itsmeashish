@@ -1,3 +1,4 @@
+"use client";
 import { SectionTitle } from "@/components/common";
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
