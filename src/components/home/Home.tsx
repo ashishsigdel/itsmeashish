@@ -6,7 +6,6 @@ import { HomeProfile, Profile } from "@/components/about";
 import { Highlight, MadeWith, Portfolio } from "@/components/projects";
 import { LikeTech } from "@/components/tech";
 import { ContactForm, DiscussProject, HomeContact } from "@/components/contact";
-import { Footer } from "@/components/footer";
 import { MainServices } from "@/components/services";
 
 export default function Home() {
@@ -34,7 +33,6 @@ export default function Home() {
           <ContactForm />
         </div>
       </div>
-      <Footer />
     </>
   );
 }

@@ -34,11 +34,11 @@ export default function SimilarProject() {
         </h3>
       </div>
       {loading ? (
-        <div className=" flex flex-col items-center justify-center p-5 w-full">
+        <div className="flex flex-col items-center justify-center p-5 w-full">
           <Spinner />
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-5 mt-16 mx-auto w-full mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-5 mt-7 mx-auto w-full mb-10">
           {projects.map((project: projects) => (
             <ProjectCard key={project.id} project={project} />
           ))}

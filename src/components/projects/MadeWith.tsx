@@ -40,7 +40,7 @@ export default function MadeWith() {
   const isInView = useInView(ref, { once: false, amount: 0.2 });
 
   return (
-    <div className="flex flex-col justify-center max-w-7xl my-3 px-3 mx-auto min-h-[100vh-96px]">
+    <div className="flex flex-col justify-center  my-3 px-3 mx-auto min-h-[100vh-96px]">
       <SectionTitle title={"Tech Behind This Website"} />
       <motion.div
         className="h-[7rem] bg-gradient-to-t from-primary-border-color to-transparent w-[1px] mx-auto"

@@ -58,7 +58,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="flex flex-col justify-center max-w-7xl my-3 px-3 mx-auto">
+    <div className="flex flex-col justify-center  my-3 px-3 mx-auto">
       <SectionTitle title={"Send Me a Message"} />
       <motion.div
         ref={formRef}

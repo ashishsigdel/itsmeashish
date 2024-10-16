@@ -112,7 +112,7 @@ export default function LikeTech() {
   ];
 
   return (
-    <div className="flex flex-col justify-center max-w-7xl my-3 px-3 mx-auto min-h-[100vh-96px] text-white/90">
+    <div className="flex flex-col justify-center  my-3 px-3 mx-auto min-h-[100vh-96px] text-white/90">
       <SectionTitle title={"Techs I like to work with"} />
       <motion.div
         className="h-[7rem] bg-gradient-to-t from-primary-border-color to-transparent w-[1px] mx-auto"

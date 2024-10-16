@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { Background } from "@/utlis";
 import { Outline } from "@/components/outline";
 import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 import { IoMdClose, IoMdSettings } from "react-icons/io";
 
 export default function HomeLayout({
@@ -26,9 +27,11 @@ export default function HomeLayout({
   return (
     <>
       <Header />
-
-      {children}
-      <Background color1={selectedColor} />
+      <div className="max-w-7xl mx-auto">
+        {children}
+        <Background color1={selectedColor} />
+      </div>
+      <Footer />
     </>
   );
 }
