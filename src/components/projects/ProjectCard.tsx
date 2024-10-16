@@ -16,7 +16,7 @@ function ProjectCard({ project }: { project: projects }) {
   return (
     <Link
       href={`/project/${project.id}`}
-      className="rounded-ss-lg bg-black/25 rounded-ee-lg blur-bg border border-primary-border-color cursor-pointer flex flex-col mb-5"
+      className="rounded-ss-lg bg-black/25 rounded-ee-lg blur-bg border border-primary-border-color cursor-pointer flex flex-col mb-5 sm:max-w-[26rem]"
       rel="noopener noreferrer"
     >
       <div className="h-full w-full">

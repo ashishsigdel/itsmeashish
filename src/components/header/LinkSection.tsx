@@ -8,8 +8,11 @@ import { navigationLinks } from "@/data/navigationData";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoMdClose, IoMdSettings } from "react-icons/io";
 import { ColorControl } from "@/utlis";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function LinkSection() {
+  const pathname = usePathname();
+  const router = useRouter();
   const [openNavbar, setOpenNavbar] = useState<boolean>(false);
   const [openColorChoose, setOpenColorChoose] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -27,6 +30,10 @@ export default function LinkSection() {
   };
 
   useEffect(() => {
+    if (pathname.split("/")[1] === "project") {
+      setActiveSection("portfolio");
+      return;
+    }
     const handleScroll = () => {
       const sections = [
         "home",
@@ -76,7 +83,7 @@ export default function LinkSection() {
             <Link href={href}>
               <div
                 className={`group relative cursor-pointer ${
-                  activeSection === href.slice(1)
+                  activeSection === href.slice(2)
                     ? "text-white"
                     : "text-white/40 hover:text-primary"
                 }`}

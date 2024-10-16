@@ -4,7 +4,7 @@ import { getProjectById } from "@/services/projectServices";
 import { projects } from "@/types/projects";
 import { useParams } from "next/navigation";
 import React, { useEffect } from "react";
-import { ProjectDetails } from "@/components/projects";
+import { ProjectDetails, SimilarProject } from "@/components/projects";
 import ProjectNotFound from "./ProjectNotFound";
 import { Spinner } from "@/components/common";
 
@@ -37,12 +37,11 @@ export default function Project() {
         </div>
       ) : project ? (
         <>
-          <div className="lg:w-[70%] w-full relative">
+          <div className="lg:w-[calc(100%-400px)] w-full relative">
             <ProjectDetails project={project} />
           </div>
-          <div className="w-[30%] p-4 text-white">
-            <h2 className="text-lg font-semibold">Suggestions</h2>
-            <p>Here you can show suggestions or related content.</p>
+          <div className="w-full lg:w-[400px] p-4 text-white ">
+            <SimilarProject />
           </div>
         </>
       ) : (

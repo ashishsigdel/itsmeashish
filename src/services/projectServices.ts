@@ -17,3 +17,12 @@ export const getProjectById = async (id: number) => {
     throw error;
   }
 };
+
+export const getSuggestions = async (id: number) => {
+  try {
+    const response = await myAxios.get(`/suggestion/project?projectId=${id}`);
+    return response.data;
+  } catch (error: any) {
+    throw error;
+  }
+};
