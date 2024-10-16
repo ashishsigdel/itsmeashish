@@ -8,6 +8,7 @@ import {
   SiSass,
   SiTypescript,
   SiNodedotjs,
+  SiFramer,
 } from "react-icons/si";
 
 const TechIcon = ({
@@ -30,6 +31,7 @@ export default function MadeWith() {
     { Icon: SiNextdotjs, name: "Next.js" },
     { Icon: SiTailwindcss, name: "Tailwind CSS" },
     { Icon: SiSass, name: "Sass" },
+    { Icon: SiFramer, name: "Framer motion" },
     { Icon: SiTypescript, name: "TypeScript" },
     { Icon: SiNodedotjs, name: "Node.js" },
   ];
