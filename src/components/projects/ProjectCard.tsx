@@ -31,7 +31,9 @@ function ProjectCard({ project }: { project: projects }) {
           <h3 className="text-[22px] font-semibold text-center my-5">
             {project.title}
           </h3>
-          <p className="text-12px text-center mb-5">{project.description}</p>
+          <p className="text-12px text-center mb-5 line-clamp-5">
+            {project.description}
+          </p>
           <div className="flex max-w-[95%] flex-wrap justify-center mb-2">
             {project.tags.map((tag: Tags) => (
               <Tag key={tag.id} tag={tag} />
