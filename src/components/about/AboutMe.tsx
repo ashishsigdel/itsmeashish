@@ -41,7 +41,7 @@ export default function AboutMe() {
           <span className="text-gray-700 mr-1">02.</span>
           I&#39;m passionate about{" "}
           <span className="text-primary-yellow">Full Stack Development </span>
-          as well as <span className="text-primary-red">Machine Learning</span>
+          as well as <span className="text-primary-red">Machine Learning </span>
           and{" "}
           <span className="text-primary-red"> Artificial intelligence.</span>
         </motion.p>
