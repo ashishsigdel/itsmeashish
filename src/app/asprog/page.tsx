@@ -1,12 +1,15 @@
-import { ThemeToggler } from "@/utlis";
+import { Home } from "@/components/asprog/home";
 import React from "react";
 
 export default function Page() {
   return (
-    <div className="flex flex-col gap-3 justify-center items-center w-full h-screen">
-      <h1>asProg</h1>
-      <ThemeToggler />
-      <p>Website under production.</p>
+    <div
+      style={{ height: "calc(100vh - 6rem)" }}
+      className="w-full bg-light dark:bg-[#0f141b]"
+    >
+      <div className="w-full h-full max-w-7xl mx-auto px-5">
+        <Home />
+      </div>
     </div>
   );
 }

@@ -24,7 +24,7 @@ const config: Config = {
         "gray-color": "#537a62",
         danger: "#D10000",
         "hard-dark": "#0d1117",
-        "soft-dark": "#161b22",
+        light: "#efefef",
       },
     },
   },
