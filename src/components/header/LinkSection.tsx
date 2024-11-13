@@ -12,7 +12,6 @@ import { usePathname, useRouter } from "next/navigation";
 
 export default function LinkSection() {
   const pathname = usePathname();
-  const router = useRouter();
   const [openNavbar, setOpenNavbar] = useState<boolean>(false);
   const [openColorChoose, setOpenColorChoose] = useState(false);
   const [activeSection, setActiveSection] = useState("");
