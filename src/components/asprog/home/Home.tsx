@@ -16,7 +16,7 @@ export default function Home() {
 
         <h3 className="text-[18px] font-normal mt-5 leading-7 text-gray-700 dark:text-gray-400">
           Gain practical experience and elevate your skills to build the
-          applications you've always envisioned.
+          applications you&#39;ve always envisioned.
         </h3>
 
         <button className="mt-8 px-6 py-3 bg-purple-500 text-white font-semibold rounded-lg hover:bg-purple-600 transition-all flex items-center gap-3">
