@@ -6,7 +6,7 @@ import myPicOne from "@/assets/me/myPicOne.jpg";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { getActive } from "@/services/profileService";
-import { motion } from "framer-motion"; // Import motion from framer-motion
+import { motion } from "framer-motion";
 
 interface ProfilePic {
   id: number;
