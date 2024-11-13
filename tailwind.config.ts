@@ -7,6 +7,7 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       backgroundImage: {
@@ -22,6 +23,8 @@ const config: Config = {
         "primary-border-color": "#336647",
         "gray-color": "#537a62",
         danger: "#D10000",
+        "hard-dark": "#0d1117",
+        "soft-dark": "#161b22",
       },
     },
   },
