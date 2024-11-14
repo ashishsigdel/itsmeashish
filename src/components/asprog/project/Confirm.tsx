@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { FaArrowRight, FaDownload } from "react-icons/fa";
-import { SiBuymeacoffee } from "react-icons/si";
 import welcomeImage from "@/assets/projects/thanks/Illustration_Celebration-Welcome.png";
+import { SiBuymeacoffee } from "react-icons/si";
 
 export default function Confirm() {
   // File or URL
@@ -38,13 +38,23 @@ export default function Confirm() {
         )}
         <div className="mt-5">
           <a href="https://www.buymeacoffee.com/ashishsigdel">
-            <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=ashishsigdel&button_colour=BD5FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00" />
+            <img
+              alt="buymeacoffee"
+              width={300}
+              height={100}
+              src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=ashishsigdel&button_colour=BD5FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00"
+            />
           </a>
         </div>
+        <p className="text-[14px] font-normal mt-3 leading-7 text-gray-700 dark:text-gray-400">
+          Your support helps me make more free content.{" "}
+        </p>
       </div>
       {/* Image Section */}
       <div className="flex-1 hidden md:block">
         <Image
+          height={500}
+          width={500}
           src={welcomeImage}
           alt="Thanks"
           className="drop-shadow-2xl shadow-black dark:shadow-white"

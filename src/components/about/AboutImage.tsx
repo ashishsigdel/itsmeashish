@@ -7,6 +7,8 @@ export default function AboutImage() {
     <>
       <div className="ml-14 w-full">
         <Image
+          height={500}
+          width={500}
           src={myPicOne}
           alt="ashish"
           className="border-[6px] border-white w-[320px] h-[400px] object-cover mx-auto"
@@ -14,6 +16,8 @@ export default function AboutImage() {
       </div>
       <div className="mr-52 lg:mr-60 relative">
         <Image
+          height={500}
+          width={500}
           src={myPicTwo}
           alt="image-two"
           className="border-[6px] border-white w-[200px] h-[400px] object-cover mt-[-450px] mx-auto"

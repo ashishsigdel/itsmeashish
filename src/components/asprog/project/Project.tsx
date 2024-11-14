@@ -4,8 +4,10 @@ import { projects } from "@/data/projects";
 import { FaGithub, FaGlobe } from "react-icons/fa";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function Project() {
+  const pathname = usePathname(); // Move usePathname to the top level
   const [project, setProject] = useState<any>(null);
   const [openForm, setOpenForm] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
@@ -46,7 +48,9 @@ export default function Project() {
           className="relative w-full h-0 mb-8"
           style={{ paddingBottom: "56.25%" }}
         >
-          <img
+          <Image
+            height={1000}
+            width={1000}
             src={project.previewPic}
             alt={project.title}
             className="absolute top-0 left-0 w-full h-full object-cover rounded-lg shadow-lg"
@@ -142,7 +146,7 @@ export default function Project() {
                 </div>
 
                 {/* Submit Button */}
-                <Link href={`${usePathname()}/confirm`}>
+                <Link href={`${pathname}/confirm`}>
                   <button
                     type="submit"
                     className="w-full mt-4 px-6 py-[8px] bg-purple-600 text-white font-semibold rounded-md hover:bg-purple-700 dark:hover:bg-purple-500 transition-all duration-300"
@@ -177,7 +181,7 @@ export default function Project() {
                 <hr className="w-full border-gray-300 dark:border-gray-700" />
               </div>
 
-              <Link href="/asprog/login">
+              <Link href="/login">
                 <button className="w-full flex items-center justify-center gap-3 px-6 py-[8px] bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm text-gray-900 dark:text-gray-200 font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">
                   Sign in
                 </button>

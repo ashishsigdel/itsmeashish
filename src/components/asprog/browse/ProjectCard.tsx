@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -9,7 +10,9 @@ export default function ProjectCard({ project }: any) {
           className="relative w-full h-0"
           style={{ paddingBottom: "56.25%" }}
         >
-          <img
+          <Image
+            height={500}
+            width={500}
             src={project.previewPic}
             alt={project.title}
             className="absolute top-0 left-0 w-full h-full object-cover"

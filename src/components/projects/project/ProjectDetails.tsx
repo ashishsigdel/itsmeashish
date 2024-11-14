@@ -46,6 +46,8 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
       >
         {project.coverPhoto ? (
           <Image
+            height={500}
+            width={500}
             src={project.coverPhoto}
             layout="fill"
             objectFit="cover"
@@ -124,6 +126,8 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
                 onClick={() => setSelectedImageIndex(index)}
               >
                 <Image
+                  height={500}
+                  width={500}
                   src={pic.previewUrl}
                   layout="fill"
                   objectFit="cover"
