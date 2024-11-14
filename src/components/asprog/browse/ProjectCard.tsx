@@ -1,8 +1,20 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 export default function ProjectCard({ project }: any) {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  // Return null until the component is rendered on the client
+  if (!isClient) {
+    return null;
+  }
+
   return (
     <Link key={project.id} href={`/asprog/project/${project.id}`}>
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden cursor-pointer">

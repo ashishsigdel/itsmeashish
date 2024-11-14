@@ -5,7 +5,7 @@ import { FaGoogle } from "react-icons/fa";
 
 interface MemberFormProps {
   which: string;
-  handleClick?: () => void;
+  handleClick?: (e: any) => void;
 }
 
 export default function MemberForm({ which, handleClick }: MemberFormProps) {

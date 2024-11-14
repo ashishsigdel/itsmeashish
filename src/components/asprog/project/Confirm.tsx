@@ -38,11 +38,12 @@ export default function Confirm() {
         )}
         <div className="mt-5">
           <a href="https://www.buymeacoffee.com/ashishsigdel">
-            <img
-              alt="buymeacoffee"
+            <Image
+              src={"https://img.buymeacoffee.com/button-api"}
+              alt="Buy me a coffee"
               width={300}
               height={100}
-              src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=ashishsigdel&button_colour=BD5FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00"
+              className="bg-purple-500 text-white"
             />
           </a>
         </div>

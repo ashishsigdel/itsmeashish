@@ -7,10 +7,12 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 
 export default function Project() {
-  const pathname = usePathname(); // Move usePathname to the top level
   const [project, setProject] = useState<any>(null);
   const [openForm, setOpenForm] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
+
+  // Call the hook here, at the top level
+  const pathname = usePathname();
 
   useEffect(() => {
     setProject(projects[0]);
@@ -181,7 +183,7 @@ export default function Project() {
                 <hr className="w-full border-gray-300 dark:border-gray-700" />
               </div>
 
-              <Link href="/login">
+              <Link href={`/login?redirect_url=${pathname}`}>
                 <button className="w-full flex items-center justify-center gap-3 px-6 py-[8px] bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm text-gray-900 dark:text-gray-200 font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">
                   Sign in
                 </button>
