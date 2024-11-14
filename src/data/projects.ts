@@ -5,7 +5,7 @@ export const projects = [
     description:
       "A web development project that showcases a fully responsive landing page with modern UI design.",
     previewPic:
-      "https://ashishsigdel.com.np/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fitsmeashish-66d6e.appspot.com%2F1730011931235-app%20cover.png&w=3840&q=75",
+      "https://ashishsigdel.com.np/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fitsmeashish-66d6e.appspot.com%2F1729139538815-Screenshot%202024-10-17%20at%209.24.56%C3%A2%C2%80%C2%AFAM.png&w=3840&q=75",
     tags: ["Nodejs", "Nextjs", "Tailwind"],
     demoLink: "https://example.com/project1-demo",
     sourceLink: "https://github.com/username/project1",
@@ -27,7 +27,7 @@ export const projects = [
     description:
       "An e-commerce website built with Node.js and MongoDB, featuring a complete product catalog and shopping cart functionality.",
     previewPic:
-      "https://ashishsigdel.com.np/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fitsmeashish-66d6e.appspot.com%2F1730011931235-app%20cover.png&w=3840&q=75",
+      "https://ashishsigdel.com.np/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fitsmeashish-66d6e.appspot.com%2F1729136953101-bea1dc86-efdb-4983-a4e8-3c1732f97ab8.webp&w=3840&q=75",
     tags: ["Nodejs", "Nextjs", "Tailwind", "Firebase"],
     demoLink: "https://example.com/project3-demo",
     sourceLink: "https://github.com/username/project3",
@@ -38,7 +38,7 @@ export const projects = [
     description:
       "A machine learning model trained to classify images into different categories using TensorFlow.",
     previewPic:
-      "https://ashishsigdel.com.np/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fitsmeashish-66d6e.appspot.com%2F1730011931235-app%20cover.png&w=3840&q=75",
+      "https://ashishsigdel.com.np/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fitsmeashish-66d6e.appspot.com%2F1729083688546-Screenshot%202024-10-13%20at%2011.58.55%C3%A2%C2%80%C2%AFAM.png&w=640&q=75",
     tags: ["Python", "Machine Learning"],
     demoLink: "https://example.com/project4-demo",
     sourceLink: "https://github.com/username/project4",
