@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { FaArrowRight, FaDownload } from "react-icons/fa";
 import welcomeImage from "@/assets/projects/thanks/Illustration_Celebration-Welcome.png";
-import { SiBuymeacoffee } from "react-icons/si";
+import buymeacoffee from "@/assets/projects/buymeacoffee.png";
 
 export default function Confirm() {
   // File or URL
@@ -39,11 +39,11 @@ export default function Confirm() {
         <div className="mt-5">
           <a href="https://www.buymeacoffee.com/ashishsigdel">
             <Image
-              src={"https://img.buymeacoffee.com/button-api"}
+              src={buymeacoffee}
               alt="Buy me a coffee"
               width={300}
               height={100}
-              className="bg-purple-500 text-white"
+              className="bg-purple-500 text-white h-[50px] w-full rounded-lg"
             />
           </a>
         </div>
