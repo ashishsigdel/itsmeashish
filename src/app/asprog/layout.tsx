@@ -3,7 +3,7 @@ import { CustomThemeProvider } from "@/provider";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "asProg",
+  title: "asProg - Home",
   description: "asProg",
 };
 
@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <CustomThemeProvider>
-      <div className="text-hard-dark dark:text-light bg-[#dcdcdc] dark:bg-hard-dark">
+      <div className="text-hard-dark dark:text-light bg-[#dcdcdc] dark:bg-hard-dark transition-colors duration-300 ease-in-out">
         <Header />
         {children}
       </div>

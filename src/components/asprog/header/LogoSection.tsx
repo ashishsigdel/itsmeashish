@@ -13,11 +13,14 @@ export default function LogoSection() {
             alt="Logo"
             width={20}
             height={20}
-            className="dark:invert"
+            className="dark:invert w-[26px]"
           />
         </div>
-        <h1 className="ml-[12px] font-semibold tracking-wider text-[26px]">
-          asProg.
+        <h1 className="ml-[12px] font-semibold tracking-wide text-[22px] md:text-[28px]">
+          as
+          <span className="text-purple-500 text-[26px] md:text-[32px]">
+            Prog.
+          </span>
         </h1>
       </div>
     </Link>
