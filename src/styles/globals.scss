@@ -5,6 +5,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  .hero-ring {
+    @apply absolute top-1/2 left-1/2 border-2 border-hard-dark/5 dark:border-light/5 -translate-x-1/2 -translate-y-1/2 rounded-full shadow-[0_0_80px_inset] shadow-hard-dark/5 dark:shadow-light/5;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;

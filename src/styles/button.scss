@@ -1,5 +1,5 @@
 :root {
-  --color-highlight: #e4af2b;
+  --color-highlight: #3078e5;
 }
 
 .btn {
@@ -59,7 +59,7 @@
 
 .btn:hover {
   box-shadow: 0 0 0 12px transparent;
-  color: #212121;
+  color: white;
   border-radius: 12px;
 }
 
@@ -76,7 +76,7 @@
 }
 
 .btn:hover svg {
-  fill: #212121;
+  fill: #ffffff;
 }
 
 .btn:active {
