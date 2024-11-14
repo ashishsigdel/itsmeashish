@@ -4,7 +4,7 @@ import { CustomThemeProvider } from "@/provider";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "asProg - Home",
+  title: "asProg",
   description: "asProg",
 };
 

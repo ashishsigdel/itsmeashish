@@ -2,8 +2,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import { projects } from "@/data/projects";
 import { FaGithub, FaGlobe } from "react-icons/fa";
-import { MemberForm } from "../home";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Project() {
   const [project, setProject] = useState<any>(null);
@@ -142,12 +142,32 @@ export default function Project() {
                 </div>
 
                 {/* Submit Button */}
-                <button
-                  type="submit"
-                  className="w-full mt-4 px-6 py-[8px] bg-purple-600 text-white font-semibold rounded-md hover:bg-purple-700 dark:hover:bg-purple-500 transition-all duration-300"
-                >
-                  Get Link
-                </button>
+                <Link href={`${usePathname()}/confirm`}>
+                  <button
+                    type="submit"
+                    className="w-full mt-4 px-6 py-[8px] bg-purple-600 text-white font-semibold rounded-md hover:bg-purple-700 dark:hover:bg-purple-500 transition-all duration-300"
+                  >
+                    Get Link
+                  </button>
+                </Link>
+                {/* Privacy Policy Checkbox */}
+                <div className="flex items-center gap-2">
+                  <label
+                    htmlFor="privacy-policy"
+                    className="text-sm text-gray-600 dark:text-gray-400"
+                  >
+                    Disclaimer: By entering your email, you accept our{" "}
+                    <a
+                      href="/asprog/privacy-policy"
+                      className="text-purple-600 hover:underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Privacy & Policy
+                    </a>
+                    .
+                  </label>
+                </div>
               </form>
               <div className="flex items-center my-6">
                 <hr className="w-full border-gray-300 dark:border-gray-700" />

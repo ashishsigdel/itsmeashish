@@ -69,11 +69,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Floating Button */}
-        <div className="fixed bottom-12 right-12 bg-yellow-500 w-14 h-14 rounded-full flex items-center justify-center shadow-lg">
-          <SiBuymeacoffee className="text-black text-3xl" />
-        </div>
-
         <Link
           href={"https://www.youtube.com/@as-prog?sub_confirmation=1"}
           target="__blank"
