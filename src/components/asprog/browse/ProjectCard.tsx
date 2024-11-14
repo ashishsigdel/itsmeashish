@@ -19,9 +19,10 @@ export default function ProjectCard({ project }: any) {
           <h4 className="text-xl font-semibold text-gray-800 dark:text-white">
             {project.title}
           </h4>
-          <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 line-clamp-2">
-            {project.description}
-          </p>
+          <p
+            className="text-sm text-gray-600 dark:text-gray-400 mt-2 line-clamp-2"
+            dangerouslySetInnerHTML={{ __html: project.description }}
+          ></p>
         </div>
       </div>
     </Link>

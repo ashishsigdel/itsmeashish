@@ -1,9 +1,9 @@
 export const projects = [
   {
     id: 1,
-    title: "Project One",
+    title: "Kurakani Mobile App",
     description:
-      "A web development project that showcases a fully responsive landing page with modern UI design.",
+      "<p>A web development project that showcases a <b>fully responsive landing page</b> with <i>modern UI design</i>.</p>",
     previewPic:
       "https://ashishsigdel.com.np/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fitsmeashish-66d6e.appspot.com%2F1729139538815-Screenshot%202024-10-17%20at%209.24.56%C3%A2%C2%80%C2%AFAM.png&w=3840&q=75",
     tags: ["Nodejs", "Nextjs", "Tailwind"],
