@@ -8,6 +8,7 @@ import { IoClose, IoArrowBack, IoArrowForward } from "react-icons/io5";
 import { motion } from "framer-motion"; // Import Framer Motion
 import { Button } from "@/components/common";
 import Link from "next/link";
+import { FaGithub, FaGlobe } from "react-icons/fa";
 
 interface ProjectDetailsProps {
   project: projects;
@@ -46,8 +47,6 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
       >
         {project.coverPhoto ? (
           <Image
-            height={500}
-            width={500}
             src={project.coverPhoto}
             layout="fill"
             objectFit="cover"
@@ -74,14 +73,26 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
         <p className="text-xl font-medium mt-4">{project.description}</p>
         <div className="flex gap-4 flex-wrap mt-4">
           {project.githubLink && (
-            <Link target="_blank" href={project.githubLink}>
-              <Button title={"View Source Code"} />
-            </Link>
+            <a
+              href={project.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex gap-2 items-center justify-center dark:bg-gray-800 bg-gray-200 text-gray-800 dark:text-white py-3 px-4 rounded-md border border-gray-300 dark:border-gray-700"
+            >
+              <FaGithub className="hover:text-primary-color transition" />
+              <p>Github</p>
+            </a>
           )}
           {project.previewLink && (
-            <Link target="_blank" href={project.previewLink}>
-              <Button title={"Demo Website"} />
-            </Link>
+            <a
+              href={project.previewLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex gap-2 items-center justify-center bg-primary-blue text-white py-3 px-4 rounded-md border border-gray-700"
+            >
+              <FaGlobe className="text-white hover:text-primary-color transition" />
+              <p>Check Live</p>
+            </a>
           )}
         </div>
       </motion.div>
@@ -126,8 +137,6 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
                 onClick={() => setSelectedImageIndex(index)}
               >
                 <Image
-                  height={500}
-                  width={500}
                   src={pic.previewUrl}
                   layout="fill"
                   objectFit="cover"

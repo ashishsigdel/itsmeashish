@@ -15,7 +15,7 @@ Tag.displayName = "Tag";
 function ProjectCard({ project }: { project: projects }) {
   return (
     <Link
-      href={`/project/${project.id}`}
+      href={`/me/project/${project.id}`}
       className="rounded-ss-lg bg-white dark:bg-black rounded-ee-lg blur-bg border border-black/15 dark:border-white/15 cursor-pointer flex flex-col mb-5 max-w-[30rem] sm:max-w-[26rem] mx-auto"
       rel="noopener noreferrer"
     >
@@ -31,7 +31,7 @@ function ProjectCard({ project }: { project: projects }) {
           <h3 className="text-[22px] text-primary-blue font-semibold text-center my-5">
             {project.title}
           </h3>
-          <p className="text-12px text-center mb-5 line-clamp-5">
+          <p className="text-12px text-hard-dark/80 dark:text-light/80 text-center mb-5 line-clamp-5">
             {project.description}
           </p>
           <div className="flex max-w-[95%] flex-wrap justify-center mb-2">

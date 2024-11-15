@@ -30,7 +30,7 @@ export default function Project() {
   }, [params]);
 
   return (
-    <div className="flex lg:flex-row flex-col w-full h-full min-h-screen">
+    <div className="flex lg:flex-row flex-col w-full h-full min-h-screen mt-5">
       {loading ? (
         <div className=" flex flex-col items-center justify-center p-5 w-full">
           <Spinner />

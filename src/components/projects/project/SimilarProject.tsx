@@ -4,8 +4,7 @@ import { getSuggestions } from "@/services/projectServices";
 import { projects } from "@/types/projects";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import ProjectDetails from "./ProjectDetails";
-import ProjectCard from "../ProjectCard";
+import { ProjectCard } from "@/components/me/projects";
 
 export default function SimilarProject() {
   const params = useParams<{ id: string }>();
