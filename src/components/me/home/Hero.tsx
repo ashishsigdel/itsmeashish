@@ -6,7 +6,7 @@ import grainImage from "@/assets/grain.jpeg";
 import starIcon from "@/assets/icons/star.svg";
 import sparkleIcon from "@/assets/icons/sparkle.svg";
 import { HeroOrbit } from "@/components/me/home";
-import { starRotate, sparkRotate } from "@/data/starrotate";
+import { starRotate, sparkRotate, dotRotate } from "@/data/starrotate";
 
 export default function Hero() {
   return (
@@ -29,6 +29,10 @@ export default function Hero() {
           key={`star-${index}`}
           size={orbit.size}
           rotation={orbit.rotation}
+          shouldOrbit={orbit?.shouldOrbit}
+          orbitDuration={orbit?.orbitDuration}
+          shouldSpin={orbit?.shouldSpin}
+          spinDuration={orbit?.spinDuration}
         >
           <Image
             src={starIcon}
@@ -48,6 +52,10 @@ export default function Hero() {
           key={`spark-${index}`}
           size={orbit.size}
           rotation={orbit.rotation}
+          shouldOrbit={orbit?.shouldOrbit}
+          orbitDuration={orbit?.orbitDuration}
+          shouldSpin={orbit?.shouldSpin}
+          spinDuration={orbit?.spinDuration}
         >
           <Image
             src={sparkleIcon}
@@ -56,25 +64,30 @@ export default function Hero() {
             height={orbit.height}
             style={{
               filter:
-                "invert(66%) sepia(80%) saturate(1866%) hue-rotate(190deg) brightness(50%) contrast(101%)",
+                "invert(66%) sepia(80%) saturate(1866%) hue-rotate(190deg) brightness(30%) contrast(101%)",
             }}
           />
         </HeroOrbit>
       ))}
 
-      <HeroOrbit size={1000} rotation={130}>
-        <Image
-          src={sparkleIcon}
-          alt="Star icon"
-          width={20}
-          height={20}
-          style={{
-            filter:
-              "invert(66%) sepia(80%) saturate(1866%) hue-rotate(190deg) brightness(99%) contrast(101%)",
-          }}
-        />
-      </HeroOrbit>
-
+      {dotRotate.map((orbit, index) => (
+        <HeroOrbit
+          key={`spark-${index}`}
+          size={orbit.size}
+          rotation={orbit.rotation}
+          shouldOrbit={orbit?.shouldOrbit}
+          orbitDuration={orbit?.orbitDuration}
+          shouldSpin={orbit?.shouldSpin}
+        >
+          <div
+            style={{
+              width: orbit.width,
+              height: orbit.width,
+            }}
+            className={`bg-blue-500 opacity-40 rounded-full`}
+          ></div>
+        </HeroOrbit>
+      ))}
       <div className="flex flex-col justify-center items-center text-center relative">
         <Image
           height={400}
@@ -84,7 +97,9 @@ export default function Hero() {
           className="size-[100px]"
         />
         <div className="bg-white dark:bg-hard-dark rounded-lg border border-gray-300 dark:border-gray-800 px-4 py-1.5 flex items-center gap-4">
-          <div className="bg-green-500 size-2.5 rounded-full"></div>
+          <div className="bg-green-500 size-2.5 rounded-full relative">
+            <div className="bg-green-500 absolute inset-0 rounded-full animate-ping-large"></div>
+          </div>
           <div className="text-sm font-medium">Available for new projects</div>
         </div>
       </div>

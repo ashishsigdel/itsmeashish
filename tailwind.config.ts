@@ -26,6 +26,17 @@ const config: Config = {
         "hard-dark": "#0d1117",
         light: "#efefef",
       },
+      animation: {
+        "ping-large": "ping-large 1s ease-in-out infinite",
+      },
+      keyframes: {
+        "ping-large": {
+          "75%, 100%": {
+            transform: "scale(3)",
+            opacity: "0",
+          },
+        },
+      },
     },
   },
   plugins: [],
