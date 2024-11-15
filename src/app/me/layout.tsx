@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <CustomThemeProvider>
-      <div className="text-hard-dark/90 dark:text-light transition-colors duration-300 ease-in-out">
+      <div className="text-hard-dark/90 dark:text-light bg-[#f2f2f2] dark:bg-hard-dark transition-colors duration-300 ease-in-out">
         <Header />
         {children}
         <Footer />

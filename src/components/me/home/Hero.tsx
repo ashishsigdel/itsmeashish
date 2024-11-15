@@ -10,7 +10,7 @@ import { starRotate, sparkRotate, dotRotate } from "@/data/starrotate";
 
 export default function Hero() {
   return (
-    <div className="py-32 md:py-40 lg:py-[12rem] min-h-[calc(100vh-6rem)] relative z-0 overflow-x-clip overflow-y-clip">
+    <div className="py-32 md:py-40 lg:py-[8rem] min-h-[calc(100vh-6rem)] relative z-0 overflow-x-clip overflow-y-clip">
       <div
         className="absolute inset-0 -z-30 opacity-5"
         style={{
@@ -19,7 +19,7 @@ export default function Hero() {
       ></div>
 
       {/* Centered Rectangle */}
-      <div className="size-[620px] hero-ring"></div>
+      <div className="size-[620px] hero-ring "></div>
       <div className="size-[820px] hero-ring"></div>
       <div className="size-[1020px] hero-ring"></div>
       <div className="size-[1220px] hero-ring"></div>
@@ -107,7 +107,8 @@ export default function Hero() {
       <div className="max-w-xl mx-auto">
         <h1 className="font-serif text-3xl md:text-5xl text-center mt-8 tracking-wide font-semibold">
           Hi I&#39;m Ashish <br />
-          an AI Enthusiast, Creative Developer
+          an <span className="text-primary-blue">AI Enthusiast</span>, Creative{" "}
+          <span className="text-primary-blue">Developer</span>
         </h1>
         <p className="mt-4 text-center text-hard-dark/60 dark:text-white/60 md:text-lg">
           Dedicated to creating robust web applications and exploring artificial
@@ -120,7 +121,7 @@ export default function Hero() {
           <span className="font-semibold">Explore My Work</span>
           <FaArrowDown />
         </button>
-        <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl bg-purple-500 text-white">
+        <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl bg-primary-blue text-white">
           <span>👋</span>
           <span className="font-semibold">Let&#39;s Connect</span>
         </button>
