@@ -7,6 +7,7 @@ import starIcon from "@/assets/icons/star.svg";
 import sparkleIcon from "@/assets/icons/sparkle.svg";
 import { HeroOrbit } from "@/components/me/home";
 import { starRotate, sparkRotate, dotRotate } from "@/data/starrotate";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -117,14 +118,20 @@ export default function Hero() {
       </div>
 
       <div className="flex flex-col md:flex-row justify-center gap-4 items-center mt-8">
-        <button className="inline-flex items-center gap-2 border border-black/15 dark:border-white/15 px-6 h-12 rounded-xl">
-          <span className="font-semibold">Explore My Work</span>
+        <Link
+          href="#projects"
+          className="inline-flex items-center gap-2 border border-black/15 dark:border-white/15 px-6 h-12 rounded-xl font-semibold"
+        >
+          <span>Explore My Work</span>
           <FaArrowDown />
-        </button>
-        <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl bg-primary-blue text-white">
+        </Link>
+        <Link
+          href="#contact"
+          className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl bg-primary-blue text-white font-semibold"
+        >
           <span>👋</span>
-          <span className="font-semibold">Let&#39;s Connect</span>
-        </button>
+          <span>Let&#39;s Connect</span>
+        </Link>
       </div>
     </div>
   );

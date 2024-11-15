@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function LogoSection() {
   return (
-    <Link href={"/asprog"}>
+    <Link href={"/me"}>
       <div className="h-full flex items-center">
         <div className="w-[40px] h-full flex justify-center items-center border-hard-dark dark:border-light overflow-hidden rotate-90">
           <Image

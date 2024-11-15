@@ -26,7 +26,7 @@ export default function Page() {
           <TechILike />
           <TechBehind />
         </div>
-        <div id="tech">
+        <div id="contact">
           <Contact />
         </div>
       </div>

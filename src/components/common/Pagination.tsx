@@ -16,7 +16,7 @@ export default function Pagination({
 }: PaginationProps) {
   return (
     <div className="gi-pro-pagination mt-[15px] flex w-full items-center justify-between border-t-[1px] border-solid border-[#eee] pt-[15px] dark:border-primary/30 max-[575px]:flex-col">
-      <span className="text-[14px] text-gray-300 max-[575px]:mb-[10px]">
+      <span className="text-[14px] text-gray-600 dark:text-gray-300 max-[575px]:mb-[10px]">
         Showing page {currentPage} of {totalPages} pages
       </span>
       <ul className="gi-pro-pagination-inner">
