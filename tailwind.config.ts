@@ -20,7 +20,7 @@ const config: Config = {
         "primary-blue": "#845eee",
         "primary-yellow": "#e1b84f",
         "primary-red": "#e14f62",
-        "primary-border-color": "#336647",
+        "primary-border-color": "#222946",
         "gray-color": "#537a62",
         danger: "#D10000",
         "hard-dark": "#0d1117",

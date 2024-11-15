@@ -6,7 +6,7 @@ import { projects, Tags } from "@/types/projects";
 import Link from "next/link";
 
 const Tag = memo(({ tag }: { tag: Tags }) => (
-  <span className="border-black/15 dark:border-white/15 blur-bg text-white rounded-full px-2 py-1 mr-2 mb-2 text-sm">
+  <span className="bg-gray-200 dark:bg-gray-800 blur-bg text-hard-dark/70 dark:text-light/90 rounded-full px-2 py-1 mr-2 mb-2 text-sm">
     {tag.title}
   </span>
 ));
@@ -16,19 +16,19 @@ function ProjectCard({ project }: { project: projects }) {
   return (
     <Link
       href={`/project/${project.id}`}
-      className="rounded-ss-lg bg-black/25 rounded-ee-lg blur-bg border border-black/15 dark:border-white/15 cursor-pointer flex flex-col mb-5 max-w-[30rem] sm:max-w-[26rem] mx-auto"
+      className="rounded-ss-lg bg-white dark:bg-black rounded-ee-lg blur-bg border border-black/15 dark:border-white/15 cursor-pointer flex flex-col mb-5 max-w-[30rem] sm:max-w-[26rem] mx-auto"
       rel="noopener noreferrer"
     >
       <div className="h-full w-full">
         <Image
           src={project.longPhoto}
           alt="project"
-          className="h-[270px] w-full object-top object-cover hover:object-bottom transition-all duration-[3000ms] rounded-ss-md"
-          width={300}
+          className="h-[270px] w-full object-top object-cover hover:object-bottom transition-all duration-[3000ms] rounded-ss-md border-b border-black/15 dark:border-white/15"
+          width={270}
           height={500}
         />
         <div className="p-3">
-          <h3 className="text-[22px] font-semibold text-center my-5">
+          <h3 className="text-[22px] text-primary-blue font-semibold text-center my-5">
             {project.title}
           </h3>
           <p className="text-12px text-center mb-5 line-clamp-5">
@@ -48,9 +48,9 @@ function ProjectCard({ project }: { project: projects }) {
                 href={project.githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex gap-2 items-center justify-center hover:bg-gray-700 py-3 px-4 rounded-md border border-gray-700"
+                className="flex gap-2 items-center justify-center dark:bg-gray-800 bg-gray-200 text-gray-800 dark:text-white py-3 px-4 rounded-md border border-gray-300 dark:border-gray-700"
               >
-                <FaGithub className="text-white hover:text-primary-color transition" />
+                <FaGithub className="hover:text-primary-color transition" />
                 <p>Github</p>
               </a>
             )}
@@ -59,7 +59,7 @@ function ProjectCard({ project }: { project: projects }) {
                 href={project.previewLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex gap-2 items-center justify-center hover:bg-gray-700 py-3 px-4 rounded-md border border-gray-700"
+                className="flex gap-2 items-center justify-center bg-primary-blue text-white py-3 px-4 rounded-md border border-gray-700"
               >
                 <FaGlobe className="text-white hover:text-primary-color transition" />
                 <p>Check Live</p>

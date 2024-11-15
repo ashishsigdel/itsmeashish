@@ -38,15 +38,15 @@ export default function Footer() {
   }, []);
 
   return (
-    <div className="border-t border-white/10 bg-white dark:bg-hard-dark shadow-md shadow-hard-dark/5 dark:shadow-light/5 py-10 w-full relative">
+    <div className="border-t border-black/10 dark:border-white/10 bg-white dark:bg-black text-hard-dark/80 dark:text-light/80 shadow-md shadow-hard-dark/5 dark:shadow-light/5 py-10 w-full relative">
       {/* Scroll to Top Button */}
       {showScrollToTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 p-3 rounded-full bg-primary text-white hover:bg-primary-dark transition-all duration-300 shadow-lg z-50"
+          className="fixed bottom-6 right-6 p-3 rounded-full bg-primary-blue text-white hover:bg-primary-dark transition-all duration-300 shadow-lg z-50"
           aria-label="Scroll to top"
         >
-          <MdOutlineKeyboardArrowUp className="text-2xl" />
+          <MdOutlineKeyboardArrowUp className="text-2xl text-white" />
         </button>
       )}
 
@@ -61,7 +61,7 @@ export default function Footer() {
               className="invert rotate-90"
             />
             <p className="text-center font-bold tracking-wider text-2xl">
-              Ashish<span className="text-primary">&lt;Sigdel&gt;</span>
+              Ashish<span className="text-primary-blue">&lt;Sigdel&gt;</span>
             </p>
           </div>
 
@@ -71,9 +71,9 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="group relative flex flex-col justify-center items-center cursor-pointer hover:text-primary text-white/60">
+              <div className="group relative flex flex-col justify-center items-center cursor-pointer ">
                 <FaLinkedin className="text-xl" />
-                <span className="absolute -top-16 opacity-0 group-hover:-top-8 group-hover:opacity-100 bg-white text-black text-xs rounded py-1 px-2 transition-all duration-300 whitespace-nowrap z-[999]">
+                <span className="absolute -top-16 opacity-0 group-hover:-top-8 group-hover:opacity-100  text-xs rounded py-1 px-2 transition-all duration-300 whitespace-nowrap z-[999]">
                   Linkedin
                 </span>
               </div>
@@ -83,9 +83,9 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="group relative flex flex-col justify-center items-center cursor-pointer hover:text-primary text-white/60">
+              <div className="group relative flex flex-col justify-center items-center cursor-pointer ">
                 <FaInstagram className="text-xl" />
-                <span className="absolute -top-16 opacity-0 group-hover:-top-8 group-hover:opacity-100 bg-white text-black text-xs rounded py-1 px-2 transition-all duration-300 whitespace-nowrap z-[999]">
+                <span className="absolute -top-16 opacity-0 group-hover:-top-8 group-hover:opacity-100  text-xs rounded py-1 px-2 transition-all duration-300 whitespace-nowrap z-[999]">
                   Instagram
                 </span>
               </div>
@@ -95,9 +95,9 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="group relative flex flex-col justify-center items-center cursor-pointer hover:text-primary text-white/60">
+              <div className="group relative flex flex-col justify-center items-center cursor-pointer ">
                 <FaFacebook className="text-xl" />
-                <span className="absolute -top-16 opacity-0 group-hover:-top-8 group-hover:opacity-100 bg-white text-black text-xs rounded py-1 px-2 transition-all duration-300 whitespace-nowrap z-[999]">
+                <span className="absolute -top-16 opacity-0 group-hover:-top-8 group-hover:opacity-100 text-xs rounded py-1 px-2 transition-all duration-300 whitespace-nowrap z-[999]">
                   Facebook
                 </span>
               </div>
@@ -107,9 +107,9 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="group relative flex flex-col justify-center items-center cursor-pointer hover:text-primary text-white/60">
+              <div className="group relative flex flex-col justify-center items-center cursor-pointer ">
                 <FaGithub className="text-xl" />
-                <span className="absolute -top-16 opacity-0 group-hover:-top-8 group-hover:opacity-100 bg-white text-black text-xs rounded py-1 px-2 transition-all duration-300 whitespace-nowrap z-[999]">
+                <span className="absolute -top-16 opacity-0 group-hover:-top-8 group-hover:opacity-100  text-xs rounded py-1 px-2 transition-all duration-300 whitespace-nowrap z-[999]">
                   Github
                 </span>
               </div>
@@ -119,9 +119,9 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="group relative flex flex-col justify-center items-center cursor-pointer hover:text-primary text-white/60">
+              <div className="group relative flex flex-col justify-center items-center cursor-pointer ">
                 <FaXTwitter className="text-xl" />
-                <span className="absolute -top-16 opacity-0 group-hover:-top-8 group-hover:opacity-100 bg-white text-black text-xs rounded py-1 px-2 transition-all duration-300 whitespace-nowrap z-[999]">
+                <span className="absolute -top-16 opacity-0 group-hover:-top-8 group-hover:opacity-100  text-xs rounded py-1 px-2 transition-all duration-300 whitespace-nowrap z-[999]">
                   X
                 </span>
               </div>
@@ -129,7 +129,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 text-sm text-white/90 w-full">
+        <div className="mt-10 text-sm w-full">
           <p className="text-center">
             &copy; Ashish Sigdel 2024 - All Right Reserved!
           </p>

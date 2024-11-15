@@ -7,8 +7,8 @@ import { MdArrowOutward } from "react-icons/md";
 
 export default function AboutMe() {
   return (
-    <div className="w-full max-w-2xl lg:max-w-3xl mx-auto bg-white/40 dark:bg-black/40 rounded-ss-md rounded-ee-md blur-bg text-gray-700 dark:text-gray-300 border border-primary-border-color h-fit ">
-      <div className="p-2 border-b border-primary-border-color">
+    <div className="w-full max-w-2xl lg:max-w-3xl mx-auto bg-white/70 dark:bg-black/60 rounded-ss-md rounded-ee-md blur-bg text-gray-700 dark:text-gray-300 border border-black/15 dark:border-white/15 h-fit  cursor-grab">
+      <div className="p-2 border-b border-black/15 dark:border-white/15">
         <span>about-me</span>
       </div>
       <div className="p-3 md:p-5 flex flex-col gap-2 m-0">

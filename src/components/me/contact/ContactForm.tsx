@@ -10,7 +10,6 @@ export default function ContactForm() {
     company,
     email,
     message,
-    formData,
     nameError,
     emailError,
     messageError,
@@ -60,12 +59,12 @@ export default function ContactForm() {
     <div className="flex flex-col justify-center  my-3 px-3 mx-auto">
       <motion.div
         ref={formRef}
-        className="w-full max-w-4xl mx-auto rounded-ss-lg bg-black/25 rounded-ee-lg blur-bg border border-primary-border-color"
+        className="w-full max-w-4xl mx-auto rounded-ss-lg bg-white dark:bg-black text-hard-dark/80 dark:text-light/80 rounded-ee-lg blur-bg border border-black/15 dark:border-white/15"
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
       >
-        <div className="p-2 border-b border-primary-border-color">
+        <div className="p-2 border-b border-black/15 dark:border-white/15">
           <span>write-me</span>
         </div>
         <form
@@ -75,7 +74,7 @@ export default function ContactForm() {
           <motion.div className="flex justify-start" variants={itemVariants}>
             <span className="text-primary-blue mr-2 text-sm">01</span>
             <div className="flex flex-col gap-0.5 w-full">
-              <span className="text-sm text-primary-yellow">your-name*</span>
+              <span className="text-sm text-primary-blue">your-name*</span>
               <input
                 type="text"
                 name="name"
@@ -83,24 +82,29 @@ export default function ContactForm() {
                 className={`px-[15px] bg-transparent border-[1px] border-solid ${
                   nameError
                     ? "border-danger"
-                    : "border-primary-border-color dark:border-gray-500"
-                } border-primary-border-color dark:border-gray-500 rounded-[5px] text-gray-500 text-[14px] outline-[0] h-[50px] w-full`}
+                    : "border-black/15 dark:border-white/15"
+                } border-black/15 dark:border-white/15 rounded-[5px] text-gray-500 text-[14px] outline-[0] h-[50px] w-full`}
                 placeholder="Enter your name address"
                 onChange={handleChange}
                 onBlur={validateName}
                 value={name}
               />
+              {nameError && (
+                <p className="text-xs text-red-500 italic ml-1">
+                  Full Name is Required.
+                </p>
+              )}
             </div>
           </motion.div>
           <motion.div className="flex justify-start" variants={itemVariants}>
             <span className="text-primary-blue mr-2 text-sm">02</span>
             <div className="flex flex-col gap-0.5 w-full">
-              <span className="text-sm text-primary-yellow">company</span>
+              <span className="text-sm text-primary-blue">company</span>
               <input
                 type="company"
                 name="company"
                 id="company"
-                className={`px-[15px] bg-transparent border-[1px] border-solid  border-primary-border-color dark:border-gray-500 rounded-[5px] text-gray-500 text-[14px] outline-[0] h-[50px] w-full`}
+                className={`px-[15px] bg-transparent border-[1px] border-solid  border-black/15 dark:border-white/15 rounded-[5px] text-gray-500 text-[14px] outline-[0] h-[50px] w-full`}
                 placeholder="Enter your company address"
                 onChange={handleChange}
                 value={company}
@@ -110,7 +114,7 @@ export default function ContactForm() {
           <motion.div className="flex justify-start" variants={itemVariants}>
             <span className="text-primary-blue mr-2 text-sm">03</span>
             <div className="flex flex-col gap-0.5 w-full">
-              <span className="text-sm text-primary-yellow">your-email*</span>
+              <span className="text-sm text-primary-blue">your-email*</span>
               <input
                 type="email"
                 name="email"
@@ -118,19 +122,24 @@ export default function ContactForm() {
                 className={`px-[15px] bg-transparent border-[1px] border-solid ${
                   emailError
                     ? "border-danger"
-                    : "border-primary-border-color dark:border-gray-500"
-                } border-primary-border-color dark:border-gray-500 rounded-[5px] text-gray-500 text-[14px] outline-[0] h-[50px] w-full`}
+                    : "border-black/15 dark:border-white/15"
+                } border-black/15 dark:border-white/15 rounded-[5px] text-gray-500 text-[14px] outline-[0] h-[50px] w-full`}
                 placeholder="Enter your email address"
                 onChange={handleChange}
                 onBlur={validateEmail}
                 value={email}
               />
+              {emailError && (
+                <p className="text-xs text-red-500 italic ml-1">
+                  Email is Required.
+                </p>
+              )}
             </div>
           </motion.div>
           <motion.div className="flex justify-start" variants={itemVariants}>
             <span className="text-primary-blue mr-2 text-sm">04</span>
             <div className="flex flex-col gap-0.5 w-full">
-              <span className="text-sm text-primary-yellow">your-message*</span>
+              <span className="text-sm text-primary-blue">your-message*</span>
               <textarea
                 placeholder="Enter your message"
                 rows={4}
@@ -139,38 +148,26 @@ export default function ContactForm() {
                 className={`px-[15px] bg-transparent border-[1px] border-solid ${
                   messageError
                     ? "border-danger"
-                    : "border-primary-border-color dark:border-gray-500"
-                } border-primary-border-color dark:border-gray-500 rounded-[5px] text-gray-500 text-[14px] outline-[0] w-full p-3 resize-none`}
+                    : "border-black/15 dark:border-white/15"
+                } border-black/15 dark:border-white/15 rounded-[5px] text-gray-500 text-[14px] outline-[0] w-full p-3 resize-none`}
                 onChange={handleChange}
                 onBlur={validateMessage}
                 value={message}
               />
+              {messageError && (
+                <p className="text-xs text-red-500 italic ml-1">
+                  Message is Required.
+                </p>
+              )}
             </div>
           </motion.div>
-          <motion.div className="mx-auto" variants={itemVariants}>
+          <motion.div className="mx-auto my-5" variants={itemVariants}>
             <button
               disabled={isLoading}
               type="submit"
-              className="btn w-fit my-5"
+              className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl bg-primary-blue text-white"
             >
-              <svg
-                viewBox="0 0 24 24"
-                className="arr-2"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
-              </svg>
-              <span className="text">
-                {isLoading ? "Loading..." : "Send Message"}
-              </span>
-              <span className="circle"></span>
-              <svg
-                viewBox="0 0 24 24"
-                className="arr-1"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
-              </svg>
+              <span className="font-semibold">Send Message</span>
             </button>
           </motion.div>
           {responseMessage && (

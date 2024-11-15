@@ -1,28 +1,57 @@
+"use client";
 import { AboutMe, ILove, MeOnline, Portrait } from "@/components/me/about";
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
 
 export default function About() {
+  const constrainRef = useRef(null);
   return (
-    <div className="max-w-7xl mx-auto h-full mt-10 px-3">
+    <div className="max-w-7xl mx-auto h-full my-16 px-3">
       <div className="w-full text-center my-10">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold">
           About Me
         </h1>
       </div>
-      <div className="relative flex flex-wrap space-y-4 space-x-3 justify-center lg:justify-normal">
-        <div className="lg:relative left-[9rem]">
+      <div
+        ref={constrainRef}
+        className="relative flex flex-wrap space-y-4 space-x-3 justify-center lg:justify-normal"
+      >
+        <motion.div
+          drag
+          dragConstraints={constrainRef}
+          dragElastic={0.2} // Lower elasticity for slower drag
+          dragTransition={{ bounceStiffness: 100, bounceDamping: 10 }} // Adjust damping for control
+          className="lg:relative left-[9rem]"
+        >
           <AboutMe />
-        </div>
-        <div className="lg:relative top-[10rem] left-[5rem]">
+        </motion.div>
+        <motion.div
+          drag
+          dragConstraints={constrainRef}
+          dragElastic={0.2}
+          dragTransition={{ bounceStiffness: 100, bounceDamping: 10 }}
+          className="lg:relative top-[10rem] left-[5rem]"
+        >
           <Portrait />
-        </div>
-        <div className="bottom-[4rem] left-[10rem] lg:relative">
+        </motion.div>
+        <motion.div
+          drag
+          dragConstraints={constrainRef}
+          dragElastic={0.2}
+          dragTransition={{ bounceStiffness: 100, bounceDamping: 10 }}
+          className="bottom-[4rem] left-[10rem] lg:relative"
+        >
           <MeOnline />
-        </div>
-        <div className="lg:relative left-[18rem] bottom-[2rem]">
+        </motion.div>
+        <motion.div
+          drag
+          dragConstraints={constrainRef}
+          dragElastic={0.2}
+          dragTransition={{ bounceStiffness: 100, bounceDamping: 10 }}
+          className="lg:relative left-[18rem] bottom-[2rem]"
+        >
           <ILove />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

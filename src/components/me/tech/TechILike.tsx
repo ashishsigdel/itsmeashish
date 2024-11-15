@@ -1,3 +1,4 @@
+"use client";
 import { SectionTitle } from "@/components/common";
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
@@ -5,6 +6,7 @@ import {
   SiAdobeillustrator,
   SiAdobephotoshop,
   SiFigma,
+  SiFlask,
   SiJavascript,
   SiNextdotjs,
   SiNodedotjs,
@@ -14,6 +16,7 @@ import {
   SiReact,
   SiSass,
   SiScikitlearn,
+  SiStreamlit,
   SiTailwindcss,
   SiTensorflow,
   SiTypescript,
@@ -26,9 +29,9 @@ const TechIcon = ({
   Icon: React.ElementType;
   name: string;
 }) => (
-  <div className="relative group">
+  <div className="relative group bg-white dark:bg-black text-hard-dark/80 dark:text-light/80">
     <Icon className="text-[52px]" />
-    <span className="absolute left-1/2 -translate-x-1/2 top-16 bg-black text-white text-xs py-1 px-2 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none">
+    <span className="absolute left-1/2 -translate-x-1/2 top-16  text-xs py-1 px-2 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none">
       {name}
     </span>
   </div>
@@ -47,12 +50,12 @@ const TechSection = ({
   return (
     <motion.div
       ref={ref}
-      className="bg-black/40 rounded-ss-md rounded-ee-md blur-bg text-white/90 border border-primary-border-color max-w-4xl mx-auto"
+      className="bg-white dark:bg-black text-hard-dark/80 dark:text-light/80 rounded-ss-md rounded-ee-md blur-bg border border-black/15 dark:border-white/15 max-w-4xl mx-auto p-3 sm:p-0"
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <div className="p-2 border-b border-primary-border-color">
+      <div className="p-2 border-b border-black/15 dark:border-white/15">
         <span className="">{title}</span>
       </div>
       <motion.div
@@ -102,6 +105,8 @@ export default function LikeTech() {
     { Icon: SiTensorflow, name: "TensorFlow" },
     { Icon: SiPytorch, name: "PyTorch" },
     { Icon: SiPandas, name: "Pandas" },
+    { Icon: SiFlask, name: "Flask" },
+    { Icon: SiStreamlit, name: "Streamlit" },
   ];
 
   const designTechs = [
@@ -111,8 +116,12 @@ export default function LikeTech() {
   ];
 
   return (
-    <div className="flex flex-col justify-center  my-3 px-3 mx-auto min-h-[100vh-96px] text-white/90">
-      <SectionTitle title={"Techs I like to work with"} />
+    <div className="flex flex-col justify-center  my-3 px-3 mx-auto min-h-[100vh-96px]">
+      <div className="w-full text-center my-10">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold">
+          My Toolbox
+        </h1>
+      </div>
       <motion.div
         className="h-[7rem] bg-gradient-to-t from-primary-border-color to-transparent w-[1px] mx-auto"
         initial={{ scaleY: 0 }}
@@ -127,7 +136,7 @@ export default function LikeTech() {
         transition={{ duration: 0.3, delay: 0.7 }}
       />
       <TechSection
-        title="machine-learning"
+        title="artificial-inteligence"
         technologies={machineLearningTechs}
       />
       <motion.div
@@ -136,7 +145,7 @@ export default function LikeTech() {
         animate={{ scaleY: 1 }}
         transition={{ duration: 0.3, delay: 1.2 }}
       />
-      <TechSection title="design" technologies={designTechs} />
+      <TechSection title="creative-design" technologies={designTechs} />
       <motion.div
         className="h-[7rem] bg-gradient-to-b from-primary-border-color to-transparent w-[1px] mx-auto mb-5"
         initial={{ scaleY: 0 }}
