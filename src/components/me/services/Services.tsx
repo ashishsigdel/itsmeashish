@@ -23,6 +23,7 @@ export default function MainServices() {
   useEffect(() => {
     fetchProject();
   }, []);
+
   return (
     <div className="max-w-7xl mx-auto h-full my-16 px-3">
       <div className="w-full text-center my-10">
@@ -38,9 +39,10 @@ export default function MainServices() {
           ))}
         </div>
       ) : (
-        <Spinner />
+        <div className="flex justify-center">
+          <Spinner />
+        </div>
       )}
-
       <div className="h-[7rem] bg-gradient-to-b from-primary-border-color to-transparent w-[1px] mx-auto mb-5"></div>
     </div>
   );
