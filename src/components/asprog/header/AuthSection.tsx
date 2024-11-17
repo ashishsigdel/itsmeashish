@@ -1,19 +1,21 @@
 "use client";
+import { RootState } from "@/redux/store";
 import { ThemeToggler } from "@/utlis";
 import Link from "next/link";
 import { redirect, usePathname } from "next/navigation";
 import React from "react";
+import { useSelector } from "react-redux";
 
 export default function AuthSection() {
   const pathname = usePathname();
-  const user = localStorage.getItem("user");
-  const currentUser = user ? JSON.parse(user) : null;
+
+  const user = useSelector((state: RootState) => state.auth.user);
 
   return (
     <div className="flex gap-5 md:gap-10 items-center mr-4">
-      {currentUser ? (
+      {user ? (
         <div className="flex gap-4 items-center ">
-          <p>Hi, {currentUser.fullName.split(" ")[0]}</p>
+          <p>Hi, {user.fullName.split(" ")[0]}</p>
           <div className="bg-gradient-to-r from-blue-500 to-purple-500 py-2 px-5 rounded-full font-semibold">
             <p className="text-light">Logout</p>
           </div>

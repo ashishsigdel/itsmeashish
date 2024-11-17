@@ -2,10 +2,13 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { signIn } from "@/services/authServices";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { setAuth } from "@/redux/features/authSlice";
 
 export default function useSignIn() {
   const searchParams = useSearchParams();
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({ email: "", password: "" });
   const { email, password } = formData;
@@ -49,10 +52,15 @@ export default function useSignIn() {
       try {
         const response = await signIn(formData);
 
-        const { accessToken, user } = response.data;
+        const data = response.data;
+
+        const accessToken: string = data.accessToken;
 
         localStorage.setItem("accessToken", accessToken);
-        localStorage.setItem("user", JSON.stringify(user));
+        const userData = JSON.stringify(data.user);
+        localStorage.setItem("user", userData);
+
+        dispatch(setAuth(data.user));
 
         setFormData({ email: "", password: "" });
         if (redirctTo !== null) {

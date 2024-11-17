@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/styles/globals.scss";
 import { ToastUtlis } from "@/utlis";
-import PreLoader from "@/utlis/PreLoader";
 import { StoreProvider } from "@/provider";
 import "./favicon.ico";
 const inter = Inter({ subsets: ["latin"] });
@@ -24,7 +23,6 @@ export default function RootLayout({
     <StoreProvider>
       <html lang="en">
         <body>
-          {/* <PreLoader /> */}
           {children}
           <ToastUtlis />
         </body>
