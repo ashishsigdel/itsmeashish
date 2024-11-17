@@ -5,6 +5,7 @@ import { redirect, usePathname } from "next/navigation";
 import React from "react";
 
 export default function AuthSection() {
+  const pathname = usePathname();
   const user = localStorage.getItem("user");
   const currentUser = user ? JSON.parse(user) : null;
 
@@ -24,7 +25,7 @@ export default function AuthSection() {
               <p className="text-hard-dark/70 dark:text-light">Register</p>
             </div>
           </Link>
-          <Link href={`/login?redirect_url=${usePathname()}`}>
+          <Link href={`/login?redirect_url=${pathname}`}>
             <div className="bg-gradient-to-r from-blue-500 to-purple-500 py-2 px-5 rounded-full font-semibold">
               <p className="text-light">Login</p>
             </div>
