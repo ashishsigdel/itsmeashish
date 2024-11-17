@@ -80,12 +80,7 @@ export default function useContact() {
       try {
         // Send the email
         await sendMessage(formData);
-        const result = await emailjs.send(
-          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-          formData,
-          process.env.NEXT_PUBLIC_EMAILJS_USER_ID!
-        );
+
         setResponseMessage("Message sent successfully!");
 
         // Reset the form after successful send
