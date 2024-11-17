@@ -4,7 +4,7 @@ import { getProjectById } from "@/services/projectServices";
 import { projects } from "@/types/projects";
 import { useParams } from "next/navigation";
 import React, { useEffect } from "react";
-import { ProjectDetails, SimilarProject } from "@/components/projects";
+import { ProjectDetails, SimilarProject } from "@/components/me/projects";
 import ProjectNotFound from "./ProjectNotFound";
 import { Spinner } from "@/components/common";
 

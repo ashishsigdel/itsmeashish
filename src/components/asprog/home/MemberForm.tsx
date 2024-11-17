@@ -10,7 +10,7 @@ export default function MemberForm() {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-8 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg shadow-lg transition duration-300">
+    <div className="max-w-lg mx-auto p-8 bg-white/50 dark:bg-gray-900/50 border border-gray-300 dark:border-gray-700 rounded-lg shadow-lg transition duration-300">
       <h1 className="text-3xl font-bold text-center text-gray-900 dark:text-gray-100 mb-4">
         {isSignUp ? "Join as a Member" : "Login to Your Account"}
       </h1>

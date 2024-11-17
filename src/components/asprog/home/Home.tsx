@@ -63,9 +63,11 @@ export default function Home() {
         </div>
 
         {/* Right Section (Form) */}
-        <div className="flex-1 flex justify-center lg:justify-end items-center w-full h-full">
-          <div className="w-full max-w-md shadow-2xl shadow-hard-dark/10 dark:shadow-light/10">
-            <MemberForm />
+        <div className="flex-1 hidden lg:flex justify-center lg:justify-end items-center w-full h-full">
+          <div className="w-full flex justify-center">
+            <div className="w-[400px] h-[400px] bg-gradient-to-tr from-blue-500 to-purple-500 shape flex items-center justify-center">
+              {/* <MemberForm /> */}
+            </div>
           </div>
         </div>
 
