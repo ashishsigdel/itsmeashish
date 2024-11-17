@@ -167,7 +167,9 @@ export default function ContactForm() {
               type="submit"
               className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl bg-primary-blue text-white"
             >
-              <span className="font-semibold">Send Message</span>
+              <span className="font-semibold">
+                {isLoading ? "Sending..." : "Send Message"}
+              </span>
             </button>
           </motion.div>
           {responseMessage && (
