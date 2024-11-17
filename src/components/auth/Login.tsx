@@ -1,24 +1,35 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { FormField } from "@/components/auth";
 import leftImage from "@/assets/auth/reg-mascot.webp";
 import { useRouter, useSearchParams } from "next/navigation";
+import useSignIn from "@/hooks/use-signin";
 
 export default function Login() {
+  const {
+    email,
+    password,
+    formData,
+    emailError,
+    passwordError,
+    isLoading,
+    handleChange,
+    validateEmail,
+    validatePassword,
+    onSubmit,
+    setRedirctTo,
+  } = useSignIn();
   const searchParams = useSearchParams();
   const router = useRouter();
 
   const redirect_url = searchParams.get("redirect_url");
 
-  const handleClick = (e: any) => {
-    e.preventDefault();
-    if (redirect_url === null) {
-      router.push("/asprog");
-    } else {
-      router.push(`${redirect_url}`);
+  useEffect(() => {
+    if (redirect_url) {
+      setRedirctTo(redirect_url);
     }
-  };
+  }, []);
 
   return (
     <div className="flex h-screen items-center justify-center">
@@ -35,7 +46,12 @@ export default function Login() {
 
       {/* Right Form */}
       <div className="flex-1 flex items-center justify-center h-full p-6 ">
-        <FormField which="login" handleClick={handleClick} />
+        <FormField
+          which="login"
+          formData={formData}
+          handleChange={handleChange}
+          onSubmitSignIn={onSubmit}
+        />
       </div>
     </div>
   );

@@ -6,9 +6,20 @@ import { FaGoogle } from "react-icons/fa";
 interface MemberFormProps {
   which: string;
   handleClick?: (e: any) => void;
+  formData?: any;
+  handleChange?: any;
+  onSubmitSignIn?: any;
+  onSubmitRegister?: any;
 }
 
-export default function MemberForm({ which, handleClick }: MemberFormProps) {
+export default function MemberForm({
+  which,
+  handleClick = () => {},
+  formData = { email: "", password: "" },
+  handleChange = () => {},
+  onSubmitSignIn = () => {},
+  onSubmitRegister = () => {},
+}: MemberFormProps) {
   return (
     <div className="max-w-lg mx-auto p-8 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg shadow-lg transition duration-300">
       <h1 className="text-3xl font-bold text-center text-gray-900 dark:text-gray-100 mb-4">
@@ -20,7 +31,10 @@ export default function MemberForm({ which, handleClick }: MemberFormProps) {
           : "Welcome back! Please sign in to continue."}
       </p>
 
-      <form onSubmit={handleClick} className="flex flex-col gap-6">
+      <form
+        onSubmit={which === "register" ? onSubmitRegister : onSubmitSignIn}
+        className="flex flex-col gap-6"
+      >
         {which === "register" && (
           <div>
             <label className="block text-gray-800 dark:text-gray-300 font-medium mb-[6px]">
@@ -28,8 +42,11 @@ export default function MemberForm({ which, handleClick }: MemberFormProps) {
             </label>
             <input
               type="text"
+              name="fullName"
               placeholder="Your full name"
               className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md text-gray-900 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              value={formData.fullName}
+              onChange={handleChange}
             />
           </div>
         )}
@@ -41,8 +58,11 @@ export default function MemberForm({ which, handleClick }: MemberFormProps) {
           </label>
           <input
             type="email"
+            name="email"
             placeholder="Your email address"
             className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md text-gray-900 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            value={formData.email}
+            onChange={handleChange}
           />
         </div>
 
@@ -53,8 +73,11 @@ export default function MemberForm({ which, handleClick }: MemberFormProps) {
           </label>
           <input
             type="password"
+            name="password"
             placeholder="Enter your password"
             className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md text-gray-900 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            value={formData.password}
+            onChange={handleChange}
           />
         </div>
 
