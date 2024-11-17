@@ -23,6 +23,8 @@ export function useRegister() {
   const [passwordError, setPasswordError] = useState<string | null>(null);
   const [redirctTo, setRedirctTo] = useState<string | null>(null);
 
+  const [error, setError] = useState<string | null>(null);
+
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
@@ -68,15 +70,18 @@ export function useRegister() {
       try {
         const response = await Register(formData);
 
+        setFormData({ fullName: "", email: "", password: "" });
+
         if (redirctTo) {
           router.push(`/login${redirctTo}`);
+        } else {
+          router.push("/login");
         }
-
-        router.push("/login");
-
-        setFormData({ fullName: "", email: "", password: "" });
       } catch (error: any) {
-        console.error("Register error:", error);
+        if (!error.response) {
+          setError("Something went wrong!");
+        }
+        setError(error.response?.data?.message);
       } finally {
         setIsLoading(false);
       }
@@ -98,5 +103,7 @@ export function useRegister() {
     validatePassword,
     onSubmit,
     setRedirctTo,
+    redirctTo,
+    error,
   };
 }

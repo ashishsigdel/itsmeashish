@@ -1,13 +1,15 @@
 // components/auth/Register.tsx
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { FormField } from "@/components/auth";
 import leftImage from "@/assets/auth/reg-mascot.webp";
 import { useRegister } from "@/hooks/use-register"; // Update import to use named import
+import { useSearchParams, useRouter } from "next/navigation";
 
 export default function Register() {
+  const router = useRouter();
   const {
     fullName,
     email,
@@ -18,11 +20,26 @@ export default function Register() {
     passwordError,
     isLoading,
     handleChange,
-    validateFullName,
-    validateEmail,
-    validatePassword,
+    setRedirctTo,
+    redirctTo,
     onSubmit,
+    error,
   } = useRegister();
+
+  const searchParams = useSearchParams();
+
+  const redirect_url = searchParams.get("redirect_url");
+
+  useEffect(() => {
+    if (redirect_url) {
+      setRedirctTo(redirect_url);
+    }
+  }, [redirect_url]);
+
+  const user = localStorage.getItem("user");
+  if (user) {
+    router.push("/asprog");
+  }
 
   return (
     <div className="flex h-screen items-center justify-center">
@@ -44,6 +61,9 @@ export default function Register() {
           formData={formData}
           handleChange={handleChange}
           onSubmitRegister={onSubmit}
+          error={error}
+          isLoading={isLoading}
+          redirectTo={redirctTo}
         />
       </div>
     </div>

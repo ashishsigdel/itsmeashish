@@ -15,6 +15,8 @@ export default function useSignIn() {
   const [passwordError, setPasswordError] = useState<string | null>(null);
   const [redirctTo, setRedirctTo] = useState<string | null>(null);
 
+  const [error, setError] = useState<string | null>(null);
+
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
@@ -49,15 +51,20 @@ export default function useSignIn() {
 
         const { accessToken, user } = response.data;
 
-        if (redirctTo) {
-          router.push(`${redirctTo}`);
-        }
-
-        router.push("/asprog");
+        localStorage.setItem("accessToken", accessToken);
+        localStorage.setItem("user", JSON.stringify(user));
 
         setFormData({ email: "", password: "" });
+        if (redirctTo !== null) {
+          router.push(redirctTo);
+        } else {
+          router.push("/asprog");
+        }
       } catch (error: any) {
-        console.error("Sign-in error:", error);
+        if (!error.response) {
+          setError("Something went wrong!");
+        }
+        setError(error.response?.data?.message);
       } finally {
         setIsLoading(false);
       }
@@ -76,5 +83,7 @@ export default function useSignIn() {
     validatePassword,
     onSubmit,
     setRedirctTo,
+    redirctTo,
+    error,
   };
 }

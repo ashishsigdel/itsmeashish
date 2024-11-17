@@ -5,8 +5,10 @@ import { FormField } from "@/components/auth";
 import leftImage from "@/assets/auth/reg-mascot.webp";
 import { useRouter, useSearchParams } from "next/navigation";
 import useSignIn from "@/hooks/use-signin";
+import { useSelector } from "react-redux";
 
 export default function Login() {
+  const router = useRouter();
   const {
     email,
     password,
@@ -15,13 +17,13 @@ export default function Login() {
     passwordError,
     isLoading,
     handleChange,
-    validateEmail,
-    validatePassword,
     onSubmit,
     setRedirctTo,
+    redirctTo,
+    error,
   } = useSignIn();
+
   const searchParams = useSearchParams();
-  const router = useRouter();
 
   const redirect_url = searchParams.get("redirect_url");
 
@@ -29,7 +31,12 @@ export default function Login() {
     if (redirect_url) {
       setRedirctTo(redirect_url);
     }
-  }, []);
+  }, [redirect_url]);
+
+  const user = localStorage.getItem("user");
+  if (user) {
+    router.push("/asprog");
+  }
 
   return (
     <div className="flex h-screen items-center justify-center">
@@ -51,6 +58,9 @@ export default function Login() {
           formData={formData}
           handleChange={handleChange}
           onSubmitSignIn={onSubmit}
+          error={error}
+          isLoading={isLoading}
+          redirectTo={redirctTo}
         />
       </div>
     </div>

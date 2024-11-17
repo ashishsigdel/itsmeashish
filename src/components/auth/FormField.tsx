@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { FaGoogle } from "react-icons/fa";
+import { Spinner } from "../common";
 
 interface MemberFormProps {
   which: string;
@@ -10,6 +11,9 @@ interface MemberFormProps {
   handleChange?: any;
   onSubmitSignIn?: any;
   onSubmitRegister?: any;
+  isLoading?: boolean;
+  error?: string | null;
+  redirectTo?: string | null;
 }
 
 export default function MemberForm({
@@ -19,6 +23,9 @@ export default function MemberForm({
   handleChange = () => {},
   onSubmitSignIn = () => {},
   onSubmitRegister = () => {},
+  isLoading,
+  error,
+  redirectTo,
 }: MemberFormProps) {
   return (
     <div className="max-w-lg mx-auto p-8 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg shadow-lg transition duration-300">
@@ -33,7 +40,7 @@ export default function MemberForm({
 
       <form
         onSubmit={which === "register" ? onSubmitRegister : onSubmitSignIn}
-        className="flex flex-col gap-6"
+        className="flex flex-col gap-4"
       >
         {which === "register" && (
           <div>
@@ -81,12 +88,20 @@ export default function MemberForm({
           />
         </div>
 
+        {error && <p className="text-sm text-red-500">{error}</p>}
+
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full mt-4 px-6 py-3 bg-purple-600 text-white font-semibold rounded-md hover:bg-purple-700 dark:hover:bg-purple-500 transition-all duration-300"
+          className="w-full px-6 py-3 bg-purple-600 text-white font-semibold rounded-md hover:bg-purple-700 dark:hover:bg-purple-500 transition-all duration-300 flex items-center justify-center"
         >
-          {which === "register" ? "Join Now" : "Sign In"}
+          {isLoading ? (
+            <Spinner />
+          ) : which === "register" ? (
+            "Join Now"
+          ) : (
+            "Sign In"
+          )}
         </button>
       </form>
 
@@ -107,7 +122,18 @@ export default function MemberForm({
       {/* Toggle Sign Up / Sign In */}
       <p className="mt-8 text-center text-gray-600 dark:text-gray-400">
         {which === "register" ? "Already a member?" : "New here?"}{" "}
-        <Link href={which === "register" ? "/login" : "/register"}>
+        <Link
+          href={
+            which === "register"
+              ? redirectTo
+                ? `/login?redirect_url=${redirectTo}`
+                : "/login"
+              : redirectTo
+              ? `/register?redirect_url=${redirectTo}`
+              : "/register"
+          }
+          className="text-purple-600 dark:text-purple-400 font-medium hover:underline"
+        >
           <button className="text-purple-600 dark:text-purple-400 font-medium hover:underline">
             {which === "register" ? "Sign in here" : "Join now"}
           </button>
