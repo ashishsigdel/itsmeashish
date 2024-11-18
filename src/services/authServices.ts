@@ -24,3 +24,12 @@ export const Register = async (formData: any) => {
     throw error;
   }
 };
+
+export const logOut = async () => {
+  try {
+    const response = await myAxios.post("/auth/logout", {});
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};

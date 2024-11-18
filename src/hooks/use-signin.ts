@@ -1,9 +1,9 @@
 "use client";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
-import { signIn } from "@/services/authServices";
+import { logOut, signIn } from "@/services/authServices";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useDispatch } from "react-redux";
-import { setAuth } from "@/redux/features/authSlice";
+import { removeAuth, setAuth } from "@/redux/features/authSlice";
 
 export default function useSignIn() {
   const searchParams = useSearchParams();

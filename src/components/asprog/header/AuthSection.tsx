@@ -1,4 +1,6 @@
 "use client";
+import useSignIn from "@/hooks/use-signin";
+import useSignOut from "@/hooks/use-signout";
 import { RootState } from "@/redux/store";
 import { ThemeToggler } from "@/utlis";
 import Link from "next/link";
@@ -8,6 +10,7 @@ import { useSelector } from "react-redux";
 
 export default function AuthSection() {
   const pathname = usePathname();
+  const { isLoading, logout } = useSignOut();
 
   const user = useSelector((state: RootState) => state.auth.user);
 
@@ -19,8 +22,15 @@ export default function AuthSection() {
             Hi,{" "}
             <span className="font-semibold">{user.fullName.split(" ")[0]}</span>
           </p>
-          <div className="bg-gradient-to-r from-blue-500 to-purple-500 py-2 px-5 rounded-full font-semibold">
-            <p className="text-light">Logout</p>
+          <div
+            onClick={() => {
+              if (!isLoading) logout();
+            }}
+            className="bg-gradient-to-r from-blue-500 to-purple-500 py-2 px-5 rounded-full font-semibold cursor-pointer"
+          >
+            <p className="text-light">
+              {isLoading ? "Logging out..." : "Logout"}
+            </p>
           </div>
         </div>
       ) : (
