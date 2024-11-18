@@ -18,12 +18,11 @@ export default function Confirm() {
           Thanks for coming!
         </h1>
         <p className="text-[18px] font-normal mt-5 leading-7 text-gray-700 dark:text-gray-400">
-          Here you can{" "}
-          {getType === "url" ? "get the full source code" : "download the file"}
-          .
+          Form submitted successfully! Please check your email for the resource
+          bundle.
         </p>
         {/* File or URL selection */}
-        {getType === "url" ? (
+        {/* {getType === "url" ? (
           <Link href={"https://github.com"} target="__blank">
             <button className="mt-8 px-6 py-3 bg-purple-500 text-white font-semibold rounded-lg hover:bg-purple-600 transition-all flex items-center gap-3">
               Go to the link
@@ -35,7 +34,7 @@ export default function Confirm() {
             Download
             <FaDownload />
           </button>
-        )}
+        )} */}
         <div className="mt-5">
           <a href="https://www.buymeacoffee.com/ashishsigdel">
             <Image

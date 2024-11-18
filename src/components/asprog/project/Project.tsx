@@ -8,15 +8,31 @@ import Image from "next/image";
 import useCreation from "@/hooks/use-creation";
 import { Spinner } from "@/components/common";
 import { FaDownload } from "react-icons/fa6";
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
+import { source } from "framer-motion/client";
 
 export default function Project() {
   const [project, setProject] = useState<any>(null);
   const [openForm, setOpenForm] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
-  const { fetchCreation, creation } = useCreation();
+  const {
+    fetchCreation,
+    creation,
+    handleGetLink,
+    isLoading,
+    formData,
+    handleChange,
+    email,
+    fullName,
+    handleGetLinkGuest,
+  } = useCreation();
+  const user = useSelector((state: RootState) => state.auth.user);
 
   // Call the hook here, at the top level
   const pathname = usePathname();
+
+  const [whichLinkModel, setWhichLinkModel] = useState<string>("source");
 
   let tags: string[] = [];
   if (creation?.tags) {
@@ -53,6 +69,16 @@ export default function Project() {
         <Spinner />
       </div>
     );
+
+  const handleClickGet = (which: string) => {
+    if (user) {
+      handleGetLink(which);
+      return;
+    } else {
+      setWhichLinkModel(which);
+      setOpenForm(true);
+    }
+  };
 
   return (
     <div className="flex flex-col md:flex-row gap-8 p-8 max-w-7xl mx-auto">
@@ -110,16 +136,22 @@ export default function Project() {
           )}
           {creation.isSourceLink && (
             <button
-              onClick={() => setOpenForm(true)}
+              onClick={() => handleClickGet("source")}
               className="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition text-center flex justify-center items-center gap-4"
             >
-              <FaGithub />
-              View Source
+              {isLoading ? (
+                <Spinner />
+              ) : (
+                <>
+                  <FaGithub />
+                  View Source
+                </>
+              )}
             </button>
           )}
           {creation.isResourceLink && (
             <button
-              onClick={() => setOpenForm(true)}
+              onClick={() => handleClickGet("resource")}
               className="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition text-center flex justify-center items-center gap-4"
             >
               <FaDownload />
@@ -146,15 +178,21 @@ export default function Project() {
                 filling out the Form below!
               </p>
 
-              <form className="flex flex-col gap-6">
+              <form
+                onSubmit={(e) => handleGetLinkGuest(e, whichLinkModel)}
+                className="flex flex-col gap-6"
+              >
                 <div>
                   <label className="block text-gray-800 dark:text-gray-300 font-medium mb-[6px]">
                     Full Name
                   </label>
                   <input
                     type="text"
+                    name="fullName"
                     placeholder="Your full name"
-                    className="w-full px-4 py-[8px] bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md text-gray-900 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md text-gray-900 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    value={formData.fullName}
+                    onChange={handleChange}
                   />
                 </div>
 
@@ -165,20 +203,21 @@ export default function Project() {
                   </label>
                   <input
                     type="email"
+                    name="email"
                     placeholder="Your email address"
-                    className="w-full px-4 py-[8px] bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md text-gray-900 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md text-gray-900 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    value={formData.email}
+                    onChange={handleChange}
                   />
                 </div>
 
                 {/* Submit Button */}
-                <Link href={`${pathname}/confirm`}>
-                  <button
-                    type="submit"
-                    className="w-full mt-4 px-6 py-[8px] bg-purple-600 text-white font-semibold rounded-md hover:bg-purple-700 dark:hover:bg-purple-500 transition-all duration-300"
-                  >
-                    Get Link
-                  </button>
-                </Link>
+                <button
+                  type="submit"
+                  className="w-full mt-4 px-6 py-[8px] bg-purple-600 text-white font-semibold rounded-md hover:bg-purple-700 dark:hover:bg-purple-500 transition-all duration-300"
+                >
+                  {isLoading ? "Sending..." : "Send link to email"}
+                </button>
                 {/* Privacy Policy Checkbox */}
                 <div className="flex items-center gap-2">
                   <label

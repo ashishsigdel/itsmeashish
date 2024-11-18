@@ -20,7 +20,9 @@ export default function AuthSection() {
         <div className="flex gap-4 items-center ">
           <p className="">
             Hi,{" "}
-            <span className="font-semibold">{user.fullName.split(" ")[0]}</span>
+            <span className="font-semibold">
+              {user.fullName && user?.fullName.split(" ")[0]}
+            </span>
           </p>
           <div
             onClick={() => {
