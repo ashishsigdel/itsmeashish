@@ -16,7 +16,7 @@ export default function ProjectCard({ project }: any) {
   }
 
   return (
-    <Link key={project.id} href={`/asprog/project/${project.id}`}>
+    <Link key={project.id} href={`/asprog/project/${project.creationId}`}>
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden cursor-pointer">
         <div
           className="relative w-full h-0"
@@ -25,7 +25,7 @@ export default function ProjectCard({ project }: any) {
           <Image
             height={500}
             width={500}
-            src={project.previewPic}
+            src={project.coverPhoto}
             alt={project.title}
             className="absolute top-0 left-0 w-full h-full object-cover"
           />

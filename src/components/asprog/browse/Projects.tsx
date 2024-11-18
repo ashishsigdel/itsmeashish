@@ -1,16 +1,23 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { tags } from "@/data/tag";
 import { projects } from "@/data/projects";
 import { ProjectCard } from "@/components/asprog/browse";
+import useCreation from "@/hooks/use-creation";
+import { Spinner } from "@/components/common";
 
 export default function Projects() {
   const [selectedTag, setSelectedTag] = useState("all");
+  const { isLoading, fetchCreations, creations } = useCreation();
 
   const handleTagClick = (tag: string) => {
     setSelectedTag(tag);
   };
+
+  useEffect(() => {
+    fetchCreations();
+  }, []);
 
   return (
     <div className="mt-10">
@@ -62,12 +69,20 @@ export default function Projects() {
         ))}
       </div>
 
-      {/* Project Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-        {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
-      </div>
+      {isLoading ? (
+        <div className="mt-20 w-full flex justify-center">
+          <Spinner />
+        </div>
+      ) : creations.length === 0 ? (
+        <div className="mt-20 w-full flex justify-center">No Result</div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+          {creations.length > 0 &&
+            creations.map((creation) => (
+              <ProjectCard key={creation.id} project={creation} />
+            ))}
+        </div>
+      )}
     </div>
   );
 }

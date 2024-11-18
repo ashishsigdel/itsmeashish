@@ -5,17 +5,26 @@ import { FaGithub, FaGlobe } from "react-icons/fa";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import useCreation from "@/hooks/use-creation";
+import { Spinner } from "@/components/common";
+import { FaDownload } from "react-icons/fa6";
 
 export default function Project() {
   const [project, setProject] = useState<any>(null);
   const [openForm, setOpenForm] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
+  const { fetchCreation, creation } = useCreation();
 
   // Call the hook here, at the top level
   const pathname = usePathname();
 
+  let tags: string[] = [];
+  if (creation?.tags) {
+    tags = creation.tags.split(",");
+  }
   useEffect(() => {
     setProject(projects[0]);
+    fetchCreation();
   }, []);
 
   // Close modal when clicking outside of it
@@ -38,13 +47,18 @@ export default function Project() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [openForm]);
 
-  if (!project) return <div>Loading...</div>;
+  if (!creation)
+    return (
+      <div className="w-full h-[40rem] flex items-center justify-center">
+        <Spinner />
+      </div>
+    );
 
   return (
     <div className="flex flex-col md:flex-row gap-8 p-8 max-w-7xl mx-auto">
       {/* Left Section - Project Details */}
       <div className="md:w-2/3">
-        <h1 className="text-3xl font-bold mb-6">{project.title}</h1>
+        <h1 className="text-3xl font-bold mb-6">{creation.title}</h1>
         {/* 16:9 Aspect Ratio Preview Image */}
         <div
           className="relative w-full h-0 mb-8"
@@ -53,7 +67,7 @@ export default function Project() {
           <Image
             height={1000}
             width={1000}
-            src={project.previewPic}
+            src={creation.coverPhoto}
             alt={project.title}
             className="absolute top-0 left-0 w-full h-full object-cover rounded-lg shadow-lg"
           />
@@ -61,11 +75,11 @@ export default function Project() {
         {/* Render HTML description */}
         <div
           className="text-lg text-gray-700 dark:text-gray-300 mb-8"
-          dangerouslySetInnerHTML={{ __html: project.description }}
+          dangerouslySetInnerHTML={{ __html: creation.description }}
         />
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-8">
-          {project.tags.map((tag: string, index: number) => (
+          {tags.map((tag: string, index: number) => (
             <span
               key={index}
               className="px-3 py-1 bg-purple-500 text-white rounded-full text-sm font-medium"
@@ -83,7 +97,7 @@ export default function Project() {
         </h2>
 
         <div className="flex flex-col gap-4">
-          {project.demoLink && (
+          {creation.isDemoLink && (
             <a
               href={project.demoLink}
               target="_blank"
@@ -94,13 +108,22 @@ export default function Project() {
               View Demo
             </a>
           )}
-          {project.sourceLink && (
+          {creation.isSourceLink && (
             <button
               onClick={() => setOpenForm(true)}
               className="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition text-center flex justify-center items-center gap-4"
             >
               <FaGithub />
               View Source
+            </button>
+          )}
+          {creation.isResourceLink && (
+            <button
+              onClick={() => setOpenForm(true)}
+              className="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition text-center flex justify-center items-center gap-4"
+            >
+              <FaDownload />
+              Get Resources
             </button>
           )}
         </div>
