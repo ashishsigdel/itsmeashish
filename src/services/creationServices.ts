@@ -18,7 +18,18 @@ export const getCreation = async (uid: string) => {
   }
 };
 
-export const getLink = async (uid: string, which: string, formData?: any) => {
+export const getLinkLoggedin = async (uid: string, which: string) => {
+  try {
+    const response = await myAxios.post(
+      `/creation/get-link/${uid}?linkType=${which}`
+    );
+    return response.data;
+  } catch (error: any) {
+    throw error;
+  }
+};
+
+export const getLink = async (uid: string, which: string, formData: any) => {
   try {
     const response = await myAxios.post(
       `/creation/get-link/${uid}?linkType=${which}`,

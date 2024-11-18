@@ -3,6 +3,7 @@ import {
   getCreation,
   getCreations,
   getLink,
+  getLinkLoggedin,
 } from "@/services/creationServices";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 
@@ -85,7 +86,7 @@ export default function useCreation() {
   const handleGetLink = async (which: string) => {
     try {
       setIsLoading(true);
-      const response = await getLink(uuid, which);
+      const response = await getLinkLoggedin(uuid, which);
       router.push(`/asprog/project/${uuid}/confirm`);
     } catch (error) {
       console.error("Error while sending...");
