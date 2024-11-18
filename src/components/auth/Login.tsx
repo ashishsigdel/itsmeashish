@@ -21,6 +21,7 @@ export default function Login() {
     setRedirctTo,
     redirctTo,
     error,
+    redirectIfAuthenticate,
   } = useSignIn();
 
   const searchParams = useSearchParams();
@@ -33,10 +34,7 @@ export default function Login() {
     }
   }, [redirect_url]);
 
-  const user = localStorage.getItem("user");
-  if (user) {
-    router.push("/asprog");
-  }
+  redirectIfAuthenticate;
 
   return (
     <div className="flex h-screen items-center justify-center">

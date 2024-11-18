@@ -1,7 +1,7 @@
 // hooks/useRegister.ts
 "use client";
 
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { Register } from "@/services/authServices";
 import { useRouter, useSearchParams } from "next/navigation";
 
@@ -88,6 +88,14 @@ export function useRegister() {
     }
   };
 
+  const redirectIfAuthenticate = useEffect(() => {
+    const accessToken = localStorage.getItem("accessToken");
+
+    if (accessToken) {
+      router.push("/asprog");
+    }
+  }, [router]);
+
   return {
     fullName,
     email,
@@ -105,5 +113,6 @@ export function useRegister() {
     setRedirctTo,
     redirctTo,
     error,
+    redirectIfAuthenticate,
   };
 }

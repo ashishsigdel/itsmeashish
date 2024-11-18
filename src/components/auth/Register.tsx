@@ -24,6 +24,7 @@ export default function Register() {
     redirctTo,
     onSubmit,
     error,
+    redirectIfAuthenticate,
   } = useRegister();
 
   const searchParams = useSearchParams();
@@ -36,10 +37,7 @@ export default function Register() {
     }
   }, [redirect_url]);
 
-  const user = localStorage.getItem("user");
-  if (user) {
-    router.push("/asprog");
-  }
+  redirectIfAuthenticate;
 
   return (
     <div className="flex h-screen items-center justify-center">

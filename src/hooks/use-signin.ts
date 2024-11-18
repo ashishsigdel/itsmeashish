@@ -1,5 +1,5 @@
 "use client";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { signIn } from "@/services/authServices";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useDispatch } from "react-redux";
@@ -79,6 +79,14 @@ export default function useSignIn() {
     }
   };
 
+  const redirectIfAuthenticate = useEffect(() => {
+    const accessToken = localStorage.getItem("accessToken");
+
+    if (accessToken) {
+      router.push("/asprog");
+    }
+  }, [router]);
+
   return {
     email,
     password,
@@ -93,5 +101,6 @@ export default function useSignIn() {
     setRedirctTo,
     redirctTo,
     error,
+    redirectIfAuthenticate,
   };
 }
