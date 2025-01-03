@@ -16,7 +16,7 @@ export default function Pagination({
 }: PaginationProps) {
   return (
     <div className="gi-pro-pagination mt-[15px] flex w-full items-center justify-between border-t-[1px] border-solid border-[#eee] pt-[15px] dark:border-primary/30 max-[575px]:flex-col">
-      <span className="text-[14px] text-gray-500 max-[575px]:mb-[10px]">
+      <span className="text-[14px] text-gray-600 dark:text-gray-300 max-[575px]:mb-[10px]">
         Showing page {currentPage} of {totalPages} pages
       </span>
       <ul className="gi-pro-pagination-inner">
@@ -26,7 +26,7 @@ export default function Pagination({
             onClick={() => handlePageChange(currentPage - 1)}
           >
             <p
-              className={`flex h-[32px] items-center justify-center rounded-[5px] bg-[#eee] p-[2px] px-[5px] text-center align-top text-[16px] font-light leading-[32px] text-green-500 hover:bg-[#5caf90] hover:text-[#fff]`}
+              className={`flex h-[32px] items-center justify-center rounded-[5px] bg-[#eee] p-[2px] px-[5px] text-center align-top text-[16px] font-light leading-[32px] text-blue-500 hover:bg-[#6a8ac8] hover:text-[#fff]`}
             >
               <FaChevronLeft className="ml-[3px] size-[12px]" /> Prev
             </p>
@@ -34,10 +34,10 @@ export default function Pagination({
         )}
         <li className="float-left mr-[5px] inline-block cursor-pointer">
           <p
-            className={`flex h-[32px] w-[32px] items-center justify-center rounded-[5px] p-[0] text-center align-top text-[16px] font-light leading-[32px] hover:bg-[#5caf90] hover:text-[#fff] ${
+            className={`flex h-[32px] w-[32px] items-center justify-center rounded-[5px] p-[0] text-center align-top text-[16px] font-light leading-[32px] hover:bg-[#6a8ac8] hover:text-[#fff] ${
               currentPage === 1
-                ? "bg-primary text-[#fff]"
-                : "bg-[#eee] text-green-500"
+                ? "bg-primary-blue text-[#fff]"
+                : "bg-[#eee] text-primary-blue"
             }`}
             onClick={() => handlePageChange(1)}
           >
@@ -46,10 +46,10 @@ export default function Pagination({
         </li>
         <li className="float-left mr-[5px] inline-block cursor-pointer">
           <p
-            className={`flex h-[32px] w-[32px] items-center justify-center rounded-[5px] p-[0] text-center align-top text-[16px] font-light leading-[32px] hover:bg-[#5caf90] hover:text-[#fff] ${
+            className={`flex h-[32px] w-[32px] items-center justify-center rounded-[5px] p-[0] text-center align-top text-[16px] font-light leading-[32px] hover:bg-[#6a8ac8] hover:text-[#fff] ${
               currentPage === 2
-                ? "bg-[#5caf90] text-[#fff]"
-                : "bg-[#eee] text-green-500"
+                ? "bg-[#6d5caf] text-[#fff]"
+                : "bg-[#eee] text-primary-blue"
             } ${totalPages < 2 && "hidden"}`}
             onClick={() => handlePageChange(2)}
           >
@@ -58,10 +58,10 @@ export default function Pagination({
         </li>
         <li className="float-left mr-[5px] inline-block cursor-pointer">
           <p
-            className={`flex h-[32px] w-[32px] items-center justify-center rounded-[5px] p-[0] text-center align-top text-[16px] font-light leading-[32px] hover:bg-[#5caf90] hover:text-[#fff] ${
+            className={`flex h-[32px] w-[32px] items-center justify-center rounded-[5px] p-[0] text-center align-top text-[16px] font-light leading-[32px] hover:bg-[#6a8ac8] hover:text-[#fff] ${
               currentPage === 3
-                ? "bg-[#5caf90] text-[#fff]"
-                : "bg-[#eee] text-green-500"
+                ? "bg-[#5c7caf] text-[#fff]"
+                : "bg-[#eee] text-primary-blue"
             } ${totalPages < 3 && "hidden"}`}
             onClick={() => handlePageChange(3)}
           >
@@ -70,10 +70,10 @@ export default function Pagination({
         </li>
         <li className="float-left mr-[5px] inline-block cursor-pointer">
           <p
-            className={`flex h-[32px] w-[32px] items-center justify-center rounded-[5px] p-[0] text-center align-top text-[16px] font-light leading-[32px] hover:bg-[#5caf90] hover:text-[#fff] ${
+            className={`flex h-[32px] w-[32px] items-center justify-center rounded-[5px] p-[0] text-center align-top text-[16px] font-light leading-[32px] hover:bg-[#6a8ac8] hover:text-[#fff] ${
               currentPage === 4
-                ? "bg-[#5caf90] text-[#fff]"
-                : "bg-[#eee] text-green-500"
+                ? "bg-[#6a8ac8] text-[#fff]"
+                : "bg-[#eee] text-primary-blue"
             } ${totalPages < 4 && "hidden"}`}
             onClick={() => handlePageChange(4)}
           >
@@ -82,10 +82,10 @@ export default function Pagination({
         </li>
         <li className="float-left mr-[5px] inline-block cursor-pointer">
           <p
-            className={`flex h-[32px] w-[32px] items-center justify-center rounded-[5px] p-[0] text-center align-top text-[16px] font-light leading-[32px] hover:bg-[#5caf90] hover:text-[#fff] ${
+            className={`flex h-[32px] w-[32px] items-center justify-center rounded-[5px] p-[0] text-center align-top text-[16px] font-light leading-[32px] hover:bg-[#6a8ac8] hover:text-[#fff] ${
               currentPage === 5
-                ? "bg-[#5caf90] text-[#fff]"
-                : "bg-[#eee] text-green-500"
+                ? "bg-[#6a8ac8] text-[#fff]"
+                : "bg-[#eee] text-primary-blue"
             } ${totalPages < 5 && "hidden"}`}
             onClick={() => handlePageChange(5)}
           >
@@ -101,13 +101,13 @@ export default function Pagination({
                 currentPage > 5 && currentPage === totalPages - 1 && "hidden"
               }`}
             >
-              <span className="block w-[20px] text-center text-green-500">
+              <span className="block w-[20px] text-center text-primary-blue">
                 ...
               </span>
             </li>
             <li className="float-left mr-[5px] inline-block cursor-pointer">
               <p
-                className={`"} flex h-[32px] w-[32px] items-center justify-center rounded-[5px] bg-[#5caf90] p-[0] text-center align-top text-[16px] font-light leading-[32px] text-[#fff]`}
+                className={`"} flex h-[32px] w-[32px] items-center justify-center rounded-[5px] bg-[#6a8ac8] p-[0] text-center align-top text-[16px] font-light leading-[32px] text-[#fff]`}
               >
                 {currentPage}
               </p>
@@ -123,16 +123,16 @@ export default function Pagination({
                 currentPage > 5 && currentPage === totalPages - 1 && "hidden"
               }`}
             >
-              <span className="block w-[20px] text-center text-green-500">
+              <span className="block w-[20px] text-center text-primary-blue">
                 ...
               </span>
             </li>
             <li className="float-left mr-[5px] inline-block cursor-pointer">
               <p
-                className={`flex h-[32px] w-[32px] items-center justify-center rounded-[5px] p-[0] text-center align-top text-[16px] font-light leading-[32px] hover:bg-[#5caf90] hover:text-[#fff] ${
+                className={`flex h-[32px] w-[32px] items-center justify-center rounded-[5px] p-[0] text-center align-top text-[16px] font-light leading-[32px] hover:bg-[#6a8ac8] hover:text-[#fff] ${
                   currentPage === totalPages
-                    ? "bg-[#5caf90] text-[#fff]"
-                    : "bg-[#eee] text-green-500"
+                    ? "bg-[#6a8ac8] text-[#fff]"
+                    : "bg-[#eee] text-primary-blue"
                 }`}
               >
                 {totalPages}
@@ -146,7 +146,7 @@ export default function Pagination({
             onClick={() => handlePageChange(currentPage + 1)}
           >
             <p
-              className={`flex h-[32px] items-center justify-center rounded-[5px] bg-[#eee] p-[2px] px-[5px] text-center align-top text-[16px] font-light leading-[32px] text-green-500 hover:bg-[#5caf90] hover:text-[#fff]`}
+              className={`flex h-[32px] items-center justify-center rounded-[5px] bg-[#eee] p-[2px] px-[5px] text-center align-top text-[16px] font-light leading-[32px] text-primary-blue hover:bg-[#6a8ac8] hover:text-[#fff]`}
             >
               Next <FaChevronRight className="ml-[3px] size-[12px]" />
             </p>

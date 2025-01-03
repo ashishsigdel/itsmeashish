@@ -7,6 +7,7 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       backgroundImage: {
@@ -19,9 +20,22 @@ const config: Config = {
         "primary-blue": "#845eee",
         "primary-yellow": "#e1b84f",
         "primary-red": "#e14f62",
-        "primary-border-color": "#336647",
+        "primary-border-color": "#222946",
         "gray-color": "#537a62",
         danger: "#D10000",
+        "hard-dark": "#0d1117",
+        light: "#efefef",
+      },
+      animation: {
+        "ping-large": "ping-large 1s ease-in-out infinite",
+      },
+      keyframes: {
+        "ping-large": {
+          "75%, 100%": {
+            transform: "scale(3)",
+            opacity: "0",
+          },
+        },
       },
     },
   },

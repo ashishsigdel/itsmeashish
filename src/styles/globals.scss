@@ -1,8 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  .hero-ring {
+    @apply absolute top-1/2 left-1/2 border-2 border-hard-dark/5 dark:border-light/5 -translate-x-1/2 -translate-y-1/2 rounded-full shadow-[0_0_80px_inset] shadow-hard-dark/5 dark:shadow-light/5;
+  }
+}
 
 body {
   margin: 0;
@@ -13,6 +20,14 @@ body {
   color: white;
 }
 
+.edu-aus {
+  font-family: "Edu AU VIC WA NT Pre", cursive;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -20,4 +35,51 @@ body {
 .blur-bg {
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-icon {
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes pulse-line {
+  0%,
+  100% {
+    height: 0%;
+  }
+  50% {
+    height: 100%;
+  }
+}
+
+.animate-pulse-line {
+  animation: pulse-line 2s infinite ease-in-out;
+}
+
+.shape {
+  animation: morph 4s infinite;
+}
+
+@keyframes morph {
+  0%,
+  100% {
+    border-radius: 50%;
+  }
+  25% {
+    border-radius: 30% 70% 70% 30% / 30% 70% 30% 70%;
+  }
+  50% {
+    border-radius: 70% 30% 30% 70% / 70% 30% 70% 30%;
+  }
+  75% {
+    border-radius: 50% 50% 30% 50%;
+  }
 }

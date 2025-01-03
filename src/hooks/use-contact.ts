@@ -1,6 +1,7 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { messageType } from "@/types/message";
 import emailjs from "emailjs-com";
+import { sendMessage } from "@/services/contactServices";
 
 export default function useContact() {
   const [responseMessage, setResponseMessage] = useState<string | undefined>(
@@ -78,12 +79,8 @@ export default function useContact() {
       setIsLoading(true);
       try {
         // Send the email
-        const result = await emailjs.send(
-          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-          formData,
-          process.env.NEXT_PUBLIC_EMAILJS_USER_ID!
-        );
+        await sendMessage(formData);
+
         setResponseMessage("Message sent successfully!");
 
         // Reset the form after successful send
